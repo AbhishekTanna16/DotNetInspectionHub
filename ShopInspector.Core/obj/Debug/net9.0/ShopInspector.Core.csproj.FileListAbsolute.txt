@@ -1,0 +1,60 @@
+G:\ShopInspector\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.deps.json
+G:\ShopInspector\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfoInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfo.cs
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.CoreCompileInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\refint\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ref\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.deps.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\refint\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ref\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.deps.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.AssemblyReference.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfoInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfo.cs
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.CoreCompileInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\refint\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ref\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.deps.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.AssemblyReference.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfoInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfo.cs
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.CoreCompileInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\refint\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ref\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.deps.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\refint\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Core\obj\Debug\net9.0\ref\ShopInspector.Core.dll

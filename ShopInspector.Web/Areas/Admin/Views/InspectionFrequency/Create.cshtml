@@ -1,0 +1,160 @@
+﻿@model ShopInspector.Core.Entities.InspectionFrequency
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Inspection Frequency";
+}
+
+<h2 class="mb-3">Add Inspection Frequency</h2>
+
+<div class="admin-card admin-container">
+    @* Display any error messages from form submission *@
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form id="createInspectionFrequencyForm" asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="form-grid">
+            <div class="mb-3 full-width">
+                <label asp-for="FrequencyName" class="form-label">
+                    Frequency Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="FrequencyName" class="form-control" placeholder="Enter frequency name (e.g., Daily, Weekly, Monthly)" />
+                <span asp-validation-for="FrequencyName" class="text-danger"></span>
+                <small class="form-text text-muted">Examples: Daily, Weekly, Monthly, Quarterly, Annual</small>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-3">
+            <button type="button" 
+                    data-action="Cancel" 
+                    data-url="@Url.Action("Index", "InspectionFrequency", new { area = "Admin" })" 
+                    class="btn btn-secondary me-3">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </button>
+            <button type="submit" 
+                    id="submitBtn" 
+                    class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Frequency
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Check authentication status using the new endpoint
+            async function checkAuthenticationStatus() {
+                try {
+                    const response = await fetch('/Admin/Asset/CheckAuth', {
+                        method: 'GET',
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        return data.authenticated === true;
+                    }
+                    return false;
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    return false;
+                }
+            }
+
+            // Enhanced validation for InspectionFrequency Create form
+            $("#createInspectionFrequencyForm").validate({
+                rules: {
+                    FrequencyName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 50,
+                        pattern: /^[a-zA-Z\s\-]+$/
+                    }
+                },
+                messages: {
+                    FrequencyName: {
+                        required: "Frequency Name is required",
+                        minlength: "Frequency Name must be at least 2 characters",
+                        maxlength: "Frequency Name cannot exceed 50 characters",
+                        pattern: "Frequency Name can only contain letters, spaces, and hyphens"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: async function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Creating...');
+
+                    try {
+                        // Check if user is still authenticated before submitting
+                        const isAuthenticated = await checkAuthenticationStatus();
+                        
+                        if (!isAuthenticated) {
+                            // Show error message and redirect to login
+                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                                .prependTo('.admin-card .admin-container');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                            }, 2000);
+                            return;
+                        }
+
+                        // Submit the form normally
+                        form.submit();
+                        
+                    } catch (error) {
+                        console.error('Error during form submission:', error);
+                        
+                        // Show error message
+                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
+                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                            .prependTo('.admin-card .admin-container');
+                        
+                        // Restore button state
+                        submitBtn.prop('disabled', false).html(originalText);
+                    }
+                }
+            });
+
+            // Custom validation method for pattern matching
+            $.validator.addMethod("pattern", function(value, element, pattern) {
+                return this.optional(element) || pattern.test(value);
+            });
+
+            // Check authentication status when page loads
+            checkAuthenticationStatus().then(isAuth => {
+                if (!isAuth) {
+                    // Show warning message
+                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                        .prependTo('.admin-card .admin-container');
+                }
+            });
+        });
+    </script>
+}
+

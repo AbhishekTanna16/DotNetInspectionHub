@@ -1,0 +1,190 @@
+﻿@model ShopInspector.Web.Areas.Admin.Models.InspectionItemViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Inspection Checklist";
+}
+
+<h2 class="mb-3">Add Inspection Checklist</h2>
+
+<div class="admin-card admin-container">
+    @* Display any error messages from form submission *@
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form id="createInspectionCheckListForm" asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="form-grid">
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListTitle" class="form-label">
+                    CheckList Title 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="InspectionCheckListTitle" class="form-control" placeholder="Enter checklist title" />
+                <span asp-validation-for="InspectionCheckListTitle" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListName" class="form-label">
+                    CheckList Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="InspectionCheckListName" class="form-control" placeholder="Enter checklist name" />
+                <span asp-validation-for="InspectionCheckListName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListDescription" class="form-label">CheckList Description</label>
+                <textarea asp-for="InspectionCheckListDescription" class="form-control" rows="4" placeholder="Enter checklist description (optional)"></textarea>
+                <span asp-validation-for="InspectionCheckListDescription" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="toggle-switch toggle-success">
+                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" checked />
+                    <label for="Active" class="toggle-switch-slider"></label>
+                    <label for="Active" class="toggle-switch-label">Active Checklist</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-3">
+            <button type="button" 
+                    data-action="Cancel" 
+                    data-url="@Url.Action("Index", "InspectionCheckList", new { area = "Admin" })" 
+                    class="btn btn-secondary me-3">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </button>
+            <button type="submit" 
+                    id="submitBtn" 
+                    class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Checklist
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Check authentication status using the new endpoint
+            async function checkAuthenticationStatus() {
+                try {
+                    const response = await fetch('/Admin/Asset/CheckAuth', {
+                        method: 'GET',
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        return data.authenticated === true;
+                    }
+                    return false;
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    return false;
+                }
+            }
+
+            // Enhanced validation for InspectionCheckList Create form
+            $("#createInspectionCheckListForm").validate({
+                rules: {
+                    InspectionCheckListTitle: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 200
+                    },
+                    InspectionCheckListName: {
+                        required: true,
+                        minlength: 3,
+                        maxlength: 100
+                    },
+                    InspectionCheckListDescription: {
+                        maxlength: 500
+                    }
+                },
+                messages: {
+                    InspectionCheckListTitle: {
+                        required: "CheckList Title is required",
+                        minlength: "Title must be at least 3 characters",
+                        maxlength: "Title cannot exceed 200 characters"
+                    },
+                    InspectionCheckListName: {
+                        required: "CheckList Name is required",
+                        minlength: "Name must be at least 3 characters",
+                        maxlength: "Name cannot exceed 100 characters"
+                    },
+                    InspectionCheckListDescription: {
+                        maxlength: "Description cannot exceed 500 characters"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: async function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Creating...');
+
+                    try {
+                        // Check if user is still authenticated before submitting
+                        const isAuthenticated = await checkAuthenticationStatus();
+                        
+                        if (!isAuthenticated) {
+                            // Show error message and redirect to login
+                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                                .prependTo('.admin-card .admin-container');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                            }, 2000);
+                            return;
+                        }
+
+                        // Submit the form normally
+                        form.submit();
+                        
+                    } catch (error) {
+                        console.error('Error during form submission:', error);
+                        
+                        // Show error message
+                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
+                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                            .prependTo('.admin-card .admin-container');
+                        
+                        // Restore button state
+                        submitBtn.prop('disabled', false).html(originalText);
+                    }
+                }
+            });
+
+            // Check authentication status when page loads
+            checkAuthenticationStatus().then(isAuth => {
+                if (!isAuth) {
+                    // Show warning message
+                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                        .prependTo('.admin-card .admin-container');
+                }
+            });
+        });
+    </script>
+}

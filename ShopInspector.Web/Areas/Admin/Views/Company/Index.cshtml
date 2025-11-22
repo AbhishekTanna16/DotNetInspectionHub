@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<ShopInspector.Core.Entities.Company>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Companies";
+}
+
+<div class="admin-container">
+    <div class="admin-toolbar">
+        <h2 class="mb-0">Companies</h2>
+        <div class="d-flex justify-content-end mb-4">
+            <a asp-area="Admin" asp-controller="Company" asp-action="Create" class="btn btn-primary">Add Company</a>
+        </div>
+    </div>
+
+    <div class="admin-card">
+        <div class="table-responsive">
+            <table class="table table-hover table-compact mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th data-hide-sm>Email</th>
+                        <th data-hide-md>Contact</th>
+                        <th class="text-center">Active</th>
+                        <th class="text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-truncate-2">@item.CompanyName</td>
+                                <td data-hide-sm class="text-truncate-2">@item.CompanyAdminEmail</td>
+                                <td data-hide-md class="text-truncate-2">@item.CompanyContactName</td>
+                                <td class="text-center">
+                                    @if (item.Active)
+                                    {
+                                        <span class="badge bg-success"><i class="bi bi-check-circle"></i> Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-secondary"><i class="bi bi-x-circle"></i> Inactive</span>
+                                    }
+                                </td>
+                                <td class="text-end">
+                                    <a asp-area="Admin" asp-controller="Company" asp-action="Edit" asp-route-id="@item.CompanyID" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                                    <button type="button" data-action="delete" data-url="@Url.Action("Delete", "Company", new { area = "Admin", id = item.CompanyID })" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+@model ShopInspector.Web.Areas.Admin.Models.AssetEditViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Asset";
+}
+
+<h2 class="mb-3">Add Asset</h2>
+
+<div class="admin-card admin-container">
+    @* Display any error messages from form submission *@
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form id="createAssetForm" asp-area="Admin" asp-controller="Asset" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="form-grid">
+            <div class="mb-3">
+                <label asp-for="AssetName" class="form-label">
+                    Asset Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="AssetName" class="form-control" placeholder="Enter asset name" />
+                <span asp-validation-for="AssetName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetCode" class="form-label">
+                    Asset Code 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="AssetCode" class="form-control" placeholder="Enter unique asset code" />
+                <span asp-validation-for="AssetCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetTypeID" class="form-label">
+                    Asset Type 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <select asp-for="AssetTypeID" asp-items="Model.AssetTypes" class="form-select">
+                    <option value="">-- Select Asset Type --</option>
+                </select>
+                <span asp-validation-for="AssetTypeID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetLocation" class="form-label">Location</label>
+                <input asp-for="AssetLocation" class="form-control" placeholder="Enter asset location" />
+                <span asp-validation-for="AssetLocation" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Department" class="form-label">Department</label>
+                <input asp-for="Department" class="form-control" placeholder="Enter department" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="Active" checked />
+                    <label class="form-check-label" asp-for="Active">Active Asset</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-2">
+            <button type="submit" id="submitBtn" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Asset
+            </button>
+            <a asp-area="Admin" asp-controller="Asset" asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Check authentication status using the new endpoint
+            async function checkAuthenticationStatus() {
+                try {
+                    const response = await fetch('/Admin/Asset/CheckAuth', {
+                        method: 'GET',
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        return data.authenticated === true;
+                    }
+                    return false;
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    return false;
+                }
+            }
+
+            // Enhanced validation for Asset Create form
+            $("#createAssetForm").validate({
+                rules: {
+                    AssetName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    AssetCode: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    AssetTypeID: {
+                        required: true
+                    },
+                    AssetLocation: {
+                        maxlength: 100
+                    },
+                    Department: {
+                        maxlength: 100
+                    }
+                },
+                messages: {
+                    AssetName: {
+                        required: "Asset Name is required",
+                        minlength: "Asset Name must be at least 2 characters",
+                        maxlength: "Asset Name cannot exceed 100 characters"
+                    },
+                    AssetCode: {
+                        required: "Asset Code is required",
+                        minlength: "Asset Code must be at least 2 characters", 
+                        maxlength: "Asset Code cannot exceed 100 characters"
+                    },
+                    AssetTypeID: {
+                        required: "Please select an Asset Type"
+                    },
+                    AssetLocation: {
+                        maxlength: "Location cannot exceed 100 characters"
+                    },
+                    Department: {
+                        maxlength: "Department cannot exceed 100 characters"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: async function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Creating...');
+
+                    try {
+                        // Check if user is still authenticated before submitting
+                        const isAuthenticated = await checkAuthenticationStatus();
+                        
+                        if (!isAuthenticated) {
+                            // Show error message and redirect to login
+                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                                .prependTo('.admin-card .admin-container');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                            }, 2000);
+                            return;
+                        }
+
+                        // Submit the form normally
+                        form.submit();
+                        
+                    } catch (error) {
+                        console.error('Error during form submission:', error);
+                        
+                        // Show error message
+                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
+                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                            .prependTo('.admin-card .admin-container');
+                        
+                        // Restore button state
+                        submitBtn.prop('disabled', false).html(originalText);
+                    }
+                }
+            });
+
+            // Check authentication status when page loads
+            checkAuthenticationStatus().then(isAuth => {
+                if (!isAuth) {
+                    // Show warning message
+                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                        .prependTo('.admin-card .admin-container');
+                }
+            });
+        });
+    </script>
+}

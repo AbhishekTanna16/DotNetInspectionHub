@@ -1,0 +1,190 @@
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.AssemblyReference.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfoInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfo.cs
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.CoreCompileInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.deps.json
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.runtimeconfig.json
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInsp.01B52ABF.Up2Date
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\refint\ShopInspector.Infrastructure.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.genruntimeconfig.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ref\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\OFL.txt
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.deps.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.runtimeconfig.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInsp.01B52ABF.Up2Date
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\refint\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.genruntimeconfig.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ref\ShopInspector.Infrastructure.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.deps.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.runtimeconfig.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.AssemblyReference.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfoInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfo.cs
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.CoreCompileInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInsp.01B52ABF.Up2Date
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\refint\ShopInspector.Infrastructure.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.genruntimeconfig.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ref\ShopInspector.Infrastructure.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.deps.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.runtimeconfig.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.AssemblyReference.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfoInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfo.cs
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.CoreCompileInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInsp.01B52ABF.Up2Date
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\refint\ShopInspector.Infrastructure.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.genruntimeconfig.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ref\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\LatoFont\OFL.txt
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.deps.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.runtimeconfig.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Application.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInsp.01B52ABF.Up2Date
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\refint\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ShopInspector.Infrastructure.genruntimeconfig.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Infrastructure\obj\Debug\net9.0\ref\ShopInspector.Infrastructure.dll

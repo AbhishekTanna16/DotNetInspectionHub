@@ -1,0 +1,95 @@
+﻿@model ShopInspector.Core.Entities.AssetInspection
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Inspection Details";
+}
+<div class="container py-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Inspection #@Model.AssetInspectionID</h4>
+        <a class="btn btn-outline-secondary" href="@Url.Action("Export", "PublicInspection", new {  inspectionId = Model.AssetInspectionID })">
+            Export PDF
+        </a>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Asset:</strong> @Model.Asset?.AssetName (@Model.AssetID)</p>
+                    <p><strong>Inspector:</strong> @Model.InspectorName</p>
+                    <p><strong>Date:</strong> @Model.InspectionDate.ToString("yyyy-MM-dd HH:mm")</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Employee:</strong> @(Model.Employee?.EmployeeName ?? "Not assigned")</p>
+                    <p><strong>Frequency:</strong> @(Model.InspectionFrequency?.FrequencyName ?? "N/A")</p>
+                    <p><strong>Third Party:</strong> @(Model.ThirdParty == true ? "Yes" : "No")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            Checklist
+        </div>
+        <div class="card-body">
+            @if (Model.AssetInspectionCheckLists?.Any() == true)
+            {
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th class="text-center">Status</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.AssetInspectionCheckLists)
+                            {
+                                var status = item.IsChecked ? "Inspected" : "Not Inspected";
+                                var badge = item.IsChecked ? "bg-success" : "bg-danger";
+                                <tr>
+                                    <td>@(item.AssetCheckList?.InspectionCheckList?.InspectionCheckListName ?? "Unknown")</td>
+                                    <td class="text-center"><span class="badge @badge">@status</span></td>
+                                    <td>@(item.Remarks ?? "-")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-muted">No checklist items.</div>
+            }
+        </div>
+    </div>
+
+    <div class="card mb-3">
+        <div class="card-header bg-primary text-white">
+            Photos (@(Model.Photos?.Count ?? 0))
+        </div>
+        <div class="card-body">
+            @if (Model.Photos?.Any() == true)
+            {
+                <div class="row g-3">
+                    @foreach (var photo in Model.Photos.OrderBy(p => p.DisplayOrder))
+                    {
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <a href="@photo.PhotoPath" target="_blank">
+                                <img src="@photo.PhotoPath" class="img-fluid rounded border" style="height:200px;object-fit:cover" />
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-muted">No photos uploaded.</div>
+            }
+        </div>
+    </div>
+
+    <a class="btn btn-secondary" href="@Url.Action("History", "PublicInspection", new { assetId = Model.AssetID })">Back to History</a>
+</div>

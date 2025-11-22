@@ -1,0 +1,59 @@
+﻿
+@model IEnumerable<ShopInspector.Core.Entities.AssetCheckList>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Asset Checklist ";
+}
+
+<div class="admin-container">
+    <div class="admin-toolbar">
+        <h2 class="mb-0">Asset Checklists</h2>
+        <div class="d-flex justify-content-end mb-4">
+            <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Create" class="btn btn-primary">Add</a>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-compact">
+            <thead class="table-light">
+                <tr>
+                    <th>Asset</th>
+                    <th data-hide-sm>Checklist</th>
+                    <th data-hide-md>Order</th>
+                    <th>Active</th>
+                    <th class="actions text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Asset?.AssetName</td>
+                            <td data-hide-sm>@item.InspectionCheckList?.InspectionCheckListName</td>
+                            <td data-hide-md>@item.DisplayOrder</td>
+                            <td>
+                                @if (item.Active)
+                                {
+                                    <span class="badge bg-success">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Inactive</span>
+                                }
+                            </td>
+                            <td class="actions action-button text-end">
+                                <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Edit" asp-route-id="@item.AssetCheckListID" class="btn btn-sm btn-outline-primary me-1">Edit</a>
+                                <form asp-area="Admin" asp-controller="AssetCheckList" asp-action="Delete" asp-route-id="@item.AssetCheckListID" method="post" class="d-inline js-ajax-delete">
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

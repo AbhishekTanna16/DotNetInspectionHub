@@ -1,0 +1,133 @@
+﻿@model ShopInspector.Web.Areas.Admin.Models.AssetEditViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Edit Asset";
+}
+
+<h2 class="mb-3">Edit Asset</h2>
+
+<div class="admin-card admin-container">
+    <form id="assetEditForm" asp-area="Admin" asp-controller="Asset" asp-action="Edit" method="post" novalidate>
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="AssetID" />
+
+        <div class="form-grid">
+            <div class="mb-3">
+                <label asp-for="AssetName" class="form-label">Asset Name <span class="text-danger">*</span></label>
+                <input asp-for="AssetName" class="form-control" placeholder="Enter asset name" />
+                <span asp-validation-for="AssetName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetCode" class="form-label">Asset Code <span class="text-danger">*</span></label>
+                <input asp-for="AssetCode" class="form-control" placeholder="Enter unique asset code" />
+                <span asp-validation-for="AssetCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetTypeID" class="form-label">Asset Type <span class="text-danger">*</span></label>
+                <select asp-for="AssetTypeID" asp-items="Model.AssetTypes" class="form-select">
+                    <option value="">-- Select Asset Type --</option>
+                </select>
+                <span asp-validation-for="AssetTypeID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AssetLocation" class="form-label">Location</label>
+                <input asp-for="AssetLocation" class="form-control" placeholder="Enter asset location" />
+                <span asp-validation-for="AssetLocation" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Department" class="form-label">Department</label>
+                <input asp-for="Department" class="form-control" placeholder="Enter department" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="toggle-switch toggle-success">
+                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                    <label for="Active" class="toggle-switch-slider"></label>
+                    <label for="Active" class="toggle-switch-label">Active Asset</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-2">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Changes
+            </button>
+            <a asp-area="Admin" asp-controller="Asset" asp-action="Index" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Enhanced validation for Asset Edit form
+            $("#assetEditForm").validate({
+                rules: {
+                    AssetName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    AssetCode: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    AssetTypeID: {
+                        required: true
+                    },
+                    AssetLocation: {
+                        maxlength: 100
+                    },
+                    Department: {
+                        maxlength: 100
+                    }
+                },
+                messages: {
+                    AssetName: {
+                        required: "Asset Name is required",
+                        minlength: "Asset Name must be at least 2 characters",
+                        maxlength: "Asset Name cannot exceed 100 characters"
+                    },
+                    AssetCode: {
+                        required: "Asset Code is required",
+                        minlength: "Asset Code must be at least 2 characters", 
+                        maxlength: "Asset Code cannot exceed 100 characters"
+                    },
+                    AssetTypeID: {
+                        required: "Please select an Asset Type"
+                    },
+                    AssetLocation: {
+                        maxlength: "Location cannot exceed 100 characters"
+                    },
+                    Department: {
+                        maxlength: "Department cannot exceed 100 characters"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: function(form) {
+                    // Show loading state on submit button
+                    const submitBtn = $(form).find('button[type="submit"]');
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Saving...');
+                    form.submit();
+                }
+            });
+        });
+    </script>
+}

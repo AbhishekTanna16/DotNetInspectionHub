@@ -1,0 +1,39 @@
+﻿@model List<ShopInspector.Core.Entities.AssetInspection>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Inspection History";
+}
+
+<div class="container py-3">
+    <h4>Past Inspections</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Inspector</th>
+                <th>Attachment Path</th>
+                <th>Attachment</th>
+                <th>Detail View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var insp in Model)
+            {
+                <tr>
+                    <td>@insp.InspectionDate.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>@insp.InspectorName</td>
+                    <td>@(insp.Attachment ?? "")</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(insp.Attachment))
+                        {
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" href="@insp.Attachment">View</a>
+                        }
+                    </td>
+                    <td>
+                        <a class="btn btn-sm btn-primary" href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

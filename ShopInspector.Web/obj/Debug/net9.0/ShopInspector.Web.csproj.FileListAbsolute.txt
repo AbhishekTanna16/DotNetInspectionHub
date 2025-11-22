@@ -1,0 +1,1383 @@
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.Development.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.runtime.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.endpoints.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.exe
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.deps.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.runtimeconfig.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Identity.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Humanizer.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QRCoder.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QuestPDF.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.ClientModel.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.CodeDom.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Drawing.Common.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Memory.Data.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\zlib1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\zlib1.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.AssemblyReference.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfoInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfo.cs
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.CoreCompileInputs.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.MvcApplicationPartsAssemblyInfo.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cs
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\bundle\ShopInspector.Web.styles.css
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-b9sayid5wm.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ix68a0lqys-bqjiyaj88i.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\49h3hgzh9o-erw9l3u2r3.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x875my6hxs-aexeepp0ev.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\68w85f6da5-d7shbmvgxk.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lq9ztaf87e-k8d9w2qqmf.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7qu20omwp3-cosvhxvwiu.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\20gx4k5krz-ub07r2b239.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\q4ue4aplnk-b7pk76d08c.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ls8or77ex4-rzd6atqjts.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\qcqw5f90yp-dxx9fxp4il.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\eaccm6ajjw-khv3u5hwcm.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\2n0dsrdl76-lcd1t2u6c8.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6e31ibrzb-tdbxkamptv.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\67xc7dv1p7-06098lyss8.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e7geb8mqas-s35ty4nyc5.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\236b4v71lh-46ein0sx1k.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e38sukvar0-37tfw0ft22.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\83chyrjh78-pk9g2wxc8p.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\em0u2eq03q-6cfz1n2cew.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\we45f8doev-6pdc2jztkx.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ev5dfuxqu8-493y06b0oq.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\doao2fmhhr-iovd86k7lj.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9eg3dbueci-vr1egmr9el.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8hyv0u6f90-kbrnm935zg.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\su42jfd88i-jj8uyg4cgr.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6azb34mpxl-y7v9cxd14o.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\3m8xzsgm8y-notf2xhcfb.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yi7k3xpbh0-h1s4sie4z3.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\kht63ninou-63fj8s7r0e.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yrw29z5uyt-0j3bgjxly4.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\17bnxjbnle-47otxtyo56.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9il7b1i1mz-4v8eqarkd7.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\nh18atl8y7-356vix0kms.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7m44b42048-83jwlth58m.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\pp9bslpgts-mrlpezrjn3.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\resz0tmntm-lzl9nlhx6b.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\t70fkbde3n-ag7o75518u.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6z6yem2n28-x0q3zqp4vz.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ukt3y9moml-o1o13a6vjx.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci3r5s7ujl-ttgo8qnofa.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\botys3vq5t-muycvpuwrr.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\i4iyduc23q-87fc7y1x7t.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lb0b8g4dre-mlv21k5csn.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\a82rbuvrad-g2pq497cmy.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\xhef7eff2x-g2pq497cmy.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.development.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInsp.EDAA5594.Up2Date
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\refint\ShopInspector.Web.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-013ui7nphv.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9lpsckmlvc-nkwl67bvac.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\5i3nxyejuw-po56s5g6y8.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\keoz9tbbux-4y7zpbqqui.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8ldcn1lbgr-yz7dtc68aa.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ksl3g6gk4t-nm4353sf2o.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6ce18yjhf-s10296y6vf.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\rsq4nki48k-0r2lw1vi67.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\w4js9swz64-uxqmvbbcip.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\hsjf7hc94x-k4b12buu5k.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ildp9h671c-fhhh1onrws.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\fu8us1itk7-fxa34o154y.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j4yvcefilv-rbalcnriup.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\s7ytyipm88-ltx0k8qiqn.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j5chlsui2u-036jfqhd45.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8q419ldygq-fyfct3v6ll.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\zyiyyj3dyo-qe1xp3hle7.gz
+G:\ShopInspector\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-kkerczdb92.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.Development.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\OFL.txt
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.runtime.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.endpoints.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.exe
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.deps.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.runtimeconfig.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Identity.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Humanizer.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Mono.TextTemplating.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QRCoder.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QuestPDF.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.ClientModel.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.CodeDom.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Convention.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Hosting.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Runtime.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.TypedParts.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Memory.Data.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\zlib1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\zlib1.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rpswa.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.MvcApplicationPartsAssemblyInfo.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\bundle\ShopInspector.Web.styles.css
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-kkerczdb92.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-013ui7nphv.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ix68a0lqys-bqjiyaj88i.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\zyiyyj3dyo-qe1xp3hle7.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\49h3hgzh9o-erw9l3u2r3.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x875my6hxs-aexeepp0ev.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\68w85f6da5-d7shbmvgxk.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8q419ldygq-fyfct3v6ll.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lq9ztaf87e-k8d9w2qqmf.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7qu20omwp3-cosvhxvwiu.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\20gx4k5krz-ub07r2b239.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j5chlsui2u-036jfqhd45.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\q4ue4aplnk-b7pk76d08c.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\s7ytyipm88-ltx0k8qiqn.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ls8or77ex4-rzd6atqjts.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j4yvcefilv-rbalcnriup.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\qcqw5f90yp-dxx9fxp4il.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\fu8us1itk7-fxa34o154y.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\eaccm6ajjw-khv3u5hwcm.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ildp9h671c-fhhh1onrws.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\2n0dsrdl76-lcd1t2u6c8.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\hsjf7hc94x-k4b12buu5k.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6e31ibrzb-tdbxkamptv.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\w4js9swz64-uxqmvbbcip.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\67xc7dv1p7-06098lyss8.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\rsq4nki48k-0r2lw1vi67.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e7geb8mqas-s35ty4nyc5.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6ce18yjhf-s10296y6vf.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\236b4v71lh-46ein0sx1k.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ksl3g6gk4t-nm4353sf2o.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e38sukvar0-37tfw0ft22.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8ldcn1lbgr-yz7dtc68aa.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\83chyrjh78-pk9g2wxc8p.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\keoz9tbbux-4y7zpbqqui.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\em0u2eq03q-6cfz1n2cew.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\we45f8doev-6pdc2jztkx.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ev5dfuxqu8-493y06b0oq.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\doao2fmhhr-iovd86k7lj.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9eg3dbueci-vr1egmr9el.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8hyv0u6f90-kbrnm935zg.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\su42jfd88i-jj8uyg4cgr.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6azb34mpxl-y7v9cxd14o.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\3m8xzsgm8y-notf2xhcfb.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yi7k3xpbh0-h1s4sie4z3.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\kht63ninou-63fj8s7r0e.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yrw29z5uyt-0j3bgjxly4.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\17bnxjbnle-47otxtyo56.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9il7b1i1mz-4v8eqarkd7.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\nh18atl8y7-356vix0kms.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7m44b42048-83jwlth58m.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\pp9bslpgts-mrlpezrjn3.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\resz0tmntm-lzl9nlhx6b.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\t70fkbde3n-ag7o75518u.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6z6yem2n28-x0q3zqp4vz.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\5i3nxyejuw-po56s5g6y8.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ukt3y9moml-o1o13a6vjx.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci3r5s7ujl-ttgo8qnofa.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9lpsckmlvc-nkwl67bvac.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\botys3vq5t-muycvpuwrr.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\i4iyduc23q-87fc7y1x7t.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lb0b8g4dre-mlv21k5csn.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\a82rbuvrad-g2pq497cmy.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\xhef7eff2x-g2pq497cmy.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.development.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInsp.EDAA5594.Up2Date
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\refint\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-k9s7a985l8.gz
+H:\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-4d6yvx0o6p.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.Development.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.runtime.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.endpoints.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.exe
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.deps.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.runtimeconfig.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Identity.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Humanizer.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QRCoder.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QuestPDF.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.ClientModel.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.CodeDom.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Drawing.Common.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Memory.Data.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\zlib1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\zlib1.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.AssemblyReference.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfoInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfo.cs
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.CoreCompileInputs.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.MvcApplicationPartsAssemblyInfo.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cs
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\bundle\ShopInspector.Web.styles.css
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-4d6yvx0o6p.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-013ui7nphv.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ix68a0lqys-bqjiyaj88i.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\zyiyyj3dyo-qe1xp3hle7.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\49h3hgzh9o-erw9l3u2r3.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x875my6hxs-aexeepp0ev.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\68w85f6da5-d7shbmvgxk.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8q419ldygq-fyfct3v6ll.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lq9ztaf87e-k8d9w2qqmf.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7qu20omwp3-cosvhxvwiu.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\20gx4k5krz-ub07r2b239.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j5chlsui2u-036jfqhd45.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\q4ue4aplnk-b7pk76d08c.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\s7ytyipm88-ltx0k8qiqn.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ls8or77ex4-rzd6atqjts.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j4yvcefilv-rbalcnriup.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\qcqw5f90yp-dxx9fxp4il.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\fu8us1itk7-fxa34o154y.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\eaccm6ajjw-khv3u5hwcm.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ildp9h671c-fhhh1onrws.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\2n0dsrdl76-lcd1t2u6c8.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\hsjf7hc94x-k4b12buu5k.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6e31ibrzb-tdbxkamptv.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\w4js9swz64-uxqmvbbcip.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\67xc7dv1p7-06098lyss8.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\rsq4nki48k-0r2lw1vi67.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e7geb8mqas-s35ty4nyc5.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6ce18yjhf-s10296y6vf.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\236b4v71lh-46ein0sx1k.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ksl3g6gk4t-nm4353sf2o.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e38sukvar0-37tfw0ft22.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8ldcn1lbgr-yz7dtc68aa.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\83chyrjh78-pk9g2wxc8p.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\keoz9tbbux-4y7zpbqqui.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\em0u2eq03q-6cfz1n2cew.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\we45f8doev-6pdc2jztkx.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ev5dfuxqu8-493y06b0oq.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\doao2fmhhr-iovd86k7lj.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9eg3dbueci-vr1egmr9el.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8hyv0u6f90-kbrnm935zg.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\su42jfd88i-jj8uyg4cgr.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6azb34mpxl-y7v9cxd14o.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\3m8xzsgm8y-notf2xhcfb.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yi7k3xpbh0-h1s4sie4z3.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\kht63ninou-63fj8s7r0e.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yrw29z5uyt-0j3bgjxly4.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\17bnxjbnle-47otxtyo56.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9il7b1i1mz-4v8eqarkd7.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\nh18atl8y7-356vix0kms.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7m44b42048-83jwlth58m.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\pp9bslpgts-mrlpezrjn3.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\resz0tmntm-lzl9nlhx6b.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\t70fkbde3n-ag7o75518u.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6z6yem2n28-x0q3zqp4vz.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\5i3nxyejuw-po56s5g6y8.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ukt3y9moml-o1o13a6vjx.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci3r5s7ujl-ttgo8qnofa.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9lpsckmlvc-nkwl67bvac.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\botys3vq5t-muycvpuwrr.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\i4iyduc23q-87fc7y1x7t.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lb0b8g4dre-mlv21k5csn.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\a82rbuvrad-g2pq497cmy.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\xhef7eff2x-g2pq497cmy.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.development.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInsp.EDAA5594.Up2Date
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\refint\ShopInspector.Web.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-iojy2mg0r8.gz
+G:\ShopInspector\19-11-25\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-5ixhfbzty4.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.Development.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\OFL.txt
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.runtime.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.endpoints.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.exe
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.deps.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.runtimeconfig.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Identity.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Humanizer.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Mono.TextTemplating.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QRCoder.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QuestPDF.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.ClientModel.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.CodeDom.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Convention.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Hosting.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Runtime.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.TypedParts.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Drawing.Common.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Memory.Data.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\zlib1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\zlib1.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.AssemblyReference.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rpswa.dswa.cache.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.GeneratedMSBuildEditorConfig.editorconfig
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfoInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfo.cs
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.CoreCompileInputs.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.MvcApplicationPartsAssemblyInfo.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cs
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\bundle\ShopInspector.Web.styles.css
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ix68a0lqys-bqjiyaj88i.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\zyiyyj3dyo-qe1xp3hle7.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\49h3hgzh9o-erw9l3u2r3.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x875my6hxs-aexeepp0ev.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\68w85f6da5-d7shbmvgxk.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8q419ldygq-fyfct3v6ll.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lq9ztaf87e-k8d9w2qqmf.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7qu20omwp3-cosvhxvwiu.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\20gx4k5krz-ub07r2b239.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j5chlsui2u-036jfqhd45.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\q4ue4aplnk-b7pk76d08c.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\s7ytyipm88-ltx0k8qiqn.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ls8or77ex4-rzd6atqjts.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j4yvcefilv-rbalcnriup.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\qcqw5f90yp-dxx9fxp4il.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\fu8us1itk7-fxa34o154y.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ildp9h671c-fhhh1onrws.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\2n0dsrdl76-lcd1t2u6c8.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\hsjf7hc94x-k4b12buu5k.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6e31ibrzb-tdbxkamptv.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\w4js9swz64-uxqmvbbcip.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\67xc7dv1p7-06098lyss8.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\rsq4nki48k-0r2lw1vi67.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e7geb8mqas-s35ty4nyc5.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6ce18yjhf-s10296y6vf.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\236b4v71lh-46ein0sx1k.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ksl3g6gk4t-nm4353sf2o.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e38sukvar0-37tfw0ft22.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8ldcn1lbgr-yz7dtc68aa.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\83chyrjh78-pk9g2wxc8p.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\keoz9tbbux-4y7zpbqqui.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\em0u2eq03q-6cfz1n2cew.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\we45f8doev-6pdc2jztkx.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ev5dfuxqu8-493y06b0oq.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\doao2fmhhr-iovd86k7lj.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9eg3dbueci-vr1egmr9el.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8hyv0u6f90-kbrnm935zg.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\su42jfd88i-jj8uyg4cgr.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6azb34mpxl-y7v9cxd14o.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\3m8xzsgm8y-notf2xhcfb.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yi7k3xpbh0-h1s4sie4z3.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\kht63ninou-63fj8s7r0e.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yrw29z5uyt-0j3bgjxly4.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\17bnxjbnle-47otxtyo56.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9il7b1i1mz-4v8eqarkd7.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\nh18atl8y7-356vix0kms.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7m44b42048-83jwlth58m.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\pp9bslpgts-mrlpezrjn3.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\resz0tmntm-lzl9nlhx6b.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\t70fkbde3n-ag7o75518u.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6z6yem2n28-x0q3zqp4vz.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\5i3nxyejuw-po56s5g6y8.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ukt3y9moml-o1o13a6vjx.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci3r5s7ujl-ttgo8qnofa.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9lpsckmlvc-nkwl67bvac.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\botys3vq5t-muycvpuwrr.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\i4iyduc23q-87fc7y1x7t.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lb0b8g4dre-mlv21k5csn.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\a82rbuvrad-g2pq497cmy.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\xhef7eff2x-g2pq497cmy.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.development.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInsp.EDAA5594.Up2Date
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\refint\ShopInspector.Web.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-r34rc21d0h.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.AspNetCore.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.File.dll
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-rwnnjl3q8u.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-ldok2ipqtl.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-8gzphq1wnt.gz
+G:\ShopInspector\20-11-25\ShopInspector-1 (1)\ShopInspector-1\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\eaccm6ajjw-h2zfunqvn4.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.Development.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.endpoints.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Black.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BlackItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Bold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-BoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLight.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ExtraLightItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Italic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Light.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-LightItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Medium.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-MediumItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Regular.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBold.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-SemiBoldItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-Thin.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\Lato-ThinItalic.ttf
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\LatoFont\OFL.txt
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\appsettings.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.staticwebassets.runtime.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.exe
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.deps.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.runtimeconfig.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Web.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Azure.Identity.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Humanizer.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.SqlServer.Server.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Microsoft.Win32.SystemEvents.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Mono.TextTemplating.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QRCoder.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\QuestPDF.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.AspNetCore.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\Serilog.Sinks.File.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.ClientModel.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.CodeDom.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.AttributedModel.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Convention.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Hosting.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.Runtime.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Composition.TypedParts.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Memory.Data.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-arm64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-musl-x64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libQuestPdfSkia.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\linux-x64\native\libqpdf.so
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libQuestPdfSkia.dylib
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-arm64\native\libqpdf.dylib
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libQuestPdfSkia.dylib
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\osx-x64\native\libqpdf.dylib
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\QuestPdfSkia.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libgcc_s_seh-1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libstdc++-6.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\libwinpthread-1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\qpdf.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x64\native\zlib1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\QuestPdfSkia.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libgcc_s_dw2-1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libstdc++-6.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\libwinpthread-1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\qpdf.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win-x86\native\zlib1.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Application.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Core.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\bin\Debug\net9.0\ShopInspector.Infrastructure.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.AssemblyReference.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rpswa.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.GeneratedMSBuildEditorConfig.editorconfig
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfoInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.AssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.csproj.CoreCompileInputs.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.MvcApplicationPartsAssemblyInfo.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.RazorAssemblyInfo.cs
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjimswa.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\bundle\ShopInspector.Web.styles.css
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-8gzphq1wnt.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-rwnnjl3q8u.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-ldok2ipqtl.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ix68a0lqys-bqjiyaj88i.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\zyiyyj3dyo-qe1xp3hle7.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\49h3hgzh9o-erw9l3u2r3.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\x875my6hxs-aexeepp0ev.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\68w85f6da5-d7shbmvgxk.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8q419ldygq-fyfct3v6ll.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lq9ztaf87e-k8d9w2qqmf.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7qu20omwp3-cosvhxvwiu.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\20gx4k5krz-ub07r2b239.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j5chlsui2u-036jfqhd45.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\q4ue4aplnk-b7pk76d08c.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\s7ytyipm88-ltx0k8qiqn.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ls8or77ex4-rzd6atqjts.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\j4yvcefilv-rbalcnriup.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\qcqw5f90yp-dxx9fxp4il.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\fu8us1itk7-fxa34o154y.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\eaccm6ajjw-h2zfunqvn4.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ildp9h671c-fhhh1onrws.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\2n0dsrdl76-lcd1t2u6c8.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\hsjf7hc94x-k4b12buu5k.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6e31ibrzb-tdbxkamptv.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\w4js9swz64-uxqmvbbcip.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\67xc7dv1p7-06098lyss8.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\rsq4nki48k-0r2lw1vi67.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e7geb8mqas-s35ty4nyc5.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\y6ce18yjhf-s10296y6vf.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\236b4v71lh-46ein0sx1k.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ksl3g6gk4t-nm4353sf2o.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e38sukvar0-37tfw0ft22.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8ldcn1lbgr-yz7dtc68aa.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\83chyrjh78-pk9g2wxc8p.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\keoz9tbbux-4y7zpbqqui.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\em0u2eq03q-6cfz1n2cew.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\we45f8doev-6pdc2jztkx.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ev5dfuxqu8-493y06b0oq.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\doao2fmhhr-iovd86k7lj.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9eg3dbueci-vr1egmr9el.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\8hyv0u6f90-kbrnm935zg.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\su42jfd88i-jj8uyg4cgr.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6azb34mpxl-y7v9cxd14o.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\3m8xzsgm8y-notf2xhcfb.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yi7k3xpbh0-h1s4sie4z3.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\kht63ninou-63fj8s7r0e.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\yrw29z5uyt-0j3bgjxly4.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\17bnxjbnle-47otxtyo56.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9il7b1i1mz-4v8eqarkd7.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\nh18atl8y7-356vix0kms.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\7m44b42048-83jwlth58m.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\pp9bslpgts-mrlpezrjn3.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\resz0tmntm-lzl9nlhx6b.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\t70fkbde3n-ag7o75518u.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\6z6yem2n28-x0q3zqp4vz.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\5i3nxyejuw-po56s5g6y8.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ukt3y9moml-o1o13a6vjx.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ci3r5s7ujl-ttgo8qnofa.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\9lpsckmlvc-nkwl67bvac.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\botys3vq5t-muycvpuwrr.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\i4iyduc23q-87fc7y1x7t.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\lb0b8g4dre-mlv21k5csn.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\a82rbuvrad-g2pq497cmy.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\xhef7eff2x-g2pq497cmy.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.development.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInsp.EDAA5594.Up2Date
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\refint\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\e17u8copk8-10xsi7yos2.gz
+H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-sac9zu0f7w.gz

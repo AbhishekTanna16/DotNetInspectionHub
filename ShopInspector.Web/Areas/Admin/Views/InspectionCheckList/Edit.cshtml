@@ -1,0 +1,51 @@
+﻿
+@model ShopInspector.Core.Entities.InspectionCheckList
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Edit  Inspection Checklist";
+}
+
+<h2 class="mb-3">Edit</h2>
+
+<div class="admin-card admin-container">
+    <form asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Edit" method="post" novalidate>
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="InspectionCheckListID" />
+
+        <div class="form-grid">
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListTitle" class="form-label">CheckList Title</label>
+                <input asp-for="InspectionCheckListTitle" class="form-control" />
+                <span asp-validation-for="InspectionCheckListTitle" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListName" class="form-label">CheckList Name</label>
+                <input asp-for="InspectionCheckListName" class="form-control" />
+                <span asp-validation-for="InspectionCheckListName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <label asp-for="InspectionCheckListDescription" class="form-label">CheckList Description</label>
+                <textarea asp-for="InspectionCheckListDescription" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="InspectionCheckListDescription" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="form-check">
+                    <input asp-for="Active" class="form-check-input" />
+                    <label asp-for="Active" class="form-check-label">Is Active</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-2">
+            <a asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success">Edit</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

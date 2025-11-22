@@ -1,0 +1,53 @@
+﻿@page "/"
+@model ShopInspector.Web.Areas.Admin.Models.InspectionStartViewModel
+@{
+    ViewData["Title"] = "Start Inspection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="h4 mb-3 fw-bold text-primary">Equipment Inspection</h2>
+                    <p class="text-muted mb-4">
+                        Scan a QR code or select an asset below to begin an inspection.
+                    </p>
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            <div asp-validation-summary="All"></div>
+                        </div>
+                    }
+
+                    <form method="post" action="/PublicInspection/Start" novalidate class="needs-validation">
+                        @Html.AntiForgeryToken()
+                        <div class="mb-3">
+                            <label for="assetSelect" class="form-label fw-semibold">Select Asset</label>
+                            <select id="assetSelect" name="selectedAssetId" class="form-select form-select-lg tap-target">
+                                <option value="">-- Choose Asset --</option>
+                                @if (Model?.Assets != null)
+                                {
+                                    @foreach (var a in Model.Assets)
+                                    {
+                                        <option value="@a.Value">@a.Text</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <div class="d-grid gap-2 mb-3">
+                            <button type="submit" class="btn btn-success btn-lg tap-target">
+                                <i class="bi bi-play-circle"></i> Start Inspection
+                            </button>
+                            <a class="btn btn-outline-primary btn-lg tap-target" href="/PublicInspection/Assets">
+                                <i class="bi bi-search"></i> Browse Assets
+                            </a>
+                        </div>
+                    </form>
+
+                    <hr class="my-4" />

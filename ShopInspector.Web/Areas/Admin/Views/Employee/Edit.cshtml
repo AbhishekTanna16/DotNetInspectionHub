@@ -1,0 +1,178 @@
+﻿@model ShopInspector.Core.Entities.Employee
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h2 class="mb-3">Edit Employee</h2>
+
+<div class="admin-card admin-container">
+    @* Display any error messages from form submission *@
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form id="editEmployeeForm" asp-area="Admin" asp-controller="Employee" asp-action="Edit" method="post" novalidate>
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="EmployeeID" />
+
+        <div class="form-grid">
+            <div class="mb-3">
+                <label asp-for="EmployeeName" class="form-label">
+                    Employee Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="EmployeeName" class="form-control" placeholder="Enter employee name" />
+                <span asp-validation-for="EmployeeName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">
+                    Company 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <select asp-for="CompanyID" asp-items="ViewBag.Companies" class="form-select">
+                    <option value="">-- Select Company --</option>
+                </select>
+                <span asp-validation-for="CompanyID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="toggle-switch toggle-success">
+                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                    <label for="Active" class="toggle-switch-slider"></label>
+                    <label for="Active" class="toggle-switch-label">Active Employee</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-3">
+            <button type="button" 
+                    data-action="Cancel" 
+                    data-url="@Url.Action("Index", "Employee", new { area = "Admin" })" 
+                    class="btn btn-secondary me-3">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </button>
+            <button type="submit" 
+                    id="submitBtn" 
+                    class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Changes
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Check authentication status using the new endpoint
+            async function checkAuthenticationStatus() {
+                try {
+                    const response = await fetch('/Admin/Asset/CheckAuth', {
+                        method: 'GET',
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        return data.authenticated === true;
+                    }
+                    return false;
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    return false;
+                }
+            }
+
+            // Enhanced validation for Employee Edit form
+            $("#editEmployeeForm").validate({
+                rules: {
+                    EmployeeName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    CompanyID: {
+                        required: true
+                    }
+                },
+                messages: {
+                    EmployeeName: {
+                        required: "Employee Name is required",
+                        minlength: "Employee Name must be at least 2 characters",
+                        maxlength: "Employee Name cannot exceed 100 characters"
+                    },
+                    CompanyID: {
+                        required: "Please select a Company"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: async function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Saving...');
+
+                    try {
+                        // Check if user is still authenticated before submitting
+                        const isAuthenticated = await checkAuthenticationStatus();
+                        
+                        if (!isAuthenticated) {
+                            // Show error message and redirect to login
+                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                                .prependTo('.admin-card .admin-container');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                            }, 2000);
+                            return;
+                        }
+
+                        // Submit the form normally
+                        form.submit();
+                        
+                    } catch (error) {
+                        console.error('Error during form submission:', error);
+                        
+                        // Show error message
+                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
+                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                            .prependTo('.admin-card .admin-container');
+                        
+                        // Restore button state
+                        submitBtn.prop('disabled', false).html(originalText);
+                    }
+                }
+            });
+
+            // Check authentication status when page loads
+            checkAuthenticationStatus().then(isAuth => {
+                if (!isAuth) {
+                    // Show warning message
+                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                        .prependTo('.admin-card .admin-container');
+                }
+            });
+        });
+    </script>
+}

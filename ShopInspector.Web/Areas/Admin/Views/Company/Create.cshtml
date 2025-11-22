@@ -1,0 +1,220 @@
+@model ShopInspector.Core.Entities.Company
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Company";
+}
+
+<h2 class="mb-3">Add Company</h2>
+
+<div class="admin-card admin-container">
+    @* Display any error messages from form submission *@
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <form id="createCompanyForm" asp-area="Admin" asp-controller="Company" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="form-grid">
+            <div class="mb-3">
+                <label asp-for="CompanyName" class="form-label">
+                    Company Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="CompanyName" class="form-control" placeholder="Enter company name" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+                <small class="form-text text-muted">Enter the full legal name of the company</small>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CompanyAdminEmail" class="form-label">
+                    Admin Email 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="CompanyAdminEmail" type="email" class="form-control" placeholder="admin@company.com" />
+                <span asp-validation-for="CompanyAdminEmail" class="text-danger"></span>
+                <small class="form-text text-muted">Primary contact email for administrative purposes</small>
+            </div>
+
+            <div class="mb-3 full-width">
+                <label asp-for="CompanyContactName" class="form-label">
+                    Contact Person Name 
+                    <span class="text-danger required-indicator">*</span>
+                </label>
+                <input asp-for="CompanyContactName" class="form-control" placeholder="Enter contact person name" />
+                <span asp-validation-for="CompanyContactName" class="text-danger"></span>
+                <small class="form-text text-muted">Name of the primary contact person</small>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="toggle-switch toggle-success">
+                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" checked />
+                    <label for="Active" class="toggle-switch-slider"></label>
+                    <label for="Active" class="toggle-switch-label">Active Company</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-3">
+            <button type="button" 
+                    data-action="Cancel" 
+                    data-url="@Url.Action("Index", "Company", new { area = "Admin" })" 
+                    class="btn btn-secondary me-3">
+                <i class="bi bi-arrow-left"></i> Cancel
+            </button>
+            <button type="submit" 
+                    id="submitBtn" 
+                    class="btn btn-success">
+                <i class="bi bi-check-circle"></i> Save Company
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Check authentication status using the new endpoint
+            async function checkAuthenticationStatus() {
+                try {
+                    const response = await fetch('/Admin/Company/CheckAuth', {
+                        method: 'GET',
+                        credentials: 'same-origin',
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        const data = await response.json();
+                        return data.authenticated === true;
+                    }
+                    return false;
+                } catch (error) {
+                    console.error('Auth check failed:', error);
+                    return false;
+                }
+            }
+
+            // Enhanced validation for Company Create form
+            $("#createCompanyForm").validate({
+                rules: {
+                    CompanyName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    },
+                    CompanyAdminEmail: {
+                        required: true,
+                        email: true,
+                        maxlength: 150
+                    },
+                    CompanyContactName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    }
+                },
+                messages: {
+                    CompanyName: {
+                        required: "Company Name is required",
+                        minlength: "Company Name must be at least 2 characters",
+                        maxlength: "Company Name cannot exceed 100 characters"
+                    },
+                    CompanyAdminEmail: {
+                        required: "Admin Email is required",
+                        email: "Please enter a valid email address",
+                        maxlength: "Email address cannot exceed 150 characters"
+                    },
+                    CompanyContactName: {
+                        required: "Contact Person Name is required",
+                        minlength: "Contact Person Name must be at least 2 characters",
+                        maxlength: "Contact Person Name cannot exceed 100 characters"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: async function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Creating...');
+
+                    try {
+                        // Check if user is still authenticated before submitting
+                        const isAuthenticated = await checkAuthenticationStatus();
+                        
+                        if (!isAuthenticated) {
+                            // Show error message and redirect to login
+                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                                .prependTo('.admin-card .admin-container');
+                            
+                            setTimeout(() => {
+                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
+                            }, 2000);
+                            return;
+                        }
+
+                        // Submit the form normally
+                        form.submit();
+                        
+                    } catch (error) {
+                        console.error('Error during form submission:', error);
+                        
+                        // Show error message
+                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
+                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                            .prependTo('.admin-card .admin-container');
+                        
+                        // Restore button state
+                        submitBtn.prop('disabled', false).html(originalText);
+                    }
+                }
+            });
+
+            // Add helpful input formatting for company name
+            $("#CompanyName").on('input', function() {
+                let value = $(this).val();
+                // Auto-capitalize first letter of each word
+                value = value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                $(this).val(value);
+            });
+
+            // Add helpful input formatting for contact name
+            $("#CompanyContactName").on('input', function() {
+                let value = $(this).val();
+                // Auto-capitalize first letter of each word
+                value = value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                $(this).val(value);
+            });
+
+            // Check authentication status when page loads
+            checkAuthenticationStatus().then(isAuth => {
+                if (!isAuth) {
+                    // Show warning message
+                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
+                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
+                        .prependTo('.admin-card .admin-container');
+                }
+            });
+        });
+    </script>
+}

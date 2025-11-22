@@ -1,0 +1,481 @@
+@model ShopInspector.Web.Areas.Admin.Models.InspectionStartViewModel
+@{
+    ViewData["Title"] = "Start Inspection";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .field-error {
+        border-color: #dc3545 !important;
+    }
+
+    .error-message {
+        color: #dc3545;
+        font-size: .75rem;
+        margin-top: .25rem;
+    }
+
+    .step-error-summary {
+        background: #dc3545;
+        color: #fff;
+        padding: .5rem .75rem;
+        border-radius: .25rem;
+        font-size: .85rem;
+        margin-bottom: 1rem;
+        display: none;
+    }
+
+    .no-checklist-warning {
+        background: #ffeaa7;
+        border: 1px solid #fdcb6e;
+        color: #2d3436;
+        padding: 1rem;
+        border-radius: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .checklist-item {
+        background: #fff;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .checklist-item:hover {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.1);
+    }
+
+    .checklist-item.checked {
+        background: #f8f9fa;
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.1rem rgba(13, 110, 253, 0.2);
+    }
+
+    .checklist-item .form-check {
+        margin-bottom: 0.5rem;
+    }
+
+    .checklist-item .form-check-input {
+        margin-top: 0.125rem;
+    }
+
+    .checklist-item .form-check-label {
+        font-weight: 600;
+        color: #495057;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+
+    .checklist-description {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+        line-height: 1.4;
+    }
+
+    .remarks-input {
+        border: 1px solid #e9ecef;
+        border-radius: 0.375rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .remarks-input:focus {
+        border-color: #86b7fe;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+        outline: 0;
+    }
+</style>
+
+<div class="container py-3">
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+                <div>
+                    <h4 class="mb-1">@Model.AssetName</h4>
+                    <div class="text-muted small">
+                        @if (!string.IsNullOrWhiteSpace(Model.AssetCode))
+                        {
+                            <span class="me-3"><strong>Code:</strong> @Model.AssetCode</span>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.AssetLocation))
+                        {
+                            <span><strong>Location:</strong> @Model.AssetLocation</span>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <a class="btn btn-outline-secondary btn-sm" href="@Url.Action("History", "PublicInspection", new { assetId = Model.AssetID })">
+                        View History
+                    </a>
+                    <a class="btn btn-outline-info btn-sm" href="@Url.Action("Debug", "PublicInspection", new { assetId = Model.AssetID })" target="_blank">
+                        Debug Info
+                    </a>
+                </div>
+            </div>
+
+            @if (Model.LastInspection != null)
+            {
+                <div class="alert alert-info mt-3 mb-0">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <div>
+                            <div class="fw-semibold">Last Inspection</div>
+                            <div class="small">
+                                &middot; <strong>Date:</strong> @Model.LastInspection.InspectionDate.ToString("yyyy-MM-dd HH:mm")
+                                &middot; <strong>Inspector:</strong> @(Model.LastInspection.InspectorName ?? "Anonymous")
+                                &middot; <strong>Employee:</strong> @(Model.LastInspection.EmployeeName ?? "N/A")
+                                &middot; <strong>Frequency:</strong> @(Model.LastInspection.FrequencyName ?? "N/A")
+                                &middot; <strong>Third Party:</strong> @(Model.LastInspection.ThirdParty ? "Yes" : "No")
+                                &middot; <strong>Photos:</strong> @Model.LastInspection.PhotoCount
+                            </div>
+                        </div>
+                        <div>
+                            <a class="btn btn-sm btn-primary" href="@Url.Action("Details", "PublicInspection", new { inspectionId = Model.LastInspection.InspectionId })">
+                                Open Report
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <div id="progress" class="mb-3">
+                <div class="progress" style="height:8px;">
+                    <div id="progressBar" class="progress-bar" role="progressbar" style="width:33%"></div>
+                </div>
+            </div>
+
+            <form id="inspectionForm" asp-action="Submit" asp-controller="PublicInspection" method="post" enctype="multipart/form-data" novalidate>
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="AssetID" value="@Model.AssetID" />
+
+                <!-- Step 1 -->
+                <section class="step" data-step="1">
+                    <div class="step-error-summary" data-summary="1"></div>
+                    <h5>Inspector Details</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Inspector Name <span class="text-danger">*</span></label>
+                        <input name="InspectorName" id="InspectorName" class="form-control tap-target" placeholder="Your name" autocomplete="off" />
+                        <div class="error-message" data-error-for="InspectorName"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Employee (optional)</label>
+                        <select name="EmployeeID" class="form-select tap-target">
+                            <option value="">-- Select --</option>
+                            @if (Model.Employees != null)
+                            {
+                                foreach (var e in Model.Employees)
+                                {
+                                    <option value="@e.Value">@e.Text</option>
+                                }
+                            }
+                        </select>
+                        <div class="error-message" data-error-for="EmployeeID"></div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Frequency (optional)</label>
+                        <select name="InspectionFrequencyID" class="form-select tap-target">
+                            <option value="">-- Select --</option>
+                            @if (Model.Frequencies != null)
+                            {
+                                foreach (var f in Model.Frequencies)
+                                {
+                                    <option value="@f.Value">@f.Text</option>
+                                }
+                            }
+                        </select>
+                        <div class="error-message" data-error-for="InspectionFrequencyID"></div>
+                    </div>
+
+                    <div class="toggle-switch">
+                        <input class="toggle-switch-input" type="checkbox" id="thirdParty" name="ThirdParty" value="true" />
+                        <label for="thirdParty" class="toggle-switch-slider"></label>
+                        <label for="thirdParty" class="toggle-switch-label">Third Party Inspection</label>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <div></div>
+                        <button type="button" class="btn btn-primary next-btn tap-target">Next</button>
+                    </div>
+                </section>
+
+                <!-- Step 2 -->
+                <section class="step d-none" data-step="2">
+                    <div class="step-error-summary" data-summary="2"></div>
+                    <h5>Checklist</h5>
+                    
+                    @if (Model.Items == null || !Model.Items.Any())
+                    {
+                        <div class="no-checklist-warning">
+                            <h6><i class="bi bi-exclamation-triangle"></i> No Checklist Items Configured</h6>
+                            <p class="mb-2">
+                                No checklist items have been configured for this asset. This means:
+                            </p>
+                            <ul class="mb-2">
+                                <li>No AssetCheckList mappings exist for Asset ID @Model.AssetID</li>
+                                <li>All existing mappings might be marked as inactive</li>
+                                <li>The inspection checklists themselves might be inactive</li>
+                            </ul>
+                            <p class="mb-0">
+                                <strong>Next Steps:</strong> Contact your administrator to configure checklist items for this asset in the admin panel 
+                                (Admin ? Asset CheckList). You can still proceed with the inspection by adding remarks below.
+                            </p>
+                        </div>
+                        
+                        <div class="card p-3 border-warning">
+                            <label class="form-label fw-bold">General Inspection Notes</label>
+                            <textarea name="GeneralRemarks" class="form-control tap-target" rows="4" 
+                                placeholder="Since no checklist items are configured, please provide your inspection findings here..."></textarea>
+                            <small class="text-muted">
+                                Provide any observations, issues found, or inspection notes.
+                            </small>
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="small text-muted mb-2">Select at least one item or provide at least one remark.</p>
+
+                        <div id="checklist">
+                            @for (int i = 0; i < Model.Items.Count; i++)
+                            {
+                                <div class="checklist-item" data-index="@i">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="Items[@i].IsChecked" value="true" id="chk_@i" />
+                                        <input type="hidden" name="Items[@i].AssetCheckListID" value="@Model.Items[i].AssetCheckListID" />
+                                        <label class="form-check-label" for="chk_@i">
+                                            @Model.Items[i].InspectionCheckListName
+                                        </label>
+                                    </div>
+                                    @if (!string.IsNullOrEmpty(Model.Items[i].InspectionCheckListDescription))
+                                    {
+                                        <div class="checklist-description">@Model.Items[i].InspectionCheckListDescription</div>
+                                    }
+                                    <div class="mt-2">
+                                        <input name="Items[@i].Remarks" class="form-control remarks-input remarks-field" placeholder="Remarks (optional)" />
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    <div class="d-flex justify-content-between mt-2">
+                        <button type="button" class="btn btn-secondary prev-btn tap-target">Back</button>
+                        <button type="button" class="btn btn-primary next-btn tap-target">Next</button>
+                    </div>
+                </section>
+
+                <!-- Step 3 -->
+                <section class="step d-none" data-step="3">
+                    <div class="step-error-summary" data-summary="3"></div>
+                    <h5>Photos</h5>
+                    <p class="text-muted small">Tap the camera icon to capture images. Max 20MB per file. (Photos optional)</p>
+
+                    <div class="mb-3">
+                        <input id="fileInput" type="file" name="Files" accept="image/*" capture="camera" multiple class="form-control tap-target" />
+                        <div class="error-message" data-error-for="fileInput"></div>
+                        <small id="fileHelp" class="form-text text-muted">You can attach multiple photos.</small>
+                    </div>
+
+                    <div id="preview" class="mb-3 d-flex flex-wrap gap-2"></div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-btn tap-target">Back</button>
+                        <button type="submit" class="btn btn-success tap-target">Submit Inspection</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/inspection-compress.js"></script>
+    <script>
+        (function(){
+            const steps = Array.from(document.querySelectorAll('.step'));
+            const progressBar = document.getElementById('progressBar');
+            const form = document.getElementById('inspectionForm');
+            let idx = 0;
+            const MAX = 20 * 1024 * 1024;
+
+            function showStep(i){
+                steps.forEach(s => s.classList.add('d-none'));
+                steps[i].classList.remove('d-none');
+                progressBar.style.width = Math.round(((i + 1) / steps.length) * 100) + '%';
+            }
+
+            function clearErrors(step){
+                const summary = step.querySelector('.step-error-summary');
+                if(summary){
+                    summary.style.display='none';
+                    summary.innerHTML='';
+                }
+                step.querySelectorAll('.field-error').forEach(e => e.classList.remove('field-error'));
+                step.querySelectorAll('.error-message').forEach(e => e.innerHTML='');
+                step.querySelectorAll('.checklist-item').forEach(item => {
+                    item.classList.remove('is-invalid');
+                });
+            }
+
+            function addFieldError(input, message){
+                input.classList.add('field-error');
+                const msgEl = input.closest('.mb-3, .checklist-item, .form-check')?.querySelector('.error-message[data-error-for="'+input.id+'"]')
+                    || input.closest('.mb-3, .checklist-item, .form-check')?.querySelector('.error-message');
+                if(msgEl) msgEl.innerHTML = message;
+            }
+
+            function showSummary(step, messages){
+                const summary = step.querySelector('.step-error-summary');
+                if(!summary) return;
+                summary.innerHTML = messages.map(m => '<div>'+m+'</div>').join('');
+                summary.style.display='block';
+            }
+
+            function validateStep(stepIndex){
+                const step = steps[stepIndex];
+                clearErrors(step);
+                const errors = [];
+
+                if(stepIndex === 0){
+                    const inspector = document.getElementById('InspectorName');
+                    if(!inspector.value.trim()){
+                        errors.push('Inspector Name is required.');
+                        addFieldError(inspector, 'Required.');
+                    }
+                }
+                else if(stepIndex === 1){
+                    const checks = step.querySelectorAll('input[type="checkbox"][name*="IsChecked"]');
+                    const remarks = step.querySelectorAll('.remarks-field');
+                    const generalRemarks = step.querySelector('textarea[name="GeneralRemarks"]');
+                    
+                    let anyChecked = Array.from(checks).some(c => c.checked);
+                    let anyRemark = Array.from(remarks).some(r => r.value.trim().length > 0);
+                    let hasGeneralRemarks = generalRemarks && generalRemarks.value.trim().length > 0;
+                    
+                    if (checks.length === 0) {
+                        if (!hasGeneralRemarks) {
+                            errors.push('Please provide inspection notes since no checklist items are configured.');
+                            if (generalRemarks) addFieldError(generalRemarks, 'Required when no checklist items exist.');
+                        }
+                    } else {
+                        if(!anyChecked && !anyRemark){
+                            errors.push('Select at least one checklist item or enter a remark.');
+                        }
+                    }
+                }
+
+                if(errors.length){
+                    showSummary(step, errors);
+                    return false;
+                }
+                return true;
+            }
+
+            // Enhanced checklist interaction
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+                const remarksInput = item.querySelector('.remarks-input');
+
+                // Make the entire item clickable to toggle checkbox
+                item.addEventListener('click', function(e) {
+                    if (e.target !== checkbox && e.target !== remarksInput) {
+                        checkbox.checked = !checkbox.checked;
+                        updateChecklistItemState(item, checkbox.checked);
+                    }
+                });
+
+                checkbox.addEventListener('change', function() {
+                    updateChecklistItemState(item, this.checked);
+                });
+
+                remarksInput.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+
+            function updateChecklistItemState(item, checked) {
+                if (checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            }
+
+            document.querySelectorAll('.next-btn').forEach(btn=>{
+                btn.addEventListener('click', () => {
+                    if(!validateStep(idx)) return;
+                    if (idx < steps.length - 1) { idx++; showStep(idx); window.scrollTo(0,0); }
+                });
+            });
+
+            document.querySelectorAll('.prev-btn').forEach(btn=>{
+                btn.addEventListener('click', () => {
+                    if (idx > 0) { idx--; showStep(idx); window.scrollTo(0,0); }
+                });
+            });
+
+            form.addEventListener('submit', (e) => {
+                for(let i=0;i<steps.length;i++){
+                    if(!validateStep(i)){
+                        e.preventDefault();
+                        idx = i;
+                        showStep(idx);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+                }
+            });
+
+            const input = document.getElementById('fileInput');
+            const preview = document.getElementById('preview');
+            input.addEventListener('change', async (ev) => {
+                preview.innerHTML='';
+                const originals = Array.from(ev.target.files||[]);
+                const accepted=[];
+                for(const f of originals){
+                    if(f.size>MAX){
+                        alert('File "'+f.name+'" exceeds 20MB and will be skipped.');
+                        continue;
+                    }
+                    const url = URL.createObjectURL(f);
+                    const img = document.createElement('img');
+                    img.src = url;
+                    img.style.width='96px';
+                    img.style.height='96px';
+                    img.style.objectFit='cover';
+                    img.className='rounded border';
+                    preview.appendChild(img);
+                    accepted.push(f);
+                }
+                let finalFiles = accepted;
+                if(window.compressFile){
+                    const compressed=[];
+                    for(const f of accepted){
+                        try{
+                            const c = await compressFile(f,{ maxWidth:1600,maxHeight:1600,quality:0.7 });
+                            const cf = new File([c], f.name, { type:c.type });
+                            if(cf.size<=MAX) compressed.push(cf);
+                        }catch{ compressed.push(f); }
+                    }
+                    finalFiles = compressed;
+                }
+                const dt = new DataTransfer();
+                finalFiles.forEach(file=>dt.items.add(file));
+                input.files = dt.files;
+            });
+
+            showStep(0);
+        })();
+    </script>
+}

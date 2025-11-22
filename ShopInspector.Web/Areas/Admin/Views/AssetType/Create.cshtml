@@ -1,0 +1,29 @@
+﻿
+@model ShopInspector.Core.Entities.AssetType
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Asset Type";
+}
+
+<h2 class="mb-3">Add Asset Type</h2>
+
+<div class="admin-card admin-container">
+    <form asp-area="Admin" asp-controller="AssetType" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+        <div class="form-grid">
+            <div class="mb-3 full-width">
+                <label asp-for="AssetTypeName" class="form-label">Asset Type Name</label>
+                <input asp-for="AssetTypeName" class="form-control" />
+                <span asp-validation-for="AssetTypeName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="btn-wrap mt-2">
+            <button type="submit" class="btn btn-success">Save</button>
+            <a asp-area="Admin" asp-controller="AssetType" asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

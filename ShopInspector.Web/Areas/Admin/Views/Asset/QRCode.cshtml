@@ -1,0 +1,21 @@
+﻿@model string
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "QR CODE";
+}
+
+<div class="admin-container d-flex flex-column align-items-center justify-content-center" style="min-height:60vh;">
+    <div class="admin-card text-center" style="max-width: 420px; width:100%;">
+        <h3 class="mb-3">QR Code</h3>
+        <img src="@Model"
+             alt="QR Code"
+             class="img-fluid border rounded shadow mb-4"
+             style="max-width: 320px; width: 100%; height: auto; background: #fff;" />
+
+        <div class="btn-wrap mt-2 justify-content-center">
+            <a download="qr.png" href="@Model" class="btn btn-primary me-2">Download QR</a>
+            <a asp-area="Admin" asp-controller="Asset" asp-action="Index" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+</div>

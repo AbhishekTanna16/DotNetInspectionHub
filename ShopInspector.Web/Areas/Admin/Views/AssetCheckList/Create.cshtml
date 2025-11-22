@@ -1,0 +1,54 @@
+﻿
+@model ShopInspector.Web.Areas.Admin.Models.AssetCheckListEditViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Add Asset Checklist Row";
+}
+
+<h2 class="mb-3">Add Asset Checklist Row</h2>
+
+<div class="admin-card admin-container">
+    <form asp-area="Admin" asp-controller="AssetCheckList" asp-action="Create" method="post" novalidate>
+        @Html.AntiForgeryToken()
+
+        <div class="form-grid">
+            <div class="mb-3">
+                <label asp-for="AssetID" class="form-label">Asset</label>
+                <select asp-for="AssetID" asp-items="Model.Assets" class="form-select">
+                    <option value="">-- Select Asset --</option>
+                </select>
+                <span asp-validation-for="AssetID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="InspectionCheckListID" class="form-label">Checklist</label>
+                <select asp-for="InspectionCheckListID" asp-items="Model.InspectionCheckLists" class="form-select">
+                    <option value="">-- Select Checklist --</option>
+                </select>
+                <span asp-validation-for="InspectionCheckListID" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="DisplayOrder" class="form-label">Display Order</label>
+                <input asp-for="DisplayOrder" class="form-control" type="number" min="1" />
+                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 full-width">
+                <div class="form-check">
+                    <input asp-for="Active" class="form-check-input" />
+                    <label asp-for="Active" class="form-check-label">Active</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-wrap mt-2">
+            <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

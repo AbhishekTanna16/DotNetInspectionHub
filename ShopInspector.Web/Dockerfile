@@ -2,25 +2,25 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Copy solution and project files
-COPY ../.. .
+# Copy everything from the web project folder
+COPY . .
 
-# Restore dependencies
-RUN dotnet restore DotNetInspectionHub/ShopInspector.Web/ShopInspector.Web.csproj
+# Restore dependencies for this project
+RUN dotnet restore ShopInspector.Web.csproj
 
 # Publish in Release mode
-RUN dotnet publish DotNetInspectionHub/ShopInspector.Web/ShopInspector.Web.csproj -c Release -o /app/out
+RUN dotnet publish ShopInspector.Web.csproj -c Release -o out
 
 
 # ===== RUNTIME STAGE =====
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 
-# Set URL for Render (Render injects PORT environment variable)
+# Render will inject PORT, we bind to it
 ENV ASPNETCORE_URLS=http://+:8080
 EXPOSE 8080
 
-# Copy published files from build stage
+# Copy published files
 COPY --from=build /app/out .
 
 # Start the app

@@ -20,6 +20,8 @@ public class AssetCheckListService : IAssetCheckListService
     public Task<List<AssetCheckList>> GetByAssetIdAsync(
        int assetId) => _repo.GetByAssetIdAsync(assetId);
     public Task<AssetCheckList?> GetByIdAsync(int id) => _repo.GetByIdAsync(id);
+    public Task<AssetCheckList?> GetByAssetAndChecklistAsync(int assetId, int inspectionCheckListId) => 
+        _repo.GetByAssetAndChecklistAsync(assetId, inspectionCheckListId);
     public Task AddAsync(AssetCheckList entity) => _repo.AddAsync(entity);
     public Task UpdateAsync(AssetCheckList entity) => _repo.UpdateAsync(entity);
     public Task DeleteAsync(int id) => _repo.DeleteAsync(id);

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj": {}
+    "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj": {}
   },
   "projects": {
-    "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj": {
+    "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj",
+        "projectUniqueName": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj",
         "projectName": "ShopInspector.Core",
-        "projectPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj",
-        "packagesPath": "C:\\Users\\HITESH\\.nuget\\packages\\",
-        "outputPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\obj\\",
+        "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj",
+        "packagesPath": "C:\\Users\\NS-44\\.nuget\\packages\\",
+        "outputPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HITESH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NS-44\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

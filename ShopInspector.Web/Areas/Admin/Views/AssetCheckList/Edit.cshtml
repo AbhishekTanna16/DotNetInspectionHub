@@ -1,55 +1,128 @@
-﻿
-@model ShopInspector.Web.Areas.Admin.Models.AssetCheckListEditViewModel
+﻿@model ShopInspector.Web.Areas.Admin.Models.AssetCheckListEditViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Edit Asset Checklist Row";
 }
 
-<h2 class="mb-3">Edit Asset Checklist Row</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Edit Asset Checklist Row</h2>
 
-<div class="admin-card admin-container">
-    <form asp-area="Admin" asp-controller="AssetCheckList" asp-action="Edit" method="post" novalidate>
-        @Html.AntiForgeryToken()
-        <input type="hidden" asp-for="AssetCheckListID" />
-
-        <div class="form-grid">
-            <div class="mb-3">
-                <label asp-for="AssetID" class="form-label">Asset</label>
-                <select id="AssetID-server" asp-for="AssetID" asp-items="Model.Assets" class="form-select">
-                    <option value="">-- Select Asset --</option>
-                </select>
-                <span asp-validation-for="AssetID" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="InspectionCheckListID" class="form-label">Checklist</label>
-                <select id="InspectionCheckListID-server" asp-for="InspectionCheckListID" asp-items="Model.InspectionCheckLists" class="form-select">
-                    <option value="">-- Select Checklist --</option>
-                </select>
-                <span asp-validation-for="InspectionCheckListID" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="DisplayOrder" class="form-label">Display Order</label>
-                <input asp-for="DisplayOrder" class="form-control" type="number" min="1" />
-                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <div class="form-check">
-                    <input asp-for="Active" class="form-check-input" />
-                    <label asp-for="Active" class="form-check-label">Active</label>
+    <div class="admin-card">
+        <div class="admin-container">
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-            </div>
-        </div>
+            }
 
-        <div class="btn-wrap mt-2">
-            <button type="submit" class="btn btn-success">Save</button>
-            <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            <form id="editAssetCheckListForm" asp-area="Admin" asp-controller="AssetCheckList" asp-action="Edit" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="AssetCheckListID" />
+
+                <div class="form-grid">
+                    <div class="mb-3">
+                        <label asp-for="AssetID" class="form-label">
+                            Asset 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <select id="AssetID-server" asp-for="AssetID" asp-items="Model.Assets" class="form-select">
+                            <option value="">-- Select Asset --</option>
+                        </select>
+                        <span asp-validation-for="AssetID" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="InspectionCheckListID" class="form-label">
+                            Checklist 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <select id="InspectionCheckListID-server" asp-for="InspectionCheckListID" asp-items="Model.InspectionCheckLists" class="form-select">
+                            <option value="">-- Select Checklist --</option>
+                        </select>
+                        <span asp-validation-for="InspectionCheckListID" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="DisplayOrder" class="form-label">
+                            Display Order 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="DisplayOrder" class="form-control" type="number" min="1" placeholder="Enter display order" />
+                        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <div class="form-check">
+                            <input asp-for="Active" class="form-check-input" />
+                            <label asp-for="Active" class="form-check-label">Active</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-2">
+                    <button type="submit" id="submitBtn" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Changes
+                    </button>
+                    <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Enhanced validation for AssetCheckList Edit form
+            $("#editAssetCheckListForm").validate({
+                rules: {
+                    AssetID: {
+                        required: true
+                    },
+                    InspectionCheckListID: {
+                        required: true
+                    },
+                    DisplayOrder: {
+                        required: true,
+                        min: 1
+                    }
+                },
+                messages: {
+                    AssetID: {
+                        required: "Please select an Asset"
+                    },
+                    InspectionCheckListID: {
+                        required: "Please select a Checklist"
+                    },
+                    DisplayOrder: {
+                        required: "Display Order is required",
+                        min: "Display Order must be at least 1"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Saving...');
+                    
+                    form.submit();
+                }
+            });
+        });
+    </script>
 }

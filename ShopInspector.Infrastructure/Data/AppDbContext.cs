@@ -77,13 +77,13 @@ public class AppDbContext : DbContext
             .HasOne(aic => aic.AssetInspection)
             .WithMany(ai => ai.AssetInspectionCheckLists)
             .HasForeignKey(aic => aic.AssetInspectionID)
-           .OnDelete(DeleteBehavior.Restrict);
+           .OnDelete(DeleteBehavior.Cascade);
 
         builder.Entity<AssetInspectionCheckList>()
             .HasOne(aic => aic.AssetCheckList)
             .WithMany(ac => ac.AssetInspectionCheckLists)
             .HasForeignKey(aic => aic.AssetCheckListID)
-              .OnDelete(DeleteBehavior.Restrict);
+              .OnDelete(DeleteBehavior.Cascade);
 
         // InspectionPhoto relationship - ADD THIS
         builder.Entity<InspectionPhoto>()

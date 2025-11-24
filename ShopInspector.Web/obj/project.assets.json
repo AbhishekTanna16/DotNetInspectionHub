@@ -5947,23 +5947,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HITESH\\.nuget\\packages\\": {},
+    "C:\\Users\\NS-44\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Web\\ShopInspector.Web.csproj",
+      "projectUniqueName": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Web\\ShopInspector.Web.csproj",
       "projectName": "ShopInspector.Web",
-      "projectPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Web\\ShopInspector.Web.csproj",
-      "packagesPath": "C:\\Users\\HITESH\\.nuget\\packages\\",
-      "outputPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Web\\obj\\",
+      "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Web\\ShopInspector.Web.csproj",
+      "packagesPath": "C:\\Users\\NS-44\\.nuget\\packages\\",
+      "outputPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HITESH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NS-44\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5978,14 +5978,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Application\\ShopInspector.Application.csproj": {
-              "projectPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Application\\ShopInspector.Application.csproj"
+            "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj": {
+              "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj"
             },
-            "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj": {
-              "projectPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Core\\ShopInspector.Core.csproj"
+            "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj": {
+              "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj"
             },
-            "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj": {
-              "projectPath": "H:\\ShopInspector (1)\\ShopInspector (1)\\ShopInspector\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj"
+            "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj": {
+              "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj"
             }
           }
         }
@@ -6068,7 +6068,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -4,69 +4,69 @@
     ViewData["Title"] = "Add Inspection Checklist";
 }
 
-<h2 class="mb-3">Add Inspection Checklist</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Add Inspection Checklist</h2>
 
-<div class="admin-card admin-container">
-    @* Display any error messages from form submission *@
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-
-    <form id="createInspectionCheckListForm" asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Create" method="post" novalidate>
-        @Html.AntiForgeryToken()
-
-        <div class="form-grid">
-            <div class="mb-3 full-width">
-                <label asp-for="InspectionCheckListTitle" class="form-label">
-                    CheckList Title 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="InspectionCheckListTitle" class="form-control" placeholder="Enter checklist title" />
-                <span asp-validation-for="InspectionCheckListTitle" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <label asp-for="InspectionCheckListName" class="form-label">
-                    CheckList Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="InspectionCheckListName" class="form-control" placeholder="Enter checklist name" />
-                <span asp-validation-for="InspectionCheckListName" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <label asp-for="InspectionCheckListDescription" class="form-label">CheckList Description</label>
-                <textarea asp-for="InspectionCheckListDescription" class="form-control" rows="4" placeholder="Enter checklist description (optional)"></textarea>
-                <span asp-validation-for="InspectionCheckListDescription" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <div class="toggle-switch toggle-success">
-                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" checked />
-                    <label for="Active" class="toggle-switch-slider"></label>
-                    <label for="Active" class="toggle-switch-label">Active Checklist</label>
+    <div class="admin-card">
+        <div class="admin-container">
+            @* Display any error messages from form submission *@
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-            </div>
-        </div>
+            }
 
-        <div class="btn-wrap mt-3">
-            <button type="button" 
-                    data-action="Cancel" 
-                    data-url="@Url.Action("Index", "InspectionCheckList", new { area = "Admin" })" 
-                    class="btn btn-secondary me-3">
-                <i class="bi bi-arrow-left"></i> Cancel
-            </button>
-            <button type="submit" 
-                    id="submitBtn" 
-                    class="btn btn-success">
-                <i class="bi bi-check-circle"></i> Save Checklist
-            </button>
+            <form id="createInspectionCheckListForm" asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Create" method="post" novalidate>
+                @Html.AntiForgeryToken()
+
+                <div class="form-grid">
+                    <div class="mb-3 full-width">
+                        <label asp-for="InspectionCheckListTitle" class="form-label">
+                            CheckList Title 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="InspectionCheckListTitle" class="form-control" placeholder="Enter checklist title" />
+                        <span asp-validation-for="InspectionCheckListTitle" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <label asp-for="InspectionCheckListName" class="form-label">
+                            CheckList Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="InspectionCheckListName" class="form-control" placeholder="Enter checklist name" />
+                        <span asp-validation-for="InspectionCheckListName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <label asp-for="InspectionCheckListDescription" class="form-label">CheckList Description</label>
+                        <textarea asp-for="InspectionCheckListDescription" class="form-control" rows="4" placeholder="Enter checklist description (optional)"></textarea>
+                        <span asp-validation-for="InspectionCheckListDescription" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <div class="form-check">
+                            <input asp-for="Active" class="form-check-input" checked />
+                            <label asp-for="Active" class="form-check-label">Active Checklist</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-3">
+                    <button type="submit" 
+                            id="submitBtn" 
+                            class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Checklist
+                    </button>
+                    <a asp-area="Admin" asp-controller="InspectionCheckList" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

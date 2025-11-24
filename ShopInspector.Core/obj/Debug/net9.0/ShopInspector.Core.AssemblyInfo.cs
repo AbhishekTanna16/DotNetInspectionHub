@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShopInspector.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9395442a1adb36ef1dafc4e1a84d4765bfe2759")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShopInspector.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShopInspector.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

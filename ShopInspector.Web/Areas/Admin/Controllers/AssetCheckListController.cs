@@ -103,32 +103,66 @@ public class AssetCheckListController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AssetCheckListEditViewModel vm)
     {
-
         try
         {
             if (!ModelState.IsValid)
             {
                 vm.Assets = (await _assetService.GetAllAsync()).Select(a => new SelectListItem(a.AssetName, a.AssetID.ToString()));
                 vm.InspectionCheckLists = (await _inspectionCheckListService.GetAllAsync()).Select(i => new SelectListItem(i.InspectionCheckListName, i.InspectionCheckListID.ToString()));
-                _logger.LogInformation("Create AssetCheckList but data not pass properly so ModelState.IsValid is not valid  {AssetCheckListID}", vm.AssetID);
+                _logger.LogInformation("Create AssetCheckList but data not pass properly so ModelState.IsValid is not valid  {AssetID}", vm.AssetID);
                 return View(vm);
             }
 
-            var entity = new AssetCheckList
+            // Handle multiple checklist selection
+            if (vm.InspectionCheckListIDs != null && vm.InspectionCheckListIDs.Any())
             {
-                AssetID = vm.AssetID,
-                InspectionCheckListID = vm.InspectionCheckListID,
-                DisplayOrder = vm.DisplayOrder,
-                Active = vm.Active
-            };
+                var createdCount = 0;
+                foreach (var checklistId in vm.InspectionCheckListIDs)
+                {
+                    // Check if this combination already exists
+                    var existingEntity = await _service.GetByAssetAndChecklistAsync(vm.AssetID, checklistId);
+                    if (existingEntity == null)
+                    {
+                        var entity = new AssetCheckList
+                        {
+                            AssetID = vm.AssetID,
+                            InspectionCheckListID = checklistId,
+                            DisplayOrder = vm.DisplayOrder + createdCount, // Increment order for each item
+                            Active = vm.Active
+                        };
 
-            await _service.AddAsync(entity);
-            _logger.LogInformation("Create AssetCheckList Sucessfully {AssetCheckListID}", entity.AssetID);
+                        await _service.AddAsync(entity);
+                        createdCount++;
+                        _logger.LogInformation("Created AssetCheckList successfully {AssetID} -> {ChecklistID}", entity.AssetID, checklistId);
+                    }
+                    else
+                    {
+                        _logger.LogWarning("AssetCheckList already exists for Asset {AssetID} and Checklist {ChecklistID}", vm.AssetID, checklistId);
+                    }
+                }
+
+                if (createdCount > 0)
+                {
+                    TempData["SuccessMessage"] = $"Successfully created {createdCount} asset checklist(s).";
+                }
+                else
+                {
+                    TempData["WarningMessage"] = "All selected checklist combinations already exist for this asset.";
+                }
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Please select at least one checklist.";
+                vm.Assets = (await _assetService.GetAllAsync()).Select(a => new SelectListItem(a.AssetName, a.AssetID.ToString()));
+                vm.InspectionCheckLists = (await _inspectionCheckListService.GetAllAsync()).Select(i => new SelectListItem(i.InspectionCheckListName, i.InspectionCheckListID.ToString()));
+                return View(vm);
+            }
+
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error creating AssetCheckList   {AssetCheckListID}", vm.AssetID);
+            _logger.LogError(ex, "Error creating AssetCheckList {AssetID}", vm.AssetID);
             throw;
         }
     }

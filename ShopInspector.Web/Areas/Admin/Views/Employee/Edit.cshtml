@@ -5,66 +5,66 @@
     ViewData["Title"] = "Edit Employee";
 }
 
-<h2 class="mb-3">Edit Employee</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Edit Employee</h2>
 
-<div class="admin-card admin-container">
-    @* Display any error messages from form submission *@
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-
-    <form id="editEmployeeForm" asp-area="Admin" asp-controller="Employee" asp-action="Edit" method="post" novalidate>
-        @Html.AntiForgeryToken()
-        <input type="hidden" asp-for="EmployeeID" />
-
-        <div class="form-grid">
-            <div class="mb-3">
-                <label asp-for="EmployeeName" class="form-label">
-                    Employee Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="EmployeeName" class="form-control" placeholder="Enter employee name" />
-                <span asp-validation-for="EmployeeName" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">
-                    Company 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <select asp-for="CompanyID" asp-items="ViewBag.Companies" class="form-select">
-                    <option value="">-- Select Company --</option>
-                </select>
-                <span asp-validation-for="CompanyID" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <div class="toggle-switch toggle-success">
-                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
-                    <label for="Active" class="toggle-switch-slider"></label>
-                    <label for="Active" class="toggle-switch-label">Active Employee</label>
+    <div class="admin-card">
+        <div class="admin-container">
+            @* Display any error messages from form submission *@
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-            </div>
-        </div>
+            }
 
-        <div class="btn-wrap mt-3">
-            <button type="button" 
-                    data-action="Cancel" 
-                    data-url="@Url.Action("Index", "Employee", new { area = "Admin" })" 
-                    class="btn btn-secondary me-3">
-                <i class="bi bi-arrow-left"></i> Cancel
-            </button>
-            <button type="submit" 
-                    id="submitBtn" 
-                    class="btn btn-success">
-                <i class="bi bi-check-circle"></i> Save Changes
-            </button>
+            <form id="editEmployeeForm" asp-area="Admin" asp-controller="Employee" asp-action="Edit" method="post" novalidate>
+                @Html.AntiForgeryToken() 
+                <input type="hidden" asp-for="EmployeeID" />
+
+                <div class="form-grid">
+                    <div class="mb-3">
+                        <label asp-for="EmployeeName" class="form-label">
+                            Employee Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="EmployeeName" class="form-control" placeholder="Enter employee name" />
+                        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">
+                            Company 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <select asp-for="CompanyID" asp-items="ViewBag.Companies" class="form-select">
+                            <option value="">-- Select Company --</option>
+                        </select>
+                        <span asp-validation-for="CompanyID" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <div class="form-check">
+                            <input asp-for="Active" class="form-check-input" />
+                            <label asp-for="Active" class="form-check-label">Active Employee</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-3">
+                    <button type="submit" 
+                            id="submitBtn" 
+                            class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Changes
+                    </button>
+                    <a asp-area="Admin" asp-controller="Employee" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

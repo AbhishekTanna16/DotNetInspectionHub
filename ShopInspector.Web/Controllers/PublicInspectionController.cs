@@ -3,6 +3,7 @@ using ShopInspector.Application.Interfaces;
 using ShopInspector.Web.Areas.Admin.Models;
 using ShopInspector.Core.Entities;
 using Microsoft.AspNetCore.Hosting;
+using ShopInspector.Application.Helpers;
 
 namespace ShopInspector.Web.Controllers;
 
@@ -383,8 +384,22 @@ public class PublicInspectionController : Controller
         {
             var insp = await _inspectionService.GetByIdAsync(inspectionId);
             if (insp == null) return NotFound();
-            var pdfBytes = InspectionPdfGenerator.Generate(insp);
-            _logger.LogError( "Export inspection suceessfully for Inspection ID {InspectionID}", inspectionId);
+
+            // Get all photos for this inspection
+            var photos = insp.Photos ?? new List<InspectionPhoto>();
+            var photoFiles = new List<(string Label, string PhysicalPath)>();
+            
+            foreach (var photo in photos.OrderBy(p => p.DisplayOrder))
+            {
+                var physicalPath = Path.Combine(_env.WebRootPath, photo.PhotoPath.TrimStart('/'));
+                var label = $"Photo {photo.DisplayOrder + 1}";
+                photoFiles.Add((label, physicalPath));
+            }
+
+            // Use the correct PDF generator from Application layer
+            var pdfBytes = InspectionPdfGenerator.Generate(insp, photoFiles);
+            
+            _logger.LogInformation("Export inspection successfully for Inspection ID {InspectionID} with {PhotoCount} photos", inspectionId, photoFiles.Count);
             return File(pdfBytes, "application/pdf", $"Inspection_{inspectionId}.pdf");
         }
         catch (Exception ex)

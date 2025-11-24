@@ -4,36 +4,89 @@
     ViewData["Title"] = "Inspection History";
 }
 
-<div class="container py-3">
-    <h4>Past Inspections</h4>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Inspector</th>
-                <th>Attachment Path</th>
-                <th>Attachment</th>
-                <th>Detail View</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var insp in Model)
-            {
-                <tr>
-                    <td>@insp.InspectionDate.ToString("yyyy-MM-dd HH:mm")</td>
-                    <td>@insp.InspectorName</td>
-                    <td>@(insp.Attachment ?? "")</td>
-                    <td>
-                        @if (!string.IsNullOrEmpty(insp.Attachment))
-                        {
-                            <a class="btn btn-sm btn-outline-primary" target="_blank" href="@insp.Attachment">View</a>
-                        }
-                    </td>
-                    <td>
-                        <a class="btn btn-sm btn-primary" href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })">Details</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+<div class="asset-page">
+    <!-- Header row with proper title styling -->
+    <div class="asset-header-row">
+        <h2 class="asset-title">Past Inspections</h2>
+    </div>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="alert alert-info mt-3" role="alert">
+            <i class="bi bi-info-circle"></i>
+            <strong>No inspection history found.</strong> No inspections have been completed for this asset yet.
+        </div>
+    }
+    else
+    {
+        <div class="asset-table-wrapper mt-3">
+            <table class="table table-hover table-compact asset-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Inspector</th>
+                        <th data-hide-md>Attachment Path</th>
+                        <th data-hide-sm class="text-center">Attachment</th>
+                        <th class="asset-col-actions text-end">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var insp in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="fw-bold">@insp.InspectionDate.ToString("MMM dd, yyyy")</div>
+                                <small class="text-muted">@insp.InspectionDate.ToString("HH:mm")</small>
+                            </td>
+                            <td >@insp.InspectorName</td>
+                            <td data-hide-md class="text-truncate" style="max-width: 200px;" title="@(insp.Attachment ?? "")">
+                                @(insp.Attachment ?? "No attachment")
+                            </td>
+                            <td class="text-center" data-hide-sm>
+                                @if (!string.IsNullOrEmpty(insp.Attachment))
+                                {
+                                    <a class="btn btn-sm btn-outline-info btn-square" 
+                                       target="_blank" 
+                                       href="@insp.Attachment" 
+                                       title="View Attachment">
+                                        <i class="bi bi-paperclip"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+                            <td class="asset-col-actions">
+                                <div class="asset-action-group">
+                                    <a class="btn btn-action btn-outline-primary" 
+                                       href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })"
+                                       title="View Details">
+                                        <i class="bi bi-eye"></i> <span class="txt">Details</span>
+                                    </a>
+                                    @if (!string.IsNullOrEmpty(insp.Attachment))
+                                    {
+                                        <a class="btn btn-action btn-outline-success" 
+                                           target="_blank" 
+                                           href="@insp.Attachment"
+                                           title="View Attachment">
+                                            <i class="bi bi-paperclip"></i> <span class="txt">View</span>
+                                        </a>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+
+    <!-- Mobile-friendly info cards for very small screens -->
+    <div class="d-md-none mt-3">
+        <div class="small text-muted mb-2">
+            <i class="bi bi-info-circle"></i> On mobile, some columns are hidden. Tap "Details" to view full inspection information.
+        </div>
+    </div>
 </div>
+

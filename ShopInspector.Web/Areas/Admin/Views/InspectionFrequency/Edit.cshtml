@@ -4,48 +4,49 @@
     ViewData["Title"] = "Edit Inspection Frequency";
 }
 
-<h2 class="mb-3">Edit Inspection Frequency</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Edit Inspection Frequency</h2>
 
-<div class="admin-card admin-container">
-    @* Display any error messages from form submission *@
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <div class="admin-card">
+        <div class="admin-container">
+            @* Display any error messages from form submission *@
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <form id="editInspectionFrequencyForm" asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Edit" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                <input asp-for="InspectionFrequencyID" type="hidden" />
+
+                <div class="form-grid">
+                    <div class="mb-3 full-width">
+                        <label asp-for="FrequencyName" class="form-label">
+                            Frequency Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="FrequencyName" class="form-control" placeholder="Enter frequency name (e.g., Daily, Weekly, Monthly)" />
+                        <span asp-validation-for="FrequencyName" class="text-danger"></span>
+                        <small class="form-text text-muted">Examples: Daily, Weekly, Monthly, Quarterly, Annual</small>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-3">
+                    <button type="submit" 
+                            id="submitBtn" 
+                            class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Changes
+                    </button>
+                    <a asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    }
-
-    <form id="editInspectionFrequencyForm" asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Edit" method="post" novalidate>
-        @Html.AntiForgeryToken()
-        <input asp-for="InspectionFrequencyID" type="hidden" />
-
-        <div class="form-grid">
-            <div class="mb-3 full-width">
-                <label asp-for="FrequencyName" class="form-label">
-                    Frequency Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="FrequencyName" class="form-control" placeholder="Enter frequency name (e.g., Daily, Weekly, Monthly)" />
-                <span asp-validation-for="FrequencyName" class="text-danger"></span>
-                <small class="form-text text-muted">Examples: Daily, Weekly, Monthly, Quarterly, Annual</small>
-            </div>
-        </div>
-
-        <div class="btn-wrap mt-3">
-            <button type="button" 
-                    data-action="Cancel" 
-                    data-url="@Url.Action("Index", "InspectionFrequency", new { area = "Admin" })" 
-                    class="btn btn-secondary me-3">
-                <i class="bi bi-arrow-left"></i> Cancel
-            </button>
-            <button type="submit" 
-                    id="submitBtn" 
-                    class="btn btn-success">
-                <i class="bi bi-check-circle"></i> Save Changes
-            </button>
-        </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

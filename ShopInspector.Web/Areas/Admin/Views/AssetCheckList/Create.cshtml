@@ -1,5 +1,4 @@
-﻿
-@model ShopInspector.Web.Areas.Admin.Models.AssetCheckListEditViewModel
+﻿@model ShopInspector.Web.Areas.Admin.Models.AssetCheckListEditViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Add Asset Checklist Row";
@@ -21,17 +20,27 @@
             </div>
 
             <div class="mb-3">
-                <label asp-for="InspectionCheckListID" class="form-label">Checklist</label>
-                <select asp-for="InspectionCheckListID" asp-items="Model.InspectionCheckLists" class="form-select">
-                    <option value="">-- Select Checklist --</option>
+                <label asp-for="InspectionCheckListIDs" class="form-label">Checklists</label>
+                <select asp-for="InspectionCheckListIDs" asp-items="Model.InspectionCheckLists" 
+                        class="form-select multi-select-checklist" 
+                        multiple 
+                        title="Select one or more checklists..."
+                        data-placeholder="Select checklists..."
+                        data-live-search="true">
                 </select>
-                <span asp-validation-for="InspectionCheckListID" class="text-danger"></span>
+                <span asp-validation-for="InspectionCheckListIDs" class="text-danger"></span>
+                <div class="form-text">
+                    <i class="bi bi-info-circle"></i> 
+                    You can select multiple checklists. Use Ctrl+Click (Windows) or Cmd+Click (Mac) to select multiple items, 
+                    or use the enhanced dropdown below.
+                </div>
             </div>
 
             <div class="mb-3">
-                <label asp-for="DisplayOrder" class="form-label">Display Order</label>
+                <label asp-for="DisplayOrder" class="form-label">Starting Display Order</label>
                 <input asp-for="DisplayOrder" class="form-control" type="number" min="1" />
                 <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                <div class="form-text">Base order for the checklists. Each selected checklist will increment from this number.</div>
             </div>
 
             <div class="mb-3 full-width">
@@ -51,4 +60,80 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    
+    <style>
+        /* Enhanced multi-select styling */
+        .multi-select-checklist {
+            min-height: 120px;
+            border: 2px dashed #ddd;
+            transition: border-color 0.3s ease;
+        }
+        
+        .multi-select-checklist:focus {
+            border-color: #0d6efd;
+            border-style: solid;
+        }
+        
+        .multi-select-checklist option {
+            padding: 8px 12px;
+            margin: 2px 0;
+        }
+        
+        .multi-select-checklist option:checked {
+            background: #0d6efd !important;
+            color: white !important;
+        }
+        
+        /* Checkbox-style option display */
+        .checklist-options {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 0.375rem;
+            padding: 0.5rem;
+            background: #f8f9fa;
+        }
+        
+        .checklist-option {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+    </style>
+    
+    <script>
+        $(document).ready(function() {
+            // Enhanced multi-select functionality
+            const $multiSelect = $('.multi-select-checklist');
+            
+            // Improve visual feedback
+            $multiSelect.on('change', function() {
+                const selectedCount = $(this).val() ? $(this).val().length : 0;
+                const $helpText = $(this).siblings('.form-text');
+                
+                if (selectedCount > 0) {
+                    $helpText.html(`<i class="bi bi-check-circle text-success"></i> ${selectedCount} checklist(s) selected`);
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $helpText.html('<i class="bi bi-info-circle"></i> You can select multiple checklists. Use Ctrl+Click (Windows) or Cmd+Click (Mac) to select multiple items.');
+                    $(this).removeClass('is-valid is-invalid');
+                }
+            });
+            
+            // Form validation
+            $('form').on('submit', function(e) {
+                const selectedChecklists = $multiSelect.val();
+                if (!selectedChecklists || selectedChecklists.length === 0) {
+                    e.preventDefault();
+                    $multiSelect.addClass('is-invalid');
+                    $multiSelect.siblings('.text-danger').text('Please select at least one checklist.');
+                    $multiSelect.focus();
+                    return false;
+                }
+                
+                // Show loading state
+                $(this).find('button[type="submit"]').prop('disabled', true).text('Creating...');
+                return true;
+            });
+        });
+    </script>
 }

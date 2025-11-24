@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ShopInspector.Application.Interfaces;
 using ShopInspector.Core.Entities;
 using ShopInspector.Web.Areas.Admin.Models;
+using ShopInspector.Application.Helpers;
 
 namespace ShopInspector.Web.Areas.Admin.Controllers;
 
@@ -261,6 +262,7 @@ public class InspectionController : Controller
             var insp = await _inspectionService.GetByIdAsync(inspectionId);
             if (insp == null) return NotFound();
 
+            // Get all photos for this inspection and build the photo files list
             var webRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
             var photoFiles = (insp.Photos ?? new List<InspectionPhoto>())
                 .OrderBy(p => p.DisplayOrder)
@@ -268,13 +270,14 @@ public class InspectionController : Controller
                 {
                     var rel = p.PhotoPath.TrimStart('/', '\\');
                     var physical = Path.Combine(webRoot, rel.Replace('/', Path.DirectorySeparatorChar));
-                    return (Label: Path.GetFileName(p.PhotoPath), PhysicalPath: physical);
+                    return (Label: $"Photo {p.DisplayOrder + 1}", PhysicalPath: physical);
                 })
                 .ToList();
 
-            var pdfBytes = InspectionPdfGenerator.Generate(insp);
+            // Use the correct PDF generator with photos
+            var pdfBytes = InspectionPdfGenerator.Generate(insp, photoFiles);
             var fileName = $"Inspection_{inspectionId}.pdf";
-            _logger.LogInformation(" exporting inspection PDF for InspectionID {InspectionID}", inspectionId);
+            _logger.LogInformation("Exporting inspection PDF for InspectionID {InspectionID} with {PhotoCount} photos", inspectionId, photoFiles.Count);
             return File(pdfBytes, "application/pdf", fileName);
         }
         catch (Exception ex)

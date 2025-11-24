@@ -41,6 +41,12 @@ public class AssetCheckListRepository : IAssetCheckListRepository
             .FirstOrDefaultAsync(ac => ac.AssetCheckListID == id);
     }
 
+    public async Task<AssetCheckList?> GetByAssetAndChecklistAsync(int assetId, int inspectionCheckListId)
+    {
+        return await _db.AssetCheckLists
+            .FirstOrDefaultAsync(ac => ac.AssetID == assetId && ac.InspectionCheckListID == inspectionCheckListId);
+    }
+
     public async Task AddAsync(AssetCheckList entity)
     {
         await _db.AssetCheckLists.AddAsync(entity);

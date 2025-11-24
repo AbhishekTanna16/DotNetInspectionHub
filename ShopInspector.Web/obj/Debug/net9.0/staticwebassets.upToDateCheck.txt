@@ -1,69 +1,69 @@
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation\LICENSE.md
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\additional-methods.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.min.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\css\admin.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\js\site.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\js\validation-enhanced.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\css\site.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.min.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\LICENSE.txt
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\favicon.ico
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\js\admin-actions.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.min.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\js\inspection-compress.js
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-H:\ShopInspector (1)\ShopInspector (1)\ShopInspector\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation\LICENSE.md
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\additional-methods.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.min.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\css\admin.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\js\site.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\js\validation-enhanced.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\css\site.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.slim.min.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\LICENSE.txt
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\favicon.ico
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\js\admin-actions.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\jquery\dist\jquery.min.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\js\inspection-compress.js
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+G:\ShopInspector\24-11-25\DotNetInspectionHub\ShopInspector.Web\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\css\admin.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
@@ -138,7 +138,9 @@ wwwroot\qrcodes\asset_1005.png
 wwwroot\qrcodes\asset_1007.png
 wwwroot\qrcodes\asset_2.png
 wwwroot\qrcodes\asset_3.png
+wwwroot\uploads\inspections\insp_1_0d879b21-b3e0-4f4b-974c-d3fb4de6b6ce.png
 wwwroot\uploads\inspections\insp_1_200a9dff-3f36-41da-be20-3be1f7f97294.png
+wwwroot\uploads\inspections\insp_1_46b5f171-b67e-48e9-aaf2-7f2ca1cde3de.png
 wwwroot\uploads\inspections\insp_1_eda06054-f5e8-4823-b03d-9fe9ff1617c2.png
 wwwroot\uploads\inspections\insp_10_17aa42be-46aa-46e6-b418-b511b84037a6.png
 wwwroot\uploads\inspections\insp_10_26873aa9-3620-4f1e-971b-2519072b8764.png
@@ -158,9 +160,11 @@ wwwroot\uploads\inspections\insp_11_938a8a16-f9b2-4ab4-b65f-951b05206f36.png
 wwwroot\uploads\inspections\insp_11_cfc26b45-0473-40af-b235-4301b7a355be.png
 wwwroot\uploads\inspections\insp_12_9ad805fc-819e-44fc-b394-6d54225a2ee2.png
 wwwroot\uploads\inspections\insp_13_86d8ad19-e39b-4ec5-9672-457f7e0dbe97.png
+wwwroot\uploads\inspections\insp_2_21ee27f3-f8cf-4191-9436-57c8d571678e.png
 wwwroot\uploads\inspections\insp_2_26f41795-10aa-4f17-8be5-aee117667ede.png
 wwwroot\uploads\inspections\insp_2_521dd700-5599-4bdd-a2a0-64afcb36de56.png
 wwwroot\uploads\inspections\insp_2_715b6291-6b26-444e-9fef-f03ec9313759.png
+wwwroot\uploads\inspections\insp_2_dc2d3ff1-a9e9-4708-b5c1-d3df14e10076.png
 wwwroot\uploads\inspections\insp_3_49f83aa1-2b5d-4425-935d-2e62bef3ad79.png
 wwwroot\uploads\inspections\insp_3_61961ef8-9e8a-4e1d-8829-57e34d31d7c6.png
 wwwroot\uploads\inspections\insp_3_737103ed-ce6a-4266-9d74-6e8814a883a4.png

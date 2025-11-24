@@ -4,75 +4,75 @@
     ViewData["Title"] = "Add Company";
 }
 
-<h2 class="mb-3">Add Company</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Add Company</h2>
 
-<div class="admin-card admin-container">
-    @* Display any error messages from form submission *@
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-
-    <form id="createCompanyForm" asp-area="Admin" asp-controller="Company" asp-action="Create" method="post" novalidate>
-        @Html.AntiForgeryToken()
-
-        <div class="form-grid">
-            <div class="mb-3">
-                <label asp-for="CompanyName" class="form-label">
-                    Company Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="CompanyName" class="form-control" placeholder="Enter company name" />
-                <span asp-validation-for="CompanyName" class="text-danger"></span>
-                <small class="form-text text-muted">Enter the full legal name of the company</small>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="CompanyAdminEmail" class="form-label">
-                    Admin Email 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="CompanyAdminEmail" type="email" class="form-control" placeholder="admin@company.com" />
-                <span asp-validation-for="CompanyAdminEmail" class="text-danger"></span>
-                <small class="form-text text-muted">Primary contact email for administrative purposes</small>
-            </div>
-
-            <div class="mb-3 full-width">
-                <label asp-for="CompanyContactName" class="form-label">
-                    Contact Person Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="CompanyContactName" class="form-control" placeholder="Enter contact person name" />
-                <span asp-validation-for="CompanyContactName" class="text-danger"></span>
-                <small class="form-text text-muted">Name of the primary contact person</small>
-            </div>
-
-            <div class="mb-3 full-width">
-                <div class="toggle-switch toggle-success">
-                    <input class="toggle-switch-input" type="checkbox" asp-for="Active" checked />
-                    <label for="Active" class="toggle-switch-slider"></label>
-                    <label for="Active" class="toggle-switch-label">Active Company</label>
+    <div class="admin-card">
+        <div class="admin-container">
+            @* Display any error messages from form submission *@
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-            </div>
-        </div>
+            }
 
-        <div class="btn-wrap mt-3">
-            <button type="button" 
-                    data-action="Cancel" 
-                    data-url="@Url.Action("Index", "Company", new { area = "Admin" })" 
-                    class="btn btn-secondary me-3">
-                <i class="bi bi-arrow-left"></i> Cancel
-            </button>
-            <button type="submit" 
-                    id="submitBtn" 
-                    class="btn btn-success">
-                <i class="bi bi-check-circle"></i> Save Company
-            </button>
+            <form id="createCompanyForm" asp-area="Admin" asp-controller="Company" asp-action="Create" method="post" novalidate>
+                @Html.AntiForgeryToken()
+
+                <div class="form-grid">
+                    <div class="mb-3">
+                        <label asp-for="CompanyName" class="form-label">
+                            Company Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="CompanyName" class="form-control" placeholder="Enter company name" />
+                        <span asp-validation-for="CompanyName" class="text-danger"></span>
+                        <small class="form-text text-muted">Enter the full legal name of the company</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="CompanyAdminEmail" class="form-label">
+                            Admin Email 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="CompanyAdminEmail" type="email" class="form-control" placeholder="admin@company.com" />
+                        <span asp-validation-for="CompanyAdminEmail" class="text-danger"></span>
+                        <small class="form-text text-muted">Primary contact email for administrative purposes</small>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <label asp-for="CompanyContactName" class="form-label">
+                            Contact Person Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="CompanyContactName" class="form-control" placeholder="Enter contact person name" />
+                        <span asp-validation-for="CompanyContactName" class="text-danger"></span>
+                        <small class="form-text text-muted">Name of the primary contact person</small>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <div class="form-check">
+                            <input asp-for="Active" class="form-check-input" checked />
+                            <label asp-for="Active" class="form-check-label">Active Company</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-3">
+                    <button type="submit" 
+                            id="submitBtn" 
+                            class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Company
+                    </button>
+                    <a asp-area="Admin" asp-controller="Company" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

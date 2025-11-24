@@ -4,80 +4,84 @@
     ViewData["Title"] = "Add Asset";
 }
 
-<h2 class="mb-3">Add Asset</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Add Asset</h2>
 
-<div class="admin-card admin-container">
-    @* Display any error messages from form submission *@
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-
-    <form id="createAssetForm" asp-area="Admin" asp-controller="Asset" asp-action="Create" method="post" novalidate>
-        @Html.AntiForgeryToken()
-
-        <div class="form-grid">
-            <div class="mb-3">
-                <label asp-for="AssetName" class="form-label">
-                    Asset Name 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="AssetName" class="form-control" placeholder="Enter asset name" />
-                <span asp-validation-for="AssetName" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="AssetCode" class="form-label">
-                    Asset Code 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <input asp-for="AssetCode" class="form-control" placeholder="Enter unique asset code" />
-                <span asp-validation-for="AssetCode" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="AssetTypeID" class="form-label">
-                    Asset Type 
-                    <span class="text-danger required-indicator">*</span>
-                </label>
-                <select asp-for="AssetTypeID" asp-items="Model.AssetTypes" class="form-select">
-                    <option value="">-- Select Asset Type --</option>
-                </select>
-                <span asp-validation-for="AssetTypeID" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="AssetLocation" class="form-label">Location</label>
-                <input asp-for="AssetLocation" class="form-control" placeholder="Enter asset location" />
-                <span asp-validation-for="AssetLocation" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3">
-                <label asp-for="Department" class="form-label">Department</label>
-                <input asp-for="Department" class="form-control" placeholder="Enter department" />
-                <span asp-validation-for="Department" class="text-danger"></span>
-            </div>
-
-            <div class="mb-3 full-width">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" asp-for="Active" checked />
-                    <label class="form-check-label" asp-for="Active">Active Asset</label>
+    <div class="admin-card">
+        <div class="admin-container">
+            @* Display any error messages from form submission *@
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
-            </div>
-        </div>
+            }
 
-        <div class="btn-wrap mt-2">
-            <button type="submit" id="submitBtn" class="btn btn-success">
-                <i class="bi bi-check-circle"></i> Save Asset
-            </button>
-            <a asp-area="Admin" asp-controller="Asset" asp-action="Index" class="btn btn-secondary">
-                <i class="bi bi-arrow-left"></i> Cancel
-            </a>
+            <form id="createAssetForm" asp-area="Admin" asp-controller="Asset" asp-action="Create" method="post" novalidate>
+                @Html.AntiForgeryToken()
+
+                <div class="form-grid">
+                    <div class="mb-3">
+                        <label asp-for="AssetName" class="form-label">
+                            Asset Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="AssetName" class="form-control" placeholder="Enter asset name" />
+                        <span asp-validation-for="AssetName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="AssetCode" class="form-label">
+                            Asset Code 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="AssetCode" class="form-control" placeholder="Enter unique asset code" />
+                        <span asp-validation-for="AssetCode" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="AssetTypeID" class="form-label">
+                            Asset Type 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <select asp-for="AssetTypeID" asp-items="Model.AssetTypes" class="form-select">
+                            <option value="">-- Select Asset Type --</option>
+                        </select>
+                        <span asp-validation-for="AssetTypeID" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="AssetLocation" class="form-label">Location</label>
+                        <input asp-for="AssetLocation" class="form-control" placeholder="Enter asset location" />
+                        <span asp-validation-for="AssetLocation" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Department" class="form-label">Department</label>
+                        <input asp-for="Department" class="form-control" placeholder="Enter department" />
+                        <span asp-validation-for="Department" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 full-width">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="Active" checked />
+                            <label class="form-check-label" asp-for="Active">Active Asset</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-wrap mt-2">
+                    <button type="submit" id="submitBtn" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Asset
+                    </button>
+                    <a asp-area="Admin" asp-controller="Asset" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {

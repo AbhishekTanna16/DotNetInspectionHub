@@ -1,29 +1,86 @@
-﻿
-@model ShopInspector.Core.Entities.AssetType
+﻿@model ShopInspector.Core.Entities.AssetType
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Add Asset Type";
 }
 
-<h2 class="mb-3">Add Asset Type</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Add Asset Type</h2>
 
-<div class="admin-card admin-container">
-    <form asp-area="Admin" asp-controller="AssetType" asp-action="Create" method="post" novalidate>
-        @Html.AntiForgeryToken()
-        <div class="form-grid">
-            <div class="mb-3 full-width">
-                <label asp-for="AssetTypeName" class="form-label">Asset Type Name</label>
-                <input asp-for="AssetTypeName" class="form-control" />
-                <span asp-validation-for="AssetTypeName" class="text-danger"></span>
-            </div>
+    <div class="admin-card">
+        <div class="admin-container">
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            <form id="createAssetTypeForm" asp-area="Admin" asp-controller="AssetType" asp-action="Create" method="post" novalidate>
+                @Html.AntiForgeryToken()
+                <div class="form-grid">
+                    <div class="mb-3 full-width">
+                        <label asp-for="AssetTypeName" class="form-label">
+                            Asset Type Name 
+                            <span class="text-danger required-indicator">*</span>
+                        </label>
+                        <input asp-for="AssetTypeName" class="form-control" placeholder="Enter asset type name" />
+                        <span asp-validation-for="AssetTypeName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="btn-wrap mt-2">
+                    <button type="submit" id="submitBtn" class="btn btn-success">
+                        <i class="bi bi-check-circle"></i> Save Asset Type
+                    </button>
+                    <a asp-area="Admin" asp-controller="AssetType" asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Cancel
+                    </a>
+                </div>
+            </form>
         </div>
-        <div class="btn-wrap mt-2">
-            <button type="submit" class="btn btn-success">Save</button>
-            <a asp-area="Admin" asp-controller="AssetType" asp-action="Index" class="btn btn-secondary">Cancel</a>
-        </div>
-    </form>
+    </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            // Enhanced validation for AssetType Create form
+            $("#createAssetTypeForm").validate({
+                rules: {
+                    AssetTypeName: {
+                        required: true,
+                        minlength: 2,
+                        maxlength: 100
+                    }
+                },
+                messages: {
+                    AssetTypeName: {
+                        required: "Asset Type Name is required",
+                        minlength: "Asset Type Name must be at least 2 characters",
+                        maxlength: "Asset Type Name cannot exceed 100 characters"
+                    }
+                },
+                errorClass: "text-danger",
+                errorElement: "span",
+                highlight: function(element) {
+                    $(element).addClass("is-invalid");
+                },
+                unhighlight: function(element) {
+                    $(element).removeClass("is-invalid");
+                },
+                submitHandler: function(form) {
+                    const submitBtn = $("#submitBtn");
+                    const originalText = submitBtn.html();
+                    
+                    // Show loading state
+                    submitBtn.prop('disabled', true)
+                             .html('<i class="bi bi-hourglass-split"></i> Creating...');
+                    
+                    form.submit();
+                }
+            });
+        });
+    </script>
 }

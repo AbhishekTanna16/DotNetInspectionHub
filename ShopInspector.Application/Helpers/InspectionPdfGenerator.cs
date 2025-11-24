@@ -3,6 +3,8 @@ using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 using ShopInspector.Core.Entities;
 
+namespace ShopInspector.Application.Helpers;
+
 public static class InspectionPdfGenerator
 {
     public static byte[] Generate(AssetInspection insp, IReadOnlyList<(string Label, string PhysicalPath)> photoFiles)

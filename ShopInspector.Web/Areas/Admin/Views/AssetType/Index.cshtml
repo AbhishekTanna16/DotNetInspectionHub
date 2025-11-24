@@ -1,42 +1,78 @@
-﻿
-@model IEnumerable<ShopInspector.Core.Entities.AssetType>
+﻿@model IEnumerable<ShopInspector.Core.Entities.AssetType>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Asset Type";
 }
 
-<div class="admin-container">
-    <div class="admin-toolbar">
-        <h2 class="mb-0">Asset Types</h2>
-        <div class="d-flex justify-content-end mb-4">
-            <a asp-area="Admin" asp-controller="AssetType" asp-action="Create" class="btn btn-primary">Add Asset Type</a>
-        </div>
+<div class="asset-page">
+    <!-- Header row: title left, add button right (same line) -->
+    <div class="asset-header-row">
+        <h2 class="asset-title">Asset Types</h2>
+        <a asp-area="Admin"
+           asp-controller="AssetType"
+           asp-action="Create"
+           class="btn btn-primary asset-add-btn"
+           title="Add Asset Type">
+            <i class="bi bi-plus-circle"></i> <span>Add Asset Type</span>
+        </a>
     </div>
 
-    <div class="table-responsive">
-        <table class="table table-hover table-compact">
-            <thead class="table-light">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="asset-table-wrapper mt-3">
+        <table class="table table-hover table-compact asset-table">
+            <thead>
                 <tr>
                     <th>Name</th>
-                    <th class="actions text-end">Actions</th>
+                    <th class="asset-col-actions text-end">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @if (Model != null)
+                @if (Model != null && Model.Any())
                 {
                     foreach (var t in Model)
                     {
                         <tr>
                             <td>@t.AssetTypeName</td>
-                            <td class="actions action-button text-end">
-                                <a asp-area="Admin" asp-controller="AssetType" asp-action="Edit" asp-route-id="@t.AssetTypeID" class="btn btn-sm btn-outline-primary me-1">Edit</a>
-                                <form asp-area="Admin" asp-controller="AssetType" asp-action="Delete" asp-route-id="@t.AssetTypeID" method="post" class="d-inline js-ajax-delete">
-                                    @Html.AntiForgeryToken()
-                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
-                                </form>
+                            <td class="asset-col-actions">
+                                <div class="asset-action-group">
+                                    <a asp-area="Admin" asp-controller="AssetType" asp-action="Edit" asp-route-id="@t.AssetTypeID"
+                                       class="btn btn-action btn-outline-primary" title="Edit Asset Type">
+                                        <i class="bi bi-pencil-square"></i> <span class="txt">Edit</span>
+                                    </a>
+                                    <button type="button" 
+                                            data-action="delete" 
+                                            data-url="@Url.Action("Delete", "AssetType", new { area = "Admin", id = t.AssetTypeID })" 
+                                            class="btn btn-action btn-outline-danger"
+                                            title="Delete Asset Type">
+                                        <i class="bi bi-trash"></i> <span class="txt">Delete</span>
+                                    </button>
+                                </div>
                             </td>
                         </tr>
                     }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2" class="text-center text-muted py-4">
+                            <i class="bi bi-inbox"></i><br />
+                            No asset types found. <a asp-area="Admin" asp-controller="AssetType" asp-action="Create">Create your first asset type</a>.
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>

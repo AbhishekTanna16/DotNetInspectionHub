@@ -18568,3 +18568,10 @@ FROM (
 INNER JOIN [AssetTypes] AS [a0] ON [a1].[AssetTypeID] = [a0].[AssetTypeID]
 ORDER BY [a1].[AssetID]
 2025-11-26 19:09:59.895 +05:30 [INF] Successfully retrieved Assets for page 1 with 5 items per page. Search term: 'none'
+2025-11-26 19:12:47.306 +05:30 [WRN] Overriding address(es) 'http://0.0.0.0:7200'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2025-11-26 19:12:47.378 +05:30 [INF] Now listening on: http://[::]:8080
+2025-11-26 19:12:47.380 +05:30 [INF] Now listening on: http://0.0.0.0:7200
+2025-11-26 19:12:47.428 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-11-26 19:12:47.429 +05:30 [INF] Hosting environment: Development
+2025-11-26 19:12:47.430 +05:30 [INF] Content root path: G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web
+2025-11-26 19:12:48.464 +05:30 [WRN] Failed to determine the https port for redirect.

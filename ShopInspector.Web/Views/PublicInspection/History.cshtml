@@ -1,4 +1,5 @@
-﻿@model List<ShopInspector.Core.Entities.AssetInspection>
+﻿@using ShopInspector.Core.Entities
+@model PaginatedList<ShopInspector.Core.Entities.AssetInspection>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Inspection History";
@@ -10,83 +11,372 @@
         <h2 class="asset-title">Past Inspections</h2>
     </div>
 
-    @if (Model == null || !Model.Any())
+    @if (TempData["SuccessMessage"] != null)
     {
-        <div class="alert alert-info mt-3" role="alert">
-            <i class="bi bi-info-circle"></i>
-            <strong>No inspection history found.</strong> No inspections have been completed for this asset yet.
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+            <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     }
-    else
+    @if (TempData["ErrorMessage"] != null)
     {
-        <div class="asset-table-wrapper mt-3">
-            <table class="table table-hover table-compact asset-table">
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Inspector</th>
-                        <th data-hide-md>Attachment Path</th>
-                        <th data-hide-sm class="text-center">Attachment</th>
-                        <th class="asset-col-actions text-end">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var insp in Model)
-                    {
-                        <tr>
-                            <td>
-                                <div class="fw-bold">@insp.InspectionDate.ToString("MMM dd, yyyy")</div>
-                                <small class="text-muted">@insp.InspectionDate.ToString("HH:mm")</small>
-                            </td>
-                            <td >@insp.InspectorName</td>
-                            <td data-hide-md class="text-truncate" style="max-width: 200px;" title="@(insp.Attachment ?? "")">
-                                @(insp.Attachment ?? "No attachment")
-                            </td>
-                            <td class="text-center" data-hide-sm>
-                                @if (!string.IsNullOrEmpty(insp.Attachment))
-                                {
-                                    <a class="btn btn-sm btn-outline-info btn-square" 
-                                       target="_blank" 
-                                       href="@insp.Attachment" 
-                                       title="View Attachment">
-                                        <i class="bi bi-paperclip"></i>
-                                    </a>
-                                }
-                                else
-                                {
-                                    <span class="text-muted">—</span>
-                                }
-                            </td>
-                            <td class="asset-col-actions">
-                                <div class="asset-action-group">
-                                    <a class="btn btn-action btn-outline-primary" 
-                                       href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })"
-                                       title="View Details">
-                                        <i class="bi bi-eye"></i> <span class="txt">Details</span>
-                                    </a>
-                                    @if (!string.IsNullOrEmpty(insp.Attachment))
-                                    {
-                                        <a class="btn btn-action btn-outline-success" 
-                                           target="_blank" 
-                                           href="@insp.Attachment"
-                                           title="View Attachment">
-                                            <i class="bi bi-paperclip"></i> <span class="txt">View</span>
-                                        </a>
-                                    }
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
+        <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     }
 
-    <!-- Mobile-friendly info cards for very small screens -->
-    <div class="d-md-none mt-3">
-        <div class="small text-muted mb-2">
-            <i class="bi bi-info-circle"></i> On mobile, some columns are hidden. Tap "Details" to view full inspection information.
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-wrapper">
+            <div class="search-input-group">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" 
+                       id="searchInput" 
+                       class="search-input" 
+                       placeholder="Search by inspector name..." 
+                       value="@ViewData["SearchTerm"]"
+                       autocomplete="off">
+                <button type="button" class="clear-search-btn" id="clearSearch" style="display: none;">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="search-info">
+                <i class="bi bi-info-circle"></i>
+                <span id="searchResults">
+                    @if (Model?.TotalCount > 0)
+                    {
+                        <span class="search-results-count">@Model.TotalCount</span>
+                        <span> inspection@(Model.TotalCount == 1 ? "" : "s") found</span>
+                    }
+                    else
+                    {
+                        <span>No inspections found</span>
+                    }
+                </span>
+            </div>
         </div>
     </div>
+
+    <!-- Table Container -->
+    <div id="tableContainer" class="mt-3">
+        @await Html.PartialAsync("_HistoryTablePartial", Model)
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        let currentPageSize = 5; // Set to match controller
+        let currentSearchTerm = '@ViewData["SearchTerm"]';
+        let currentAssetId = @ViewData["AssetId"];
+        let searchTimeout;
+
+        // Search functionality using vanilla JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearButton = document.getElementById('clearSearch');
+
+            // Initialize search state
+            if (currentSearchTerm && currentSearchTerm.trim().length > 0) {
+                searchInput.value = currentSearchTerm;
+                clearButton.style.display = 'block';
+            }
+
+            // Handle search input with debouncing
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = this.value;
+                
+                // Show/hide clear button
+                if (searchTerm.length > 0) {
+                    clearButton.style.display = 'block';
+                } else {
+                    clearButton.style.display = 'none';
+                }
+
+                // Debounce search to avoid too many requests
+                searchTimeout = setTimeout(function() {
+                    performHistorySearch(searchTerm);
+                }, 500);
+            });
+
+            // Handle Enter key
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.which === 13 || e.keyCode === 13) { // Enter key
+                    clearTimeout(searchTimeout);
+                    performHistorySearch(this.value);
+                }
+            });
+
+            // Clear search
+            clearButton.addEventListener('click', function() {
+                searchInput.value = '';
+                clearButton.style.display = 'none';
+                performHistorySearch('');
+            });
+
+            // Focus search input on page load for better UX
+            searchInput.focus();
+        });
+
+        function performHistorySearch(searchTerm) {
+            currentSearchTerm = searchTerm;
+            console.log('Searching history for:', searchTerm);
+            
+            // Show loading state
+            document.getElementById('tableContainer').innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            
+            // Build URL with parameters
+            const params = new URLSearchParams({
+                pageIndex: 1,
+                pageSize: currentPageSize,
+                searchTerm: searchTerm || ''
+            });
+
+            fetch(`/PublicInspection/LoadHistoryTable/${currentAssetId}?` + params.toString(), {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(result => {
+                document.getElementById('tableContainer').innerHTML = result;
+                
+                // Update search results info
+                const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                updateHistorySearchResultsInfo(totalCount, searchTerm);
+                
+                console.log('History search completed for:', searchTerm, 'Results:', totalCount);
+            })
+            .catch(error => {
+                console.error('History search error:', error);
+                document.getElementById('tableContainer').innerHTML = 
+                    '<div class="alert alert-danger">' +
+                    '<i class="bi bi-exclamation-triangle"></i> ' +
+                    'Error searching. Please try again.' +
+                    '</div>';
+            });
+        }
+
+        function updateHistorySearchResultsInfo(totalCount, searchTerm) {
+            const resultsSpan = document.getElementById('searchResults');
+            if (!resultsSpan) return;
+
+            if (totalCount > 0) {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.innerHTML = 
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `inspection${totalCount === 1 ? '' : 's'} found for "<strong>${searchTerm}</strong>"`;
+                } else {
+                    resultsSpan.innerHTML = 
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `inspection${totalCount === 1 ? '' : 's'} found`;
+                }
+            } else {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.innerHTML = `No inspections found for "<strong>${searchTerm}</strong>"`;
+                } else {
+                    resultsSpan.innerHTML = 'No inspections found';
+                }
+            }
+        }
+
+        function clearHistorySearch() {
+            const searchInput = document.getElementById('searchInput');
+            const clearButton = document.getElementById('clearSearch');
+            
+            searchInput.value = '';
+            clearButton.style.display = 'none';
+            performHistorySearch('');
+        }
+
+        // Handle pagination clicks using event delegation
+        document.addEventListener('click', function(e) {
+            // Handle pagination clicks
+            if (e.target.matches('.page-btn') || e.target.closest('.page-btn')) {
+                e.preventDefault();
+                
+                const pageBtn = e.target.matches('.page-btn') ? e.target : e.target.closest('.page-btn');
+                
+                if (pageBtn.closest('.disabled')) {
+                    console.log('Pagination button is disabled, ignoring click');
+                    return false;
+                }
+                
+                const pageIndex = pageBtn.dataset.page;
+                console.log('History pagination clicked: Page', pageIndex);
+                
+                // Show loading state
+                document.getElementById('tableContainer').innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                
+                const params = new URLSearchParams({
+                    pageIndex: pageIndex,
+                    pageSize: currentPageSize,
+                    searchTerm: currentSearchTerm || ''
+                });
+
+                fetch(`/PublicInspection/LoadHistoryTable/${currentAssetId}?` + params.toString(), {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.text())
+                .then(result => {
+                    document.getElementById('tableContainer').innerHTML = result;
+                    console.log('Successfully loaded History page', pageIndex);
+                    
+                    // Scroll to table top for better UX
+                    document.getElementById('tableContainer').scrollIntoView({ behavior: 'smooth' });
+                })
+                .catch(error => {
+                    console.error('Error loading History table:', error);
+                    document.getElementById('tableContainer').innerHTML = 
+                        '<div class="alert alert-danger">' +
+                        '<i class="bi bi-exclamation-triangle"></i> ' +
+                        'Error loading data. Please refresh the page and try again.' +
+                        '</div>';
+                });
+            }
+        });
+
+        // Make functions globally available
+        window.clearHistorySearch = clearHistorySearch;
+        window.performHistorySearch = performHistorySearch;
+
+        console.log('Inspection History search and pagination system initialized');
+        console.log('Current search term:', currentSearchTerm);
+        console.log('Current page size:', currentPageSize);
+        console.log('Current asset ID:', currentAssetId);
+    </script>
+}
+
+<style>
+/* History Search Section Styles - Same as Admin Pages */
+.search-section {
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    margin-top: 1rem !important;
+}
+
+.search-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+}
+
+.search-input-group {
+    position: relative !important;
+    flex: 1 !important;
+    min-width: 250px !important;
+    max-width: 500px !important;
+    margin-right: 1rem !important;
+}
+
+.search-icon {
+    position: absolute !important;
+    left: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: #6c757d !important;
+}
+
+.search-input {
+    width: 100% !important;
+    padding: 0.75rem 2rem 0.75rem 2.5rem !important;
+    border: 2px solid #e9ecef !important;
+    border-radius: 6px !important;
+    font-size: 0.95rem !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+    color: #000000 !important;
+}
+
+.search-input:focus {
+    outline: none !important;
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+    background: white !important;
+    color: #000000 !important;
+}
+
+.search-input::placeholder {
+    color: #adb5bd !important;
+    font-style: italic !important;
+}
+
+.clear-search-btn {
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: none !important;
+    border: none !important;
+    color: #6c757d !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 3px !important;
+    transition: color 0.2s ease !important;
+}
+
+.clear-search-btn:hover {
+    color: #dc3545 !important;
+    background: rgba(220, 53, 69, 0.1) !important;
+}
+
+.search-info {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 0.9rem !important;
+    color: #6c757d !important;
+    margin-top: 0.5rem !important;
+}
+
+.search-results-count {
+    font-weight: 500 !important;
+    color: #333 !important;
+    margin-right: 0.2rem !important;
+}
+
+/* History-specific mobile action grid for 2 actions */
+.history-mobile-action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.history-mobile-action-grid .mobile-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    min-height: 36px;
+}
+
+.history-mobile-action-grid .mobile-action-btn:hover:not(.disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Small mobile responsive adjustments */
+
+</style>
 

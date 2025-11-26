@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using QuestPDF.Helpers;
 using ShopInspector.Application.Interfaces;
 using ShopInspector.Core.Entities;
 using ShopInspector.Web.Areas.Admin.Models;
@@ -12,82 +12,100 @@ namespace ShopInspector.Web.Areas.Admin.Controllers;
 public class AssetController : Controller
 {
     private readonly IAssetService _assetService;
-    private readonly IAssetTypeService _assetTypeService;
-    private readonly IEmployeeService _employeeService;
-    private readonly ICompanyService _companyService;
     private readonly IQRCodeService _qrCodeService;
     private readonly IConfiguration _configuration;
-    ILogger<AssetController> _logger;
+    private readonly ILogger<AssetController> _logger;
 
     public AssetController(
         IAssetService assetService,
-        IAssetTypeService assetTypeService,
-        IEmployeeService employeeService,
-        ICompanyService companyService,
         ILogger<AssetController> logger,
         IConfiguration configuration,
         IQRCodeService qrCodeService)
     {
         _assetService = assetService;
-        _assetTypeService = assetTypeService;
-        _employeeService = employeeService;
-        _companyService = companyService;
         _qrCodeService = qrCodeService;
         _configuration = configuration;
         _logger = logger;
     }
 
-    // ==============================
-    // AUTH CHECK ENDPOINT
-    // ==============================
     [HttpGet]
     public IActionResult CheckAuth()
     {
         return Ok(new { authenticated = User.Identity?.IsAuthenticated == true });
     }
 
-    // ==============================
-    // LIST
-    // ==============================
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 5, string? searchTerm = null)
     {
         try
         {
-            var assets = await _assetService.GetAllAsync();
-            _logger.LogInformation(" retrieving Assets");
+            PaginatedList<Asset> assets;
+            
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                assets = await _assetService.SerchAssetAsync(searchTerm.Trim(), pageIndex, pageSize);
+                ViewData["SearchTerm"] = searchTerm.Trim();
+            }
+            else
+            {
+                assets = await _assetService.GetAllAsync(pageIndex: pageIndex, pageSize: pageSize);
+                ViewData["SearchTerm"] = "";
+            }
+            
+            // Pass pagination info to view
+            ViewData["PageSize"] = pageSize;
+            ViewData["CurrentPage"] = pageIndex;
+            
+            _logger.LogInformation("Successfully retrieved Assets for page {PageIndex} with {PageSize} items per page. Search term: '{SearchTerm}'", 
+                pageIndex, pageSize, searchTerm ?? "none");
+                
             return View(assets);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error retrieving Assets");
+            _logger.LogError(ex, "Error retrieving Assets for page {PageIndex}. Search term: '{SearchTerm}'", pageIndex, searchTerm ?? "none");
             throw;
         }
     }
 
+    // AJAX endpoint for loading table with pagination and search
+    public async Task<IActionResult> LoadTable(int pageIndex = 1, int pageSize = 5, string? searchTerm = null)
+    {
+        try
+        {
+            PaginatedList<Asset> assets;
+            
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                assets = await _assetService.SerchAssetAsync(searchTerm.Trim(), pageIndex, pageSize);
+            }
+            else
+            {
+                assets = await _assetService.GetAllAsync(pageIndex: pageIndex, pageSize: pageSize);
+            }
+            
+            _logger.LogInformation("LoadTable: Retrieved {Count} Assets for page {PageIndex} with {PageSize} items per page. Search term: '{SearchTerm}'", 
+                assets.Count, pageIndex, pageSize, searchTerm ?? "none");
+            
+            return PartialView("_TablePartial", assets);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "LoadTable Error retrieving Assets for page {PageIndex}. Search term: '{SearchTerm}'", pageIndex, searchTerm ?? "none");
+            return PartialView("_TablePartial", new PaginatedList<Asset>(new List<Asset>(), 0, pageIndex, pageSize));
+        }
+    }
 
-    // ==============================
-    // CREATE (GET)
-    // ==============================
     public async Task<IActionResult> Create()
     {
         try
         {
-            var vm = new AssetEditViewModel
-            {
+            var vm = new AssetEditViewModel();
+            
+            // Use the clean repository method to get all dropdown data
+            var dropdownData = await _assetService.GetAssetFormDropdownDataAsync();
+            vm.PopulateDropdownsForCreate(dropdownData.AssetTypes, dropdownData.Employees, dropdownData.Companies);
 
-                AssetTypes = (await _assetTypeService.GetAllAsync())
-                                .Select(t => new SelectListItem(t.AssetTypeName, t.AssetTypeID.ToString()))
-                                .ToList(),
-
-                //Employees = (await _employeeService.GetAllAsync())
-                //                .Select(e => new SelectListItem(e.EmployeeName, e.EmployeeID.ToString()))
-                //                .ToList(),
-
-                //Companies = (await _companyService.GetAllAsync())
-                //                .Select(c => new SelectListItem(c.CompanyName, c.CompanyID.ToString()))
-                //                .ToList()
-            };
-            _logger.LogInformation(" loading Create Asset view");
+            _logger.LogInformation("Loading Create Asset view");
             return View(vm);
         }
         catch (Exception ex)
@@ -97,9 +115,6 @@ public class AssetController : Controller
         }
     }
 
-    // ==============================
-    // CREATE (POST)
-    // ==============================
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create(AssetEditViewModel vm)
@@ -108,14 +123,11 @@ public class AssetController : Controller
         {
             if (!ModelState.IsValid)
             {
-                vm.AssetTypes = (await _assetTypeService.GetAllAsync())
-                    .Select(t => new SelectListItem(t.AssetTypeName, t.AssetTypeID.ToString()))
-                    .ToList();
+                // Repopulate dropdowns using clean method
+                var dropdownData = await _assetService.GetAssetFormDropdownDataAsync();
+                vm.PopulateDropdownsForCreate(dropdownData.AssetTypes, dropdownData.Employees, dropdownData.Companies);
 
-                vm.Employees = (await _employeeService.GetAllAsync())
-                    .Select(e => new SelectListItem(e.EmployeeName, e.EmployeeID.ToString()))
-                    .ToList();
-                _logger.LogInformation(" creating Asset but model is not valid ", vm.AssetID);
+                _logger.LogWarning("Creating Asset but model is not valid");
                 return View(vm);
             }
 
@@ -132,7 +144,7 @@ public class AssetController : Controller
             };
 
             await _assetService.AddAsync(entity);
-            _logger.LogInformation(" creating Asset Successfully for {AssetName}", vm.AssetName);
+            _logger.LogInformation("Creating Asset Successfully for {AssetName}", vm.AssetName);
             
             // Add success message for user feedback
             TempData["SuccessMessage"] = $"Asset '{vm.AssetName}' created successfully!";
@@ -146,24 +158,24 @@ public class AssetController : Controller
             // Add error message and reload form
             TempData["ErrorMessage"] = "An error occurred while creating the asset. Please try again.";
             
-            vm.AssetTypes = (await _assetTypeService.GetAllAsync())
-                .Select(t => new SelectListItem(t.AssetTypeName, t.AssetTypeID.ToString()))
-                .ToList();
+            // Repopulate dropdowns
+            var dropdownData = await _assetService.GetAssetFormDropdownDataAsync();
+            vm.PopulateDropdownsForCreate(dropdownData.AssetTypes, dropdownData.Employees, dropdownData.Companies);
                 
             return View(vm);
         }
     }
 
-    // ==============================
-    // EDIT (GET)
-    // ==============================
     public async Task<IActionResult> Edit(int id)
     {
         try
         {
             var asset = await _assetService.GetByIdAsync(id);
-            _logger.LogInformation(" loading Edit view but Asset ID not found  {AssetID}", id);
-            if (asset == null) return NotFound();
+            if (asset == null) 
+            {
+                _logger.LogWarning("Asset ID not found {AssetID}", id);
+                return NotFound();
+            }
 
             var vm = new AssetEditViewModel
             {
@@ -173,20 +185,14 @@ public class AssetController : Controller
                 AssetTypeID = asset.AssetTypeID,
                 AssetCode = asset.AssetCode,
                 Department = asset.Department,
-                Active = asset.Active,
-
-                AssetTypes = (await _assetTypeService.GetAllAsync())
-                    .Select(t => new SelectListItem(
-                        t.AssetTypeName, t.AssetTypeID.ToString(), t.AssetTypeID == asset.AssetTypeID)),
-
-                Employees = (await _employeeService.GetAllAsync())
-                    .Select(e => new SelectListItem(e.EmployeeName, e.EmployeeID.ToString())),
-
-                Companies = (await _companyService.GetAllAsync())
-                    .Select(c => new SelectListItem(
-                        c.CompanyName, c.CompanyID.ToString()))
+                Active = asset.Active
             };
-            _logger.LogInformation(" loading Edit view for Asset ID {AssetID}", id);
+
+            // Use the clean repository method to get all dropdown data
+            var dropdownData = await _assetService.GetAssetFormDropdownDataAsync();
+            vm.PopulateDropdowns(dropdownData.AssetTypes, dropdownData.Employees, dropdownData.Companies);
+
+            _logger.LogInformation("Loading Edit view for Asset ID {AssetID}", id);
             return View(vm);
         }
         catch (Exception ex)
@@ -196,26 +202,19 @@ public class AssetController : Controller
         }
     }
 
-    // ==============================
-    // EDIT (POST)
-    // ==============================
     [HttpPost]
-     [ValidateAntiForgeryToken]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Edit(AssetEditViewModel vm)
     {
         try
         {
             if (!ModelState.IsValid)
             {
-                vm.AssetTypes = (await _assetTypeService.GetAllAsync())
-                    .Select(t => new SelectListItem(t.AssetTypeName, t.AssetTypeID.ToString(), t.AssetTypeID == vm.AssetTypeID));
+                // Repopulate dropdowns using clean method
+                var dropdownData = await _assetService.GetAssetFormDropdownDataAsync();
+                vm.PopulateDropdowns(dropdownData.AssetTypes, dropdownData.Employees, dropdownData.Companies);
 
-                vm.Employees = (await _employeeService.GetAllAsync())
-                    .Select(e => new SelectListItem(e.EmployeeName, e.EmployeeID.ToString()));
-
-                vm.Companies = (await _companyService.GetAllAsync())
-                    .Select(c => new SelectListItem(c.CompanyName, c.CompanyID.ToString()));
-                _logger.LogError(" updating Asset ID but Model is not valid  {AssetID}", vm.AssetID);
+                _logger.LogWarning("Updating Asset ID but Model is not valid {AssetID}", vm.AssetID);
                 return View(vm);
             }
 
@@ -230,7 +229,7 @@ public class AssetController : Controller
             existing.Active = vm.Active;
 
             await _assetService.UpdateAsync(existing);
-            _logger.LogInformation(" updating Asset ID {AssetID}", vm.AssetID);
+            _logger.LogInformation("Updating Asset ID {AssetID}", vm.AssetID);
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
@@ -247,22 +246,43 @@ public class AssetController : Controller
         try
         {
             await _assetService.DeleteAsync(id);
-            _logger.LogInformation("deleting Asset ID {AssetID}", id);
+            _logger.LogInformation("Deleting Asset ID {AssetID}", id);
+            
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = true, message = "Asset deleted successfully!" });
+            }
+            
+            TempData["SuccessMessage"] = "Asset deleted successfully!";
+
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error deleting Asset ID {AssetID}", id);
-            throw;
+            
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = false, message = "Error deleting asset. Please try again." });
+            }
+            
+            TempData["ErrorMessage"] = "Error deleting asset. Please try again.";
+            return RedirectToAction(nameof(Index));
         }
     }
+
     public async Task<IActionResult> GenerateQr(int id)
     {
         try
         {
             var asset = await _assetService.GetByIdAsync(id);
-            _logger.LogInformation(" generating QR code but Asset ID Not Found {AssetID}", id);
-            if (asset == null) return NotFound();
+            if (asset == null) 
+            {
+                _logger.LogWarning("Asset ID Not Found for QR generation {AssetID}", id);
+                return NotFound();
+            }
             
             // Get base URL from configuration, fallback to current request host
             var baseUrl = _configuration["QRCode:BaseUrl"];
@@ -276,7 +296,7 @@ public class AssetController : Controller
             var url = $"{baseUrl}/PublicInspection/Start/{id}";
             var (bytes, savedPath) = await _qrCodeService.GenerateQrAsync(url, id, saveToDisk: true);
             Console.WriteLine("QR URL = " + url);
-            _logger.LogInformation(" generating QR code for Asset ID {AssetID}", id);
+            _logger.LogInformation("Generating QR code for Asset ID {AssetID}", id);
             return View("QRCode", savedPath);
         }
         catch (Exception ex)

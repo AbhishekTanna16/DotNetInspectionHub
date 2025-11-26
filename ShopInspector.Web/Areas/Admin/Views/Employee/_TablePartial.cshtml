@@ -1,0 +1,161 @@
+@using ShopInspector.Core.Entities
+@using ShopInspector.Web.Areas.Admin.Models
+@model PaginatedList<EmployeeListViewModel>
+
+<div class="asset-table-wrapper">
+    <!-- Desktop Table View -->
+    <div class="d-none d-md-block">
+        <table class="table table-hover table-compact asset-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Created</th>
+                    <th class="text-center">Active</th>
+                    <th class="asset-col-actions text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var e in Model)
+                    {
+                        <tr>
+                            <td class="text-truncate-2">@e.EmployeeName</td>
+                            <td class="text-truncate-2">@e.CompanyName</td>
+                            <td class="text-muted">
+                                <small>@e.CreatedOn.ToString("MMM dd, yyyy")<br />by @e.CreatedBy</small>
+                            </td>
+                            <td class="text-center">
+                                @if (e.Active)
+                                {
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary"><i class="bi bi-x-circle"></i> Inactive</span>
+                                }
+                            </td>
+                            <td class="asset-col-actions">
+                                <div class="asset-action-group">
+                                    <a asp-area="Admin" asp-controller="Employee" asp-action="Edit" asp-route-id="@e.EmployeeID"
+                                       class="btn btn-action btn-outline-primary" title="Edit Employee">
+                                        <i class="bi bi-pencil-square"></i> <span class="txt">Edit</span>
+                                    </a>
+                                    <form asp-area="Admin"
+                                          asp-controller="Employee"
+                                          asp-action="Delete"
+                                          asp-route-id="@e.EmployeeID"
+                                          method="post"
+                                          class="m-0 p-0 d-inline delete-form"
+                                          data-confirm="Are you sure you want to delete this employee?">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-action btn-outline-danger" title="Delete Employee">
+                                            <i class="bi bi-trash"></i> <span class="txt">Delete</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">
+                            <i class="bi bi-inbox"></i><br />
+                            No employees found. <a asp-area="Admin" asp-controller="Employee" asp-action="Create">Create your first employee</a>.
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div class="d-md-none">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var e in Model)
+            {
+                <div class="asset-card mb-3">
+                    <div class="asset-card-header">
+                        <div class="asset-card-title">
+                            <h6 class="mb-1 fw-bold text-primary">@e.EmployeeName</h6>
+                            <div class="asset-card-meta">
+                                @if (e.Active)
+                                {
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary"><i class="bi bi-x-circle"></i> Inactive</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-body">
+                        <div class="asset-card-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-building text-muted me-1"></i>Company:</span>
+                                <span class="detail-value">@(e.CompanyName ?? "N/A")</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-calendar-plus text-muted me-1"></i>Created:</span>
+                                <span class="detail-value">@e.CreatedOn.ToString("MMM dd, yyyy")</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-person text-muted me-1"></i>Created by:</span>
+                                <span class="detail-value">@e.CreatedBy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-actions">
+                        <div class="mobile-action-grid">
+                            <a asp-area="Admin" asp-controller="Employee" asp-action="Edit" asp-route-id="@e.EmployeeID"
+                               class="btn btn-outline-primary btn-sm mobile-action-btn">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <form asp-area="Admin"
+                                  asp-controller="Employee"
+                                  asp-action="Delete"
+                                  asp-route-id="@e.EmployeeID"
+                                  method="post"
+                                  class="mobile-action-form delete-form"
+                                  data-confirm="Are you sure you want to delete this employee?">
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-outline-danger btn-sm mobile-action-btn w-100">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center text-muted py-5">
+                <i class="bi bi-inbox" style="font-size: 3rem; opacity: 0.5;"></i>
+                <div class="mt-3">
+                    <h6>No employees found</h6>
+                    <a asp-area="Admin" asp-controller="Employee" asp-action="Create" class="btn btn-primary mt-2">
+                        <i class="bi bi-plus-circle"></i> Create your first employee
+                    </a>
+                </div>
+            </div>
+        }
+        
+        <!-- Mobile info notice -->
+        <div class="mobile-info-notice mt-3 p-3 bg-light border rounded">
+            <small class="text-muted">
+                <i class="bi bi-info-circle me-1"></i>
+                All employee information is displayed in card format for better mobile viewing.
+            </small>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Pagination", Model)
+</div>

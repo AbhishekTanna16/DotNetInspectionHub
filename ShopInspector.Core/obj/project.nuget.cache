@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BU4P0BKud98=",
+  "dgSpecHash": "0f3QHwhaQM4=",
   "success": true,
-  "projectFilePath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj",
+  "projectFilePath": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NS-44\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.3.0\\microsoft.aspnetcore.hosting.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\NS-44\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.3.0\\microsoft.aspnetcore.hosting.server.abstractions.2.3.0.nupkg.sha512",

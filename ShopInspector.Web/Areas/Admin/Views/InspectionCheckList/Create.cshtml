@@ -47,9 +47,13 @@
                     </div>
 
                     <div class="mb-3 full-width">
-                        <div class="form-check">
-                            <input asp-for="Active" class="form-check-input" checked />
-                            <label asp-for="Active" class="form-check-label">Active Checklist</label>
+                        <div>
+
+                            <label class="form-check-label">
+                                @((Model?.Active ?? false) ? "Active" : "Inactive");
+                            </label>
+                            <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                            <label for="Active" class="toggle-switch-slider"></label>
                         </div>
                     </div>
                 </div>

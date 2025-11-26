@@ -1,124 +1,5 @@
-﻿@* @model IEnumerable<ShopInspector.Core.Entities.Asset>
-@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewData["Title"] = "Asset";
-}
-
-<div class="admin-container">
-    @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i> @TempData["ErrorMessage"]
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
-    }
-
-    <div class="admin-toolbar">
-        <h2 class="mb-0">Assets</h2>
-        <div class="d-flex justify-content-end mb-4">
-            <a asp-area="Admin" asp-controller="Asset" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> Add Asset
-            </a>
-        </div>
-    </div>
-
-    <div class="table-responsive">
-        <!-- Added table-fixed class for consistent column alignment -->
-        <table class="table table-hover table-compact table-fixed">
-            <thead class="table-light">
-                <tr>
-                    <th scope="col" data-hide-md>Code</th>
-                    <th scope="col">Asset</th>
-                    <th scope="col" data-hide-sm>Type</th>
-                    <th scope="col" data-hide-md>Location</th>
-                    <th scope="col" data-hide-md>Active</th>
-                    <th scope="col" class="qr-col"> QR</th>
-                    <th scope="col" class="actions text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null)
-                {
-                    foreach (var a in Model)
-                    {
-                        <tr>
-                            <td data-hide-md class="text-nowrap">@a.AssetCode</td>
-                            <td>@a.AssetName</td>
-                            <td data-hide-sm>@a.AssetType?.AssetTypeName</td>
-                            <td data-hide-md>@a.AssetLocation</td>
-                            <td data-hide-md>
-                                @if (a.Active)
-                                {
-                                    <span class="badge bg-success">Active</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">Inactive</span>
-                                }
-                            </td>
-                            <td  class="qr-col">
-                                <button type="button"
-                                        data-action="generate-qr"
-                                        data-url="@Url.Action("GenerateQr", "Asset", new { area = "Admin", id = a.AssetID })"
-                                        class="btn btn-sm btn-outline-info"
-                                        title="Generate QR">
-                                    <i class="bi bi-qr-code"></i>
-                                </button>
-                            </td>
-                            <td class="actions text-end">
-                                <!-- Desktop: horizontal flex row; Mobile: 2x2 grid -->
-                                <div class="action-grid">
-                                    <a asp-controller="PublicInspection" asp-action="Start" asp-route-assetId="@a.AssetID"
-                                       class="btn btn-sm btn-outline-success" title="Start Inspection">
-                                        <i class="bi bi-play-circle"></i> Inspect
-                                    </a>
-                                    <a asp-controller="PublicInspection" asp-action="History" asp-route-assetId="@a.AssetID"
-                                       class="btn btn-sm btn-outline-secondary" title="Inspection History">
-                                        <i class="bi bi-clock-history"></i> History
-                                    </a>
-                                    <a asp-area="Admin" asp-controller="Asset" asp-action="Edit" asp-route-id="@a.AssetID"
-                                       class="btn btn-sm btn-outline-primary" title="Edit Asset">
-                                        <i class="bi bi-pencil-square"></i> Edit
-                                    </a>
-                                    <form asp-area="Admin"
-                                          asp-controller="Asset"
-                                          asp-action="Delete"
-                                          asp-route-id="@a.AssetID"
-                                          method="post"
-                                          class="js-ajax-delete">
-                                        @Html.AntiForgeryToken()
-                                        <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete Asset">
-                                            <i class="bi bi-trash"></i> Delete
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="7" class="text-center text-muted py-4">
-                            <i class="bi bi-inbox"></i><br />
-                            No assets found. <a asp-area="Admin" asp-controller="Asset" asp-action="Create">Create your first asset</a>.
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div> *@
-
-
-@model IEnumerable<ShopInspector.Core.Entities.Asset>
+﻿@using ShopInspector.Core.Entities
+@model PaginatedList<ShopInspector.Core.Entities.Asset>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Asset";
@@ -152,88 +33,365 @@
         </div>
     }
 
-    <div class="asset-table-wrapper mt-3">
-        <table class="table table-hover table-compact asset-table">
-            <thead>
-                <tr>
-                    <th data-hide-sm>Code</th>
-                    <th>Asset</th>
-                    <th data-hide-sm>Type</th>
-                    <th data-hide-md>Location</th>
-                    <th data-hide-md>Active</th>
-                    <th class="asset-col-qr">QR</th>
-                    <th class="asset-col-actions text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null && Model.Any())
-                {
-                    foreach (var a in Model)
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-wrapper">
+            <div class="search-input-group">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" 
+                       id="searchInput" 
+                       class="search-input" 
+                       placeholder="Search assets by name or code..." 
+                       value="@ViewData["SearchTerm"]"
+                       autocomplete="off">
+                <button type="button" class="clear-search-btn" id="clearSearch">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="search-info">
+                <i class="bi bi-info-circle"></i>
+                <span id="searchResults">
+                    @if (Model?.TotalCount > 0)
                     {
-                        <tr>
-                            <td class="text-nowrap" data-hide-sm>@a.AssetCode</td>
-                            <td>@a.AssetName</td>
-                            <td data-hide-sm>@a.AssetType?.AssetTypeName</td>
-                            <td data-hide-md>@a.AssetLocation</td>
-                            <td data-hide-md>
-                                @if (a.Active)
-                                {
-                                    <span class="badge bg-success">Active</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-secondary">Inactive</span>
-                                }
-                            </td>
-                            <td class="asset-col-qr">
-                                <button type="button"
-                                        data-action="generate-qr"
-                                        data-url="@Url.Action("GenerateQr", "Asset", new { area = "Admin", id = a.AssetID })"
-                                        class="btn btn-outline-info btn-square btn-sm"
-                                        title="Generate QR">
-                                    <i class="bi bi-qr-code"></i>
-                                </button>
-                            </td>
-                            <td class="asset-col-actions">
-                                <div class="asset-action-group">
-                                    <a asp-controller="PublicInspection" asp-action="Start" asp-route-assetId="@a.AssetID"
-                                       class="btn btn-action btn-outline-success" title="Inspect">
-                                        <i class="bi bi-play-circle"></i> <span class="txt">Inspect</span>
-                                    </a>
-                                    <a asp-controller="PublicInspection" asp-action="History" asp-route-assetId="@a.AssetID"
-                                       class="btn btn-action btn-outline-secondary" title="History">
-                                        <i class="bi bi-clock-history"></i> <span class="txt">History</span>
-                                    </a>
-                                    <a asp-area="Admin" asp-controller="Asset" asp-action="Edit" asp-route-id="@a.AssetID"
-                                       class="btn btn-action btn-outline-primary" title="Edit">
-                                        <i class="bi bi-pencil-square"></i> <span class="txt">Edit</span>
-                                    </a>
-                                    <form asp-area="Admin"
-                                          asp-controller="Asset"
-                                          asp-action="Delete"
-                                          asp-route-id="@a.AssetID"
-                                          method="post"
-                                          class="m-0 p-0 d-inline">
-                                        @Html.AntiForgeryToken()
-                                        <button type="submit" class="btn btn-action btn-outline-danger" title="Delete">
-                                            <i class="bi bi-trash"></i> <span class="txt">Delete</span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        <span class="search-results-count">@Model.TotalCount</span>
+                        <span> asset@(Model.TotalCount == 1 ? "" : "s") found</span>
                     }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="7" class="text-center text-muted py-4">
-                            <i class="bi bi-inbox"></i><br />
-                            No assets found. <a asp-area="Admin" asp-controller="Asset" asp-action="Create">Create your first asset</a>.
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                    else
+                    {
+                        <span>No assets found</span>
+                    }
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Container -->
+    <div id="tableContainer" class="mt-3">
+        @await Html.PartialAsync("_TablePartial", Model)
     </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/admin-actions.js"></script>
+    <script>
+        let currentPageSize = 5; // Set to match controller
+        let currentSearchTerm = '@ViewData["SearchTerm"]';
+        let searchTimeout;
+
+        // Search functionality
+        $(document).ready(function() {
+            const searchInput = $('#searchInput');
+            const clearButton = $('#clearSearch');
+
+            // Handle search input with debouncing
+            searchInput.on('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = $(this).val();
+                
+                // Show/hide clear button
+                if (searchTerm.length > 0) {
+                    clearButton.show();
+                } else {
+                    clearButton.hide();
+                }
+
+                // Debounce search to avoid too many requests
+                searchTimeout = setTimeout(function() {
+                    performSearch(searchTerm);
+                }, 500);
+            });
+
+            // Handle Enter key
+            searchInput.on('keypress', function(e) {
+                if (e.which === 13) { // Enter key
+                    clearTimeout(searchTimeout);
+                    performSearch($(this).val());
+                }
+            });
+
+            // Clear search
+            clearButton.on('click', function() {
+                searchInput.val('');
+                clearButton.hide();
+                performSearch('');
+            });
+        });
+
+        function performSearch(searchTerm) {
+            currentSearchTerm = searchTerm;
+            console.log('Searching for:', searchTerm);
+            
+            // Show loading state
+            $('#tableContainer').html('<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+            
+            $.ajax({
+                url: '/Admin/Asset/LoadTable',
+                type: 'GET',
+                data: { 
+                    pageIndex: 1, 
+                    pageSize: currentPageSize, 
+                    searchTerm: searchTerm 
+                },
+                success: function(result) {
+                    $('#tableContainer').html(result);
+                    
+                    // Update search results info
+                    const totalCount = parseInt($('#tableContainer').attr('data-total-count')) || 0;
+                    updateSearchResultsInfo(totalCount, searchTerm);
+                    
+                    console.log('Search completed for:', searchTerm, 'Results:', totalCount);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Search error:', error);
+                    $('#tableContainer').html(
+                        '<div class="alert alert-danger">' +
+                        '<i class="bi bi-exclamation-triangle"></i> ' +
+                        'Error searching. Please try again.' +
+                        '</div>'
+                    );
+                }
+            });
+        }
+
+        function updateSearchResultsInfo(totalCount, searchTerm) {
+            const resultsSpan = $('#searchResults');
+            if (totalCount > 0) {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.html(
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `asset${totalCount === 1 ? '' : 's'} found for "<strong>${searchTerm}</strong>"`
+                    );
+                } else {
+                    resultsSpan.html(
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `asset${totalCount === 1 ? '' : 's'} found`
+                    );
+                }
+            } else {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.html(`assets found for "<strong>${searchTerm}</strong>"`);
+                } else {
+                    resultsSpan.html('No assets found');
+                }
+            }
+        }
+
+        // Handle pagination clicks with improved error handling and logging
+        $(document).on('click', '.page-btn', function(e) {
+            e.preventDefault();
+            
+            if ($(this).closest('.disabled').length) {
+                console.log('Pagination button is disabled, ignoring click');
+                return false;
+            }
+            
+            const pageIndex = $(this).data('page');
+            console.log('Asset pagination clicked: Page', pageIndex);
+            
+            // Show loading state
+            $('#tableContainer').html('<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+            
+            $.ajax({
+                url: '/Admin/Asset/LoadTable',
+                type: 'GET',
+                data: { 
+                    pageIndex: pageIndex, 
+                    pageSize: currentPageSize,
+                    searchTerm: currentSearchTerm 
+                },
+                success: function(result) {
+                    $('#tableContainer').html(result);
+                    console.log('Successfully loaded Asset page', pageIndex);
+                    
+                    // Scroll to table top for better UX
+                    $('#tableContainer')[0].scrollIntoView({ behavior: 'smooth' });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error loading Asset table:', error);
+                    $('#tableContainer').html(
+                        '<div class="alert alert-danger">' +
+                        '<i class="bi bi-exclamation-triangle"></i> ' +
+                        'Error loading data. Please refresh the page and try again.' +
+                        '</div>'
+                    );
+                }
+            });
+        });
+
+        // Handle delete forms with AJAX
+        $(document).on('submit', '.delete-form', function(e) {
+            e.preventDefault();
+            
+            const confirmMessage = $(this).data('confirm');
+            if (!confirm(confirmMessage)) {
+                return false;
+            }
+            
+            const form = $(this);
+            const formData = new FormData(this);
+            
+            $.ajax({
+                url: form.attr('action'),
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    // Show success message
+                    $('.alert').remove();
+                    $('<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">' +
+                      '<i class="bi bi-check-circle-fill"></i> Asset deleted successfully!' +
+                      '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                      '</div>').insertAfter('.asset-header-row');
+                    
+                    // Reload table via AJAX (stay on same page/search)
+                    const currentPage = $('.pagination .page-item.active .page-btn').data('page') || 1;
+                    $.ajax({
+                        url: '/Admin/Asset/LoadTable',
+                        type: 'GET',
+                        data: { 
+                            pageIndex: currentPage, 
+                            pageSize: currentPageSize,
+                            searchTerm: currentSearchTerm 
+                        },
+                        success: function(data) {
+                            $('#tableContainer').html(data);
+                            console.log('Asset table reloaded after delete');
+                            
+                            // Update search results info
+                            const totalCount = parseInt($('#tableContainer').attr('data-total-count')) || 0;
+                            updateSearchResultsInfo(totalCount, currentSearchTerm);
+                        },
+                        error: function() {
+                            // Fallback to page 1 if current page fails
+                            $.get('/Admin/Asset/LoadTable?pageIndex=1&pageSize=' + currentPageSize + '&searchTerm=' + encodeURIComponent(currentSearchTerm), function(data) {
+                                $('#tableContainer').html(data);
+                                const totalCount = parseInt($('#tableContainer').attr('data-total-count')) || 0;
+                                updateSearchResultsInfo(totalCount, currentSearchTerm);
+                            });
+                        }
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error deleting asset:', error);
+                    $('.alert').remove();
+                    $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
+                      '<i class="bi bi-exclamation-triangle-fill"></i> Error deleting asset. Please try again.' +
+                      '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
+                      '</div>').insertAfter('.asset-header-row');
+                }
+            });
+        });
+
+        // Handle QR Code generation 
+        $(document).on('click', '[data-action="generate-qr"]', function(e) {
+            e.preventDefault();
+            
+            const url = $(this).data('url');
+            if (url) {
+                // Open QR code generation in new window/tab
+                window.open(url, '_blank');
+            }
+        });
+        
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Asset search and pagination system initialized');
+            console.log('Current search term:', currentSearchTerm);
+            console.log('Current page size:', currentPageSize);
+            
+            // Initialize search state
+            if (currentSearchTerm) {
+                $('#searchInput').val(currentSearchTerm);
+                $('#clearSearch').show();
+                updateSearchResultsInfo(currentSearchTerm);
+            }
+            
+            // Focus search input on page load for better UX
+            $('#searchInput').focus();
+        });
+    </script>
+}
+
+<style>
+/* AssetType Search Section Styles */
+.search-section {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-input-group {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+    margin-right: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2rem 0.75rem 2.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 3px;
+    transition: color 0.2s ease;
+}
+
+.clear-search-btn:hover {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.search-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.search-results-count {
+    font-weight: 500;
+    color: #333;
+    margin-right: 0.2rem;
+}
+</style>

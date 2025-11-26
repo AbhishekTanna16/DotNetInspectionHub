@@ -1,0 +1,243 @@
+@using ShopInspector.Core.Entities
+@model PaginatedList<ShopInspector.Core.Entities.Asset>
+
+<div class="asset-table-wrapper" data-total-count="@Model.TotalCount">
+    <!-- Desktop Table View -->
+    <div class="d-none d-md-block">
+        <table class="table table-hover table-compact asset-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Asset</th>
+                    <th>Type</th>
+                    <th>Location</th>
+                    <th class="text-center">Active</th>
+                    <th class="asset-col-qr">QR</th>
+                    <th class="asset-col-actions text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="fw-bold">@item.AssetCode</div>
+                            </td>
+                            <td>
+                                <div class="fw-bold">@item.AssetName</div>
+                                @if (!string.IsNullOrEmpty(item.Department))
+                                {
+                                    <small class="text-muted">@item.Department</small>
+                                }
+                            </td>
+                            <td class="text-truncate" style="max-width: 150px;" title="@(item.AssetType?.AssetTypeName ?? "Unknown")">
+                                @(item.AssetType?.AssetTypeName ?? "Unknown")
+                            </td>
+                            <td class="text-truncate" style="max-width: 200px;" title="@(item.AssetLocation ?? "Not specified")">
+                                @(item.AssetLocation ?? "Not specified")
+                            </td>
+                            <td class="text-center">
+                                @if (item.Active)
+                                {
+                                    <span class="badge bg-success">
+                                        <i class="bi bi-check-circle"></i> Active
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">
+                                        <i class="bi bi-x-circle"></i> Inactive
+                                    </span>
+                                }
+                            </td>
+                            <td class="asset-col-qr">
+                                <button type="button"
+                                        class="btn btn-outline-info btn-square"
+                                        title="Generate QR Code"
+                                        data-action="generate-qr"
+                                        data-url="/Admin/Asset/GenerateQr/@item.AssetID">
+                                    <i class="bi bi-qr-code"></i>
+                                </button>
+                            </td>
+                            <td class="asset-col-actions">
+                                <div class="asset-action-group">
+                                    <a href="/PublicInspection/Start/@item.AssetID"
+                                       class="btn btn-action btn-outline-success"
+                                       title="Start Inspection">
+                                        <i class="bi bi-play-circle"></i> <span class="txt">Inspect</span>
+                                    </a>
+                                    <a href="/PublicInspection/History/@item.AssetID"
+                                       class="btn btn-action btn-outline-info"
+                                       title="View History">
+                                        <i class="bi bi-clock-history"></i> <span class="txt">History</span>
+                                    </a>
+                                    <a asp-area="Admin"
+                                       asp-controller="Asset"
+                                       asp-action="Edit"
+                                       asp-route-id="@item.AssetID"
+                                       class="btn btn-action btn-outline-primary"
+                                       title="Edit Asset">
+                                        <i class="bi bi-pencil-square"></i> <span class="txt">Edit</span>
+                                    </a>
+                                    <form asp-area="Admin"
+                                          asp-controller="Asset"
+                                          asp-action="Delete"
+                                          asp-route-id="@item.AssetID"
+                                          method="post"
+                                          class="m-0 p-0 d-inline delete-form"
+                                          data-confirm="Are you sure you want to delete this asset?">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit"
+                                                class="btn btn-action btn-outline-danger"
+                                                title="Delete Asset">
+                                            <i class="bi bi-trash"></i> <span class="txt">Delete</span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="7" class="text-center text-muted py-4">
+                            <i class="bi bi-inbox" style="font-size: 2rem; opacity: 0.5;"></i>
+                            <br>No assets found
+                            @if (!string.IsNullOrEmpty(ViewBag.SearchTerm as string))
+                            {
+                                <br><small>Try adjusting your search terms or <a href="javascript:void(0)" onclick="$('#searchInput').val('').trigger('input')">clear search</a></small>
+                            }
+                            else
+                            {
+                                <br><a asp-area="Admin" asp-controller="Asset" asp-action="Create">Create your first asset</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div class="d-md-none">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <div class="asset-card mb-3">
+                    <div class="asset-card-header">
+                        <div class="asset-card-title">
+                            <h6 class="mb-1 fw-bold text-primary">@item.AssetName</h6>
+                            <div class="asset-card-meta">
+                                <small class="text-muted"><strong>@item.AssetCode</strong></small>
+                                @if (item.Active)
+                                {
+                                    <span class="badge bg-success"><i class="bi bi-check-circle"></i> Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary"><i class="bi bi-x-circle"></i> Inactive</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="asset-card-qr">
+                            <button type="button"
+                                    class="btn btn-outline-info btn-square"
+                                    title="Generate QR Code"
+                                    data-action="generate-qr"
+                                    data-url="/Admin/Asset/GenerateQr/@item.AssetID">
+                                <i class="bi bi-qr-code"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-body">
+                        <div class="asset-card-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-tag text-muted me-1"></i>Type:</span>
+                                <span class="detail-value">@(item.AssetType?.AssetTypeName ?? "Unknown")</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-geo-alt text-muted me-1"></i>Location:</span>
+                                <span class="detail-value">@(item.AssetLocation ?? "Not specified")</span>
+                            </div>
+                            @if (!string.IsNullOrEmpty(item.Department))
+                            {
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="bi bi-building text-muted me-1"></i>Department:</span>
+                                    <span class="detail-value">@item.Department</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-actions">
+                        <div class="mobile-action-grid">
+                            <a href="/PublicInspection/Start/@item.AssetID"
+                               class="btn btn-outline-success btn-sm mobile-action-btn">
+                                <i class="bi bi-play-circle"></i> Inspect
+                            </a>
+                            <a href="/PublicInspection/History/@item.AssetID"
+                               class="btn btn-outline-info btn-sm mobile-action-btn">
+                                <i class="bi bi-clock-history"></i> History
+                            </a>
+                            <a asp-area="Admin"
+                               asp-controller="Asset"
+                               asp-action="Edit"
+                               asp-route-id="@item.AssetID"
+                               class="btn btn-outline-primary btn-sm mobile-action-btn">
+                                <i class="bi bi-pencil-square"></i> Edit
+                            </a>
+                            <form asp-area="Admin"
+                                  asp-controller="Asset"
+                                  asp-action="Delete"
+                                  asp-route-id="@item.AssetID"
+                                  method="post"
+                                  class="mobile-action-form delete-form"
+                                  data-confirm="Are you sure you want to delete this asset?">
+                                @Html.AntiForgeryToken()
+                                <button type="submit"
+                                        class="btn btn-outline-danger btn-sm mobile-action-btn w-100">
+                                    <i class="bi bi-trash"></i> Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center text-muted py-5">
+                <i class="bi bi-inbox" style="font-size: 3rem; opacity: 0.5;"></i>
+                <div class="mt-3">
+                    @if (!string.IsNullOrEmpty(ViewBag.SearchTerm as string))
+                    {
+                        <h6>No assets found for your search</h6>
+                        <p>Try adjusting your search terms or <a href="javascript:void(0)" onclick="$('#searchInput').val('').trigger('input')" class="btn btn-outline-secondary btn-sm mt-2">Clear Search</a></p>
+                    }
+                    else
+                    {
+                        <h6>No assets found</h6>
+                        <a asp-area="Admin" asp-controller="Asset" asp-action="Create" class="btn btn-primary mt-2">
+                            <i class="bi bi-plus-circle"></i> Create your first asset
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+        
+        <!-- Mobile info notice -->
+        <div class="mobile-info-notice mt-3 p-3 bg-light border rounded">
+            <small class="text-muted">
+                <i class="bi bi-info-circle me-1"></i>
+                All asset information is displayed in card format for better mobile viewing. Tap QR code icon to generate QR codes.
+            </small>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Pagination", Model)
+</div>

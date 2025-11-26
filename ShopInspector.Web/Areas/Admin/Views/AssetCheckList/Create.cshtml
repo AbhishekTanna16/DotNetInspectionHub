@@ -4,84 +4,132 @@
     ViewData["Title"] = "Add Asset Checklist Row";
 }
 
-<h2 class="mb-3">Add Asset Checklist Row</h2>
+<div class="admin-page-container">
+    <h2 class="mb-3">Add Asset Checklist Row</h2>
 
-<div class="admin-card admin-container">
-    <form asp-area="Admin" asp-controller="AssetCheckList" asp-action="Create" method="post" novalidate>
-        @Html.AntiForgeryToken()
+    <div class="admin-card">
+        <form asp-area="Admin" asp-controller="AssetCheckList" asp-action="Create" method="post" novalidate>
+            @Html.AntiForgeryToken()
 
-        <div class="form-grid">
-            <div class="mb-3">
-                <label asp-for="AssetID" class="form-label">Asset</label>
-                <select asp-for="AssetID" asp-items="Model.Assets" class="form-select">
-                    <option value="">-- Select Asset --</option>
-                </select>
-                <span asp-validation-for="AssetID" class="text-danger"></span>
-            </div>
+            <div class="form-grid">
+                <div class="mb-3">
+                    <label asp-for="AssetID" class="form-label">Asset</label>
+                    <select asp-for="AssetID" asp-items="Model.Assets" class="form-select">
+                        <option value="">-- Select Asset --</option>
+                    </select>
+                    <span asp-validation-for="AssetID" class="text-danger"></span>
+                </div>
 
-            <div class="mb-3">
-                <label asp-for="InspectionCheckListIDs" class="form-label">Checklists</label>
-                <select asp-for="InspectionCheckListIDs" asp-items="Model.InspectionCheckLists" 
-                        class="form-select multi-select-checklist" 
-                        multiple 
-                        title="Select one or more checklists..."
-                        data-placeholder="Select checklists..."
-                        data-live-search="true">
-                </select>
-                <span asp-validation-for="InspectionCheckListIDs" class="text-danger"></span>
-                <div class="form-text">
-                    <i class="bi bi-info-circle"></i> 
-                    You can select multiple checklists. Use Ctrl+Click (Windows) or Cmd+Click (Mac) to select multiple items, 
-                    or use the enhanced dropdown below.
+                <div class="mb-3">
+                    <label asp-for="InspectionCheckListIDs" class="form-label">Checklists</label>
+                    <select asp-for="InspectionCheckListIDs" asp-items="Model.InspectionCheckLists" 
+                            class="form-select multi-select-checklist" 
+                            multiple 
+                            title="Select one or more checklists..."
+                            data-placeholder="Select checklists..."
+                            >
+                    </select>
+                    <span asp-validation-for="InspectionCheckListIDs" class="text-danger"></span>
+                    <div class="form-text">
+                        <i class="bi bi-info-circle"></i> 
+                        You can select multiple checklists. Use Ctrl+Click (Windows) or Cmd+Click (Mac) to select multiple items, 
+                        or use the enhanced dropdown below.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DisplayOrder" class="form-label">Starting Display Order</label>
+                    <input asp-for="DisplayOrder" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                    <div class="form-text">Base order for the checklists. Each selected checklist will increment from this number.</div>
+                </div>
+
+                <div class="mb-3 full-width">
+                    <div>
+                        <label class="form-check-label">
+                            @(Model.Active ? "Active" : "Inactive")
+                        </label>
+                        <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                        <label for="Active" class="toggle-switch-slider"></label>
+                    </div>
                 </div>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="DisplayOrder" class="form-label">Starting Display Order</label>
-                <input asp-for="DisplayOrder" class="form-control" type="number" min="1" />
-                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-                <div class="form-text">Base order for the checklists. Each selected checklist will increment from this number.</div>
+            <div class="btn-wrap mt-2">
+                <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Index" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
-
-            <div class="mb-3 full-width">
-                <div class="form-check">
-                    <input asp-for="Active" class="form-check-input" />
-                    <label asp-for="Active" class="form-check-label">Active</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="btn-wrap mt-2">
-            <a asp-area="Admin" asp-controller="AssetCheckList" asp-action="Index" class="btn btn-secondary">Cancel</a>
-            <button type="submit" class="btn btn-success">Save</button>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     
     <style>
-        /* Enhanced multi-select styling */
+        /* Enhanced multi-select styling with proper scrollbar */
         .multi-select-checklist {
             min-height: 120px;
-            border: 2px dashed #ddd;
+            max-height: 200px; /* FIXED: Set maximum height */
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
             transition: border-color 0.3s ease;
+            overflow-y: auto !important; /* FIXED: Enable vertical scrollbar */
+            overflow-x: hidden; /* FIXED: Hide horizontal scrollbar */
+            padding: 4px; /* FIXED: Add padding for better appearance */
+            background-color: #ffffff;
         }
         
         .multi-select-checklist:focus {
-            border-color: #0d6efd;
+            border-color: #667eea;
             border-style: solid;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
         
         .multi-select-checklist option {
             padding: 8px 12px;
             margin: 2px 0;
+            border-radius: 4px;
+            color: #000000 !important; /* FIXED: Ensure black text */
+            background-color: transparent;
+            cursor: pointer;
         }
         
         .multi-select-checklist option:checked {
-            background: #0d6efd !important;
+            background: #667eea !important;
             color: white !important;
+            font-weight: 500;
+        }
+        
+        .multi-select-checklist option:hover:not(:checked) {
+            background-color: #f8f9fa !important;
+            color: #000000 !important;
+        }
+
+        /* FIXED: Custom scrollbar styling for better appearance */
+        .multi-select-checklist::-webkit-scrollbar {
+            width: 8px;
+            display: block !important; /* Override the previous display: none */
+        }
+
+        .multi-select-checklist::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .multi-select-checklist::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .multi-select-checklist::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* Firefox scrollbar styling */
+        .multi-select-checklist {
+            scrollbar-width: thin;
+            scrollbar-color: #c1c1c1 #f1f1f1;
         }
         
         /* Checkbox-style option display */
@@ -98,6 +146,9 @@
             display: block;
             margin-bottom: 0.25rem;
         }
+
+        /* FIXED: Ensure proper sizing on different screen sizes */
+  
     </style>
     
     <script>
@@ -133,6 +184,14 @@
                 // Show loading state
                 $(this).find('button[type="submit"]').prop('disabled', true).text('Creating...');
                 return true;
+            });
+
+            // ADDED: Enhanced keyboard navigation
+            $multiSelect.on('keydown', function(e) {
+                // Allow arrow keys for navigation within the select
+                if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+                    e.stopPropagation();
+                }
             });
         });
     </script>

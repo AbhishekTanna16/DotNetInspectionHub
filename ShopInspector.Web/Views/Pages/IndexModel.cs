@@ -52,7 +52,7 @@ public class IndexModel : PageModel
         if (!SelectedAssetId.HasValue || SelectedAssetId.Value <= 0)
         {
             ModelState.AddModelError(string.Empty, "Please select an asset.");
-            Assets = await _assetService.GetAllAsync();
+            Assets = await _assetService.GetAllAsync(null, null);
             return Page();
         }
         return Redirect($"/PublicInspection/Start/{SelectedAssetId.Value}");

@@ -1,4 +1,4 @@
-@model ShopInspector.Core.Entities.Company
+@model ShopInspector.Web.Areas.Admin.Models.CompanyEditViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Edit Company";
@@ -29,8 +29,6 @@
             <form id="editCompanyForm" asp-area="Admin" asp-controller="Company" asp-action="Edit" method="post" novalidate>
                 @Html.AntiForgeryToken()
                 <input type="hidden" asp-for="CompanyID" />
-                <input type="hidden" asp-for="CreatedOn" />
-                <input type="hidden" asp-for="CreatedBy" />
 
                 <div class="form-grid">
                     <div class="mb-3">
@@ -64,9 +62,12 @@
                     </div>
 
                     <div class="mb-3 full-width">
-                        <div class="form-check">
-                            <input asp-for="Active" class="form-check-input" />
-                            <label asp-for="Active" class="form-check-label">Active Company</label>
+                        <div>
+                            <label class="form-check-label">
+                                @(Model.Active ? "Active" : "Inactive")
+                            </label>
+                            <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                            <label for="Active" class="toggle-switch-slider"></label>
                         </div>
                     </div>
                 </div>

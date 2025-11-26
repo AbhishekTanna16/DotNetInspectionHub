@@ -4,6 +4,7 @@ using ShopInspector.Web.Areas.Admin.Models;
 using ShopInspector.Core.Entities;
 using Microsoft.AspNetCore.Hosting;
 using ShopInspector.Application.Helpers;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ShopInspector.Web.Controllers;
 
@@ -13,8 +14,6 @@ public class PublicInspectionController : Controller
     private readonly IAssetService _assetService;
     private readonly IAssetCheckListService _assetCheckListService;
     private readonly IAssetInspectionService _inspectionService;
-    private readonly IEmployeeService _employeeService;
-    private readonly IInspectionFrequencyService _frequencyService;
     private readonly IFileService _fileService;
     private readonly IInspectionPhotoService _photoService;
     private readonly IWebHostEnvironment _env;
@@ -24,18 +23,14 @@ public class PublicInspectionController : Controller
         IAssetService assetService,
         IAssetCheckListService assetCheckListService,
         IAssetInspectionService inspectionService,
-        IEmployeeService employeeService,
-        IInspectionFrequencyService frequencyService,
         IFileService fileService,
         IInspectionPhotoService photoService,
-         ILogger<PublicInspectionController> logger,
-    IWebHostEnvironment env)
+        ILogger<PublicInspectionController> logger,
+        IWebHostEnvironment env)
     {
         _assetService = assetService;
         _assetCheckListService = assetCheckListService;
         _inspectionService = inspectionService;
-        _employeeService = employeeService;
-        _frequencyService = frequencyService;
         _fileService = fileService;
         _photoService = photoService;
         _logger = logger;
@@ -55,14 +50,18 @@ public class PublicInspectionController : Controller
                 return RedirectToAction(nameof(Start), new { assetId = assetId.Value });
             }
 
-            // Show asset selection page
-            var assets = await _assetService.GetAllAsync();
-            _logger.LogInformation("Loading public inspection home page");
-            return View("~/Views/Pages/Index.cshtml", new InspectionStartViewModel 
+            // Show asset selection page using the clean repository method
+            var assetData = await _assetCheckListService.GetAssetDropdownDataAsync();
+            var assets = assetData.Select(a => new SelectListItem(a.DisplayText, a.AssetID.ToString())).ToList();
+            
+            _logger.LogInformation("Loading public inspection home page with {Count} assets", assets.Count);
+            
+            var inspectionStartViewModel = new InspectionStartViewModel 
             { 
-                Assets = assets.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem(
-                    $"{a.AssetName} ({a.AssetCode})", a.AssetID.ToString())).ToList()
-            });
+                Assets = assets
+            };
+            
+            return View("~/Views/Pages/Index.cshtml", inspectionStartViewModel);
         }
         catch (Exception ex)
         {
@@ -76,8 +75,8 @@ public class PublicInspectionController : Controller
     {
         try
         {
-            var assets = await _assetService.GetAllAsync();
-            _logger.LogInformation(" retrieving Assets for Public Inspection");
+            var assets = await _assetService.GetAllAsync(null, null);
+            _logger.LogInformation("Retrieving Assets for Public Inspection");
             return View("~/Views/PublicInspection/Assets.cshtml", assets);
         }
         catch (Exception ex)
@@ -103,40 +102,26 @@ public class PublicInspectionController : Controller
 
             _logger.LogInformation("Starting inspection for Asset ID {AssetID} - {AssetName}", assetId, asset.AssetName);
 
-            // Load checklist items mapped to this asset
-            var mappings = await _assetCheckListService.GetByAssetIdAsync(assetId);
-            _logger.LogInformation("Found {Count} checklist mappings for Asset ID {AssetID}", mappings?.Count ?? 0, assetId);
-
-            var items = new List<InspectionItemViewModel>();
-            
-            if (mappings != null && mappings.Any())
+            // Use the clean repository method to get inspection items
+            var itemsData = await _assetCheckListService.GetInspectionItemsForAssetAsync(assetId);
+            var items = itemsData.Select(i => new InspectionItemViewModel
             {
-                items = mappings
-                    .Where(m => m.Active) // Only include active mappings
-                    .OrderBy(m => m.DisplayOrder)
-                    .Select(m => new InspectionItemViewModel
-                    {
-                        AssetCheckListID = m.AssetCheckListID,
-                        InspectionCheckListID = m.InspectionCheckListID,
-                        InspectionCheckListName = m.InspectionCheckList?.InspectionCheckListName ?? $"Checklist {m.InspectionCheckListID}",
-                        InspectionCheckListDescription = m.InspectionCheckList?.InspectionCheckListDescription,
-                        InspectionCheckListTitle = m.InspectionCheckList?.InspectionCheckListTitle ?? string.Empty,
-                        Active = m.Active
-                    })
-                    .ToList();
+                AssetCheckListID = i.AssetCheckListID,
+                InspectionCheckListID = i.InspectionCheckListID,
+                InspectionCheckListName = i.InspectionCheckListName,
+                InspectionCheckListDescription = i.InspectionCheckListDescription,
+                InspectionCheckListTitle = i.InspectionCheckListTitle,
+                Active = i.Active
+            }).ToList();
 
-                _logger.LogInformation("Processed {Count} active checklist items for Asset ID {AssetID}", items.Count, assetId);
-            }
-            else
-            {
-                _logger.LogWarning("No checklist mappings found for Asset ID {AssetID}. You may need to configure checklists for this asset in the admin panel.", assetId);
-            }
+            _logger.LogInformation("Found {Count} checklist items for Asset ID {AssetID}", items.Count, assetId);
 
-            // Dropdowns
-            var employees = (await _employeeService.GetAllAsync())
-                .Select(e => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem(e.EmployeeName, e.EmployeeID.ToString()));
-            var frequencies = (await _frequencyService.GetAllAsync())
-                .Select(f => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem(f.FrequencyName, f.InspectionFrequencyID.ToString()));
+            // Get dropdown data using clean repository methods
+            var employeeData = await _assetCheckListService.GetEmployeeDropdownDataAsync();
+            var employees = employeeData.Select(e => new SelectListItem(e.EmployeeName, e.EmployeeID.ToString()));
+
+            var frequencyData = await _assetCheckListService.GetInspectionFrequencyDropdownDataAsync();
+            var frequencies = frequencyData.Select(f => new SelectListItem(f.FrequencyName, f.InspectionFrequencyID.ToString()));
 
             // Last inspection summary for this asset
             var history = await _inspectionService.GetByAssetIdAsync(assetId);
@@ -144,20 +129,22 @@ public class PublicInspectionController : Controller
             LastInspectionSummary? lastSummary = null;
             if (last != null)
             {
+                
                 lastSummary = new LastInspectionSummary
                 {
                     InspectionId = last.AssetInspectionID,
                     InspectionDate = last.InspectionDate,
-                    InspectorName = last.InspectorName,
-                    EmployeeName = last.Employee?.EmployeeName,
-                    FrequencyName = last.InspectionFrequency?.FrequencyName,
+                    InspectorName = last.InspectorName ?? "Unknown",
+                  
+                    EmployeeName = last.Employee?.EmployeeName ?? "N/A",
+                    FrequencyName = last.InspectionFrequency?.FrequencyName ?? "N/A",
                     ThirdParty = last.ThirdParty ?? false,
                     Attachment = string.IsNullOrWhiteSpace(last.Attachment) ? null : last.Attachment,
                     PhotoCount = last.Photos?.Count ?? 0
                 };
             }
 
-            var vm = new InspectionStartViewModel
+            var viewModel = new InspectionStartViewModel
             {
                 AssetID = asset.AssetID,
                 AssetName = asset.AssetName,
@@ -170,7 +157,7 @@ public class PublicInspectionController : Controller
             };
             
             _logger.LogInformation("Successfully prepared inspection start view for Asset ID {AssetID} with {ItemCount} checklist items", assetId, items.Count);
-            return View("~/Views/PublicInspection/Start.cshtml", vm);
+            return View("~/Views/PublicInspection/Start.cshtml", viewModel);
         }
         catch (Exception ex)
         {
@@ -186,7 +173,7 @@ public class PublicInspectionController : Controller
         try
         {
             var asset = await _assetService.GetByIdAsync(assetId);
-            var mappings = await _assetCheckListService.GetAllAsync(); // Get all mappings
+            var mappings = await _assetCheckListService.GetAllAsync(null,null); // Get all mappings
             var assetMappings = mappings.Where(m => m.AssetID == assetId).ToList();
 
             var debugInfo = new
@@ -216,18 +203,91 @@ public class PublicInspectionController : Controller
     }
 
     [HttpGet("History/{assetId}")]
-    public async Task<IActionResult> History(int assetId)
+    public async Task<IActionResult> History(int assetId, int pageIndex = 1, int pageSize = 5, string searchTerm = "")
     {
         try
         {
-            var list = await _inspectionService.GetByAssetIdAsync(assetId);
-            _logger.LogInformation(" History inspection for Asset ID {AssetID}", assetId);
-            return View("History", list);
+            // Get all inspections for the asset
+            var allInspections = await _inspectionService.GetByAssetIdAsync(assetId);
+            
+            // Apply search filter if provided
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                allInspections = allInspections.Where(i => 
+                    !string.IsNullOrWhiteSpace(i.InspectorName) && 
+                    i.InspectorName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+            
+            // Order by inspection date descending (newest first)
+            var orderedInspections = allInspections.OrderByDescending(i => i.InspectionDate).ToList();
+            
+            // Create paginated list
+            var totalCount = orderedInspections.Count;
+            var skip = (pageIndex - 1) * pageSize;
+            var pagedInspections = orderedInspections.Skip(skip).Take(pageSize).ToList();
+            
+            var paginatedList = new PaginatedList<AssetInspection>(pagedInspections, totalCount, pageIndex, pageSize);
+            
+            // Pass pagination and search info to view
+            ViewData["PageSize"] = pageSize;
+            ViewData["CurrentPage"] = pageIndex;
+            ViewData["AssetId"] = assetId;
+            ViewData["SearchTerm"] = searchTerm;
+            
+            _logger.LogInformation("History inspection for Asset ID {AssetID} - Page {PageIndex}, Size {PageSize}, Total {TotalCount}, Search: '{SearchTerm}'", 
+                assetId, pageIndex, pageSize, totalCount, searchTerm);
+            
+            return View("History", paginatedList);
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error History inspection for Asset ID {AssetID}", assetId);
             return StatusCode(500, "Internal server error");
+        }
+    }
+
+    // AJAX endpoint for loading history table with pagination and search
+    [HttpGet("LoadHistoryTable/{assetId}")]
+    public async Task<IActionResult> LoadHistoryTable(int assetId, int pageIndex = 1, int pageSize = 5, string searchTerm = "")
+    {
+        try
+        {
+            // Get all inspections for the asset
+            var allInspections = await _inspectionService.GetByAssetIdAsync(assetId);
+            
+            // Apply search filter if provided
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                allInspections = allInspections.Where(i => 
+                    !string.IsNullOrWhiteSpace(i.InspectorName) && 
+                    i.InspectorName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+            }
+            
+            // Order by inspection date descending (newest first)
+            var orderedInspections = allInspections.OrderByDescending(i => i.InspectionDate).ToList();
+            
+            // Create paginated list
+            var totalCount = orderedInspections.Count;
+            var skip = (pageIndex - 1) * pageSize;
+            var pagedInspections = orderedInspections.Skip(skip).Take(pageSize).ToList();
+            
+            var paginatedList = new PaginatedList<AssetInspection>(pagedInspections, totalCount, pageIndex, pageSize);
+            
+            // Pass pagination and search info to view
+            ViewData["AssetId"] = assetId;
+            ViewData["SearchTerm"] = searchTerm;
+            
+            _logger.LogInformation("LoadHistoryTable: Retrieved {Count} inspections for Asset ID {AssetID}, page {PageIndex}, search: '{SearchTerm}'", 
+                paginatedList.Count, assetId, pageIndex, searchTerm);
+            
+            return PartialView("_HistoryTablePartial", paginatedList);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "LoadHistoryTable Error for Asset ID {AssetID}", assetId);
+            return PartialView("_HistoryTablePartial", new PaginatedList<AssetInspection>(new List<AssetInspection>(), 0, pageIndex, pageSize));
         }
     }
 
@@ -359,14 +419,18 @@ public class PublicInspectionController : Controller
         {
             if (selectedAssetId <= 0)
             {
-                // Return to asset selection with error
-                var assets = await _assetService.GetAllAsync();
+                // Return to asset selection with error using the clean repository method
+                var assetData = await _assetCheckListService.GetAssetDropdownDataAsync();
+                var assets = assetData.Select(a => new SelectListItem(a.DisplayText, a.AssetID.ToString())).ToList();
+                
                 ModelState.AddModelError(string.Empty, "Please select an asset.");
-                return View("~/Views/Pages/Index.cshtml", new InspectionStartViewModel 
+                
+                var inspectionStartViewModel = new InspectionStartViewModel 
                 { 
-                    Assets = assets.Select(a => new Microsoft.AspNetCore.Mvc.Rendering.SelectListItem(
-                        $"{a.AssetName} ({a.AssetCode})", a.AssetID.ToString())).ToList()
-                });
+                    Assets = assets
+                };
+                
+                return View("~/Views/Pages/Index.cshtml", inspectionStartViewModel);
             }
             return RedirectToAction(nameof(Start), new { assetId = selectedAssetId });
         }
@@ -383,23 +447,63 @@ public class PublicInspectionController : Controller
         try
         {
             var insp = await _inspectionService.GetByIdAsync(inspectionId);
-            if (insp == null) return NotFound();
+            if (insp == null) 
+            {
+                _logger.LogWarning("Inspection not found for ID {InspectionID}", inspectionId);
+                return NotFound($"Inspection with ID {inspectionId} not found");
+            }
 
-            // Get all photos for this inspection
             var photos = insp.Photos ?? new List<InspectionPhoto>();
             var photoFiles = new List<(string Label, string PhysicalPath)>();
             
             foreach (var photo in photos.OrderBy(p => p.DisplayOrder))
             {
+                if (string.IsNullOrWhiteSpace(photo.PhotoPath))
+                {
+                    _logger.LogWarning("Photo path is null or empty for photo in inspection {InspectionID}", inspectionId);
+                    continue;
+                }
+
+                if (string.IsNullOrWhiteSpace(_env.WebRootPath))
+                {
+                    _logger.LogError("Web root path is not configured");
+                    continue;
+                }
+
                 var physicalPath = Path.Combine(_env.WebRootPath, photo.PhotoPath.TrimStart('/'));
+                
+                if (!System.IO.File.Exists(physicalPath))
+                {
+                    _logger.LogWarning("Photo file not found at path: {PhysicalPath} for inspection {InspectionID}", 
+                        physicalPath, inspectionId);
+                    continue;
+                }
+
                 var label = $"Photo {photo.DisplayOrder + 1}";
                 photoFiles.Add((label, physicalPath));
             }
 
-            // Use the correct PDF generator from Application layer
-            var pdfBytes = InspectionPdfGenerator.Generate(insp, photoFiles);
+            if (insp == null)
+            {
+                _logger.LogError("Inspection object is null for ID {InspectionID}", inspectionId);
+                return StatusCode(500, "Unable to generate PDF: Inspection data is invalid");
+            }
+
+            // Use the correct PDF generator from Application layer with enhanced error handling
+            byte[] pdfBytes;
+            try
+            {
+                pdfBytes = InspectionPdfGenerator.Generate(insp, photoFiles);
+            }
+            catch (Exception pdfEx)
+            {
+                _logger.LogError(pdfEx, "Error generating PDF for inspection {InspectionID}", inspectionId);
+                return StatusCode(500, "Error generating PDF report");
+            }
             
-            _logger.LogInformation("Export inspection successfully for Inspection ID {InspectionID} with {PhotoCount} photos", inspectionId, photoFiles.Count);
+            _logger.LogInformation("Export inspection successfully for Inspection ID {InspectionID} with {PhotoCount} valid photos", 
+                inspectionId, photoFiles.Count);
+            
             return File(pdfBytes, "application/pdf", $"Inspection_{inspectionId}.pdf");
         }
         catch (Exception ex)

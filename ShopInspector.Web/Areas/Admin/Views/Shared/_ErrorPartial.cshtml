@@ -1,0 +1,10 @@
+@model string
+
+<div class="text-center text-muted py-5">
+    <i class="bi bi-exclamation-triangle text-danger" style="font-size: 3rem;"></i>
+    <h5 class="mt-3 text-danger">Error Loading Data</h5>
+    <p>@(Model ?? "An unexpected error occurred while loading the data.")</p>
+    <button class="btn btn-outline-primary" onclick="location.reload()">
+        <i class="bi bi-arrow-clockwise"></i> Refresh Page
+    </button>
+</div>

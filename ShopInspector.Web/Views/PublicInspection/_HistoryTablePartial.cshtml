@@ -1,0 +1,181 @@
+@using ShopInspector.Core.Entities
+@model PaginatedList<ShopInspector.Core.Entities.AssetInspection>
+
+<div class="asset-table-wrapper" data-total-count="@Model.TotalCount">
+    <!-- Desktop Table View -->
+    <div class="d-none d-md-block">
+        <table class="table table-hover table-compact asset-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Inspector</th>
+                    <th class="text-center">Attachment</th>
+                    <th class="asset-col-actions text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var insp in Model)
+                    {
+                        <tr>
+                            <td>
+                                <div class="fw-bold">@insp.InspectionDate.ToString("MMM dd, yyyy")</div>
+                                <small class="text-muted">@insp.InspectionDate.ToString("HH:mm")</small>
+                            </td>
+                            <td>@insp.InspectorName</td>
+                            <td class="text-center">
+                                @if (!string.IsNullOrEmpty(insp.Attachment))
+                                {
+                                    <a class="btn btn-sm btn-outline-info btn-square" 
+                                       target="_blank" 
+                                       href="@insp.Attachment" 
+                                       title="View Attachment">
+                                        <i class="bi bi-paperclip"></i>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">—</span>
+                                }
+                            </td>
+                            <td class="asset-col-actions">
+                                <div class="asset-action-group">
+                                    <a class="btn btn-action btn-outline-primary" 
+                                       href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })"
+                                       title="View Details">
+                                        <i class="bi bi-eye"></i> <span class="txt">Details</span>
+                                    </a>
+                                    @if (!string.IsNullOrEmpty(insp.Attachment))
+                                    {
+                                        <a class="btn btn-action btn-outline-success" 
+                                           target="_blank" 
+                                           href="@insp.Attachment"
+                                           title="View Attachment">
+                                            <i class="bi bi-paperclip"></i> <span class="txt">View</span>
+                                        </a>
+                                    }
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="4" class="text-center text-muted py-4">
+                            <i class="bi bi-inbox" style="font-size: 2rem; opacity: 0.5;"></i>
+                            <br>No inspections found
+                            @if (!string.IsNullOrEmpty(ViewData["SearchTerm"] as string))
+                            {
+                                <br><small>Try adjusting your search terms or <a href="javascript:void(0)" onclick="clearHistorySearch()">clear search</a></small>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Mobile Card View -->
+    <div class="d-md-none">
+        @if (Model != null && Model.Any())
+        {
+            foreach (var insp in Model)
+            {
+                <div class="asset-card mb-3">
+                    <div class="asset-card-header">
+                        <div class="asset-card-title">
+                            <h6 class="mb-1 fw-bold text-primary">@insp.InspectionDate.ToString("MMM dd, yyyy")</h6>
+                            <div class="asset-card-meta">
+                                <span class="badge bg-light text-dark me-2">@insp.InspectionDate.ToString("HH:mm")</span>
+                                @if (!string.IsNullOrEmpty(insp.Attachment))
+                                {
+                                    <span class="badge bg-info">Has Attachment</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">No Attachment</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-body">
+                        <div class="asset-card-details">
+                            <div class="detail-row">
+                                <span class="detail-label"><i class="bi bi-person text-muted me-1"></i>Inspector:</span>
+                                <span class="detail-value">@insp.InspectorName</span>
+                            </div>
+                            @if (!string.IsNullOrEmpty(insp.Attachment))
+                            {
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="bi bi-paperclip text-muted me-1"></i>Attachment:</span>
+                                    <span class="detail-value text-truncate">Available for download</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="detail-row">
+                                    <span class="detail-label"><i class="bi bi-paperclip text-muted me-1"></i>Attachment:</span>
+                                    <span class="detail-value text-muted">No attachment</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    
+                    <div class="asset-card-actions">
+                        <div class="history-mobile-action-grid">
+                            <a href="@Url.Action("Details", "PublicInspection", new { inspectionId = insp.AssetInspectionID })"
+                               class="btn btn-outline-primary btn-sm mobile-action-btn">
+                                <i class="bi bi-eye"></i> Details
+                            </a>
+                            @if (!string.IsNullOrEmpty(insp.Attachment))
+                            {
+                                <a target="_blank" 
+                                   href="@insp.Attachment"
+                                   class="btn btn-outline-success btn-sm mobile-action-btn">
+                                    <i class="bi bi-paperclip"></i> View File
+                                </a>
+                            }
+                            else
+                            {
+                                <span class="btn btn-outline-secondary btn-sm mobile-action-btn disabled" style="opacity: 0.5;">
+                                    <i class="bi bi-paperclip"></i> No File
+                                </span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="text-center text-muted py-5">
+                <i class="bi bi-inbox" style="font-size: 3rem; opacity: 0.5;"></i>
+                <div class="mt-3">
+                    @if (!string.IsNullOrEmpty(ViewData["SearchTerm"] as string))
+                    {
+                        <h6>No inspections found for your search</h6>
+                        <p>Try adjusting your search terms or <a href="javascript:void(0)" onclick="clearHistorySearch()" class="btn btn-outline-secondary btn-sm mt-2">Clear Search</a></p>
+                    }
+                    else
+                    {
+                        <h6>No inspection history found</h6>
+                        <p class="small">Inspection history will appear here once inspections are completed for this asset.</p>
+                    }
+                </div>
+            </div>
+        }
+        
+        <!-- Mobile info notice -->
+        <div class="mobile-info-notice mt-3 p-3 bg-light border rounded">
+            <small class="text-muted">
+                <i class="bi bi-info-circle me-1"></i>
+                All inspection information is displayed in card format for better mobile viewing.
+            </small>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_Pagination", Model)
+</div>

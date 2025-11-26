@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "AutoMapper/12.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.38.0": {
         "type": "package",
         "dependencies": {
@@ -522,7 +538,7 @@
           }
         }
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -1955,7 +1971,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0",
           "QuestPDF": "2025.7.4",
           "ShopInspector.Core": "1.0.0"
@@ -1983,6 +2001,21 @@
     }
   },
   "libraries": {
+    "AutoMapper/12.0.1": {
+      "sha512": "hvV62vl6Hp/WfQ24yzo3Co9+OPl8wH8hApwVtgWpiAynVJkUcs7xvehnSftawL8Pe8FrPffBRM3hwzLQqWDNjA==",
+      "type": "package",
+      "path": "automapper/12.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.12.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/netstandard2.1/AutoMapper.dll",
+        "lib/netstandard2.1/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.38.0": {
       "sha512": "IuEgCoVA0ef7E4pQtpC3+TkPbzaoQfa77HlfJDmfuaJUCVJmn7fT0izamZiryW5sYUFKizsftIxMkXKbgIcPMQ==",
       "type": "package",
@@ -3132,10 +3165,10 @@
         "microsoft.codeanalysis.workspaces.msbuild.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3148,6 +3181,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -3157,7 +3191,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -5496,11 +5530,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj",
+      "projectUniqueName": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj",
       "projectName": "ShopInspector.Infrastructure",
-      "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj",
+      "projectPath": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Infrastructure\\ShopInspector.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\NS-44\\.nuget\\packages\\",
-      "outputPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Infrastructure\\obj\\",
+      "outputPath": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5521,11 +5555,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj": {
-              "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj"
+            "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj": {
+              "projectPath": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Application\\ShopInspector.Application.csproj"
             },
-            "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj": {
-              "projectPath": "G:\\ShopInspector\\24-11-25\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj"
+            "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj": {
+              "projectPath": "G:\\ShopInspector\\24-11-25\\26\\DotNetInspectionHub\\ShopInspector.Core\\ShopInspector.Core.csproj"
             }
           }
         }

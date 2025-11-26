@@ -1,4 +1,6 @@
-@model IEnumerable<ShopInspector.Core.Entities.InspectionFrequency>
+@using ShopInspector.Core.Entities
+@using ShopInspector.Web.Areas.Admin.Models
+@model PaginatedList<InspectionFrequencyListViewModel>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Inspection Frequencies";
@@ -32,62 +34,1063 @@
         </div>
     }
 
-    <div class="asset-table-wrapper mt-3">
-        <table class="table table-hover table-compact asset-table">
-            <thead>
-                <tr>
-                    <th>Frequency Name</th>
-                    <th data-hide-md class="text-center">ID</th>
-                    <th class="asset-col-actions text-end">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model != null && Model.Any())
-                {
-                    foreach (var f in Model)
+    <!-- Search Section -->
+    <div class="search-section">
+        <div class="search-wrapper">
+            <div class="search-input-group">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" 
+                       id="searchInput" 
+                       class="search-input" 
+                       placeholder="Search by frequency name or description..." 
+                       value="@ViewData["SearchTerm"]"
+                       autocomplete="off">
+                <button type="button" class="clear-search-btn" id="clearSearch" style="display: none;">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="search-info">
+                <i class="bi bi-info-circle"></i>
+                <span id="searchResults">
+                    @if (Model?.TotalCount > 0)
                     {
-                        <tr data-id="@f.InspectionFrequencyID">
-                            <td>
-                                <strong>@f.FrequencyName</strong>
-                            </td>
-                            <td data-hide-md class="text-center text-muted">#@f.InspectionFrequencyID</td>
-                            <td class="asset-col-actions">
-                                <div class="asset-action-group">
-                                    <a asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Edit" asp-route-id="@f.InspectionFrequencyID" 
-                                       class="btn btn-action btn-outline-primary" title="Edit">
-                                        <i class="bi bi-pencil-square"></i> <span class="txt">Edit</span>
-                                    </a>
-                                    <form asp-area="Admin"
-                                          asp-controller="InspectionFrequency"
-                                          asp-action="Delete"
-                                          asp-route-id="@f.InspectionFrequencyID"
-                                          method="post"
-                                          class="m-0 p-0 d-inline"
-                                          onsubmit="return confirm('Are you sure you want to delete this inspection frequency?');">
-                                        @Html.AntiForgeryToken()
-                                        <button type="submit" class="btn btn-action btn-outline-danger" title="Delete">
-                                            <i class="bi bi-trash"></i> <span class="txt">Delete</span>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        <span class="search-results-count">@Model.TotalCount</span>
+                        <span> frequenc@(Model.TotalCount == 1 ? "y" : "ies") found</span>
                     }
-                }
-                else
-                {
-                    <tr>
-                        <td colspan="3" class="text-center text-muted py-4">
-                            <i class="bi bi-inbox"></i><br />
-                            No inspection frequencies found. <a asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Create">Create your first frequency</a>.
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                    else
+                    {
+                        <span>No frequencies found</span>
+                    }
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Table Container -->
+    <div id="tableContainer" class="mt-3">
+        @await Html.PartialAsync("_TablePartial", Model)
     </div>
 </div>
 
 @section Scripts {
     <script src="~/js/admin-actions.js"></script>
-}}
+    <script>
+        let currentPageSize = 5; // Set to match controller
+        let currentSearchTerm = '@ViewData["SearchTerm"]';
+        let searchTimeout;
+
+        // Search functionality using vanilla JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const clearButton = document.getElementById('clearSearch');
+
+            // Initialize search state
+            if (currentSearchTerm && currentSearchTerm.trim().length > 0) {
+                searchInput.value = currentSearchTerm;
+                clearButton.style.display = 'block';
+            }
+
+            // Handle search input with debouncing
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = this.value;
+                
+                // Show/hide clear button
+                if (searchTerm.length > 0) {
+                    clearButton.style.display = 'block';
+                } else {
+                    clearButton.style.display = 'none';
+                }
+
+                // Debounce search to avoid too many requests
+                searchTimeout = setTimeout(function() {
+                    performSearch(searchTerm);
+                }, 500);
+            });
+
+            // Handle Enter key
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.which === 13 || e.keyCode === 13) { // Enter key
+                    clearTimeout(searchTimeout);
+                    performSearch(this.value);
+                }
+            });
+
+            // Clear search
+            clearButton.addEventListener('click', function() {
+                searchInput.value = '';
+                clearButton.style.display = 'none';
+                performSearch('');
+            });
+
+            // Focus search input on page load for better UX
+            searchInput.focus();
+        });
+
+        function performSearch(searchTerm) {
+            currentSearchTerm = searchTerm;
+            console.log('Searching for:', searchTerm);
+            
+            // Show loading state
+            document.getElementById('tableContainer').innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+            
+            // Build URL with parameters
+            const params = new URLSearchParams({
+                pageIndex: 1,
+                pageSize: currentPageSize,
+                searchTerm: searchTerm || ''
+            });
+
+            fetch('/Admin/InspectionFrequency/LoadTable?' + params.toString(), {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(result => {
+                document.getElementById('tableContainer').innerHTML = result;
+                
+                // Update search results info
+                const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                updateSearchResultsInfo(totalCount, searchTerm);
+                
+                console.log('Search completed for:', searchTerm, 'Results:', totalCount);
+            })
+            .catch(error => {
+                console.error('Search error:', error);
+                document.getElementById('tableContainer').innerHTML = 
+                    '<div class="alert alert-danger">' +
+                    '<i class="bi bi-exclamation-triangle"></i> ' +
+                    'Error searching. Please try again.' +
+                    '</div>';
+            });
+        }
+
+        function updateSearchResultsInfo(totalCount, searchTerm) {
+            const resultsSpan = document.getElementById('searchResults');
+            if (!resultsSpan) return;
+
+            if (totalCount > 0) {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.innerHTML = 
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `frequenc${totalCount === 1 ? 'y' : 'ies'} found for "<strong>${searchTerm}</strong>"`;
+                } else {
+                    resultsSpan.innerHTML = 
+                        `<span class="search-results-count">${totalCount}</span> ` +
+                        `frequenc${totalCount === 1 ? 'y' : 'ies'} found`;
+                }
+            } else {
+                if (searchTerm && searchTerm.trim().length > 0) {
+                    resultsSpan.innerHTML = `frequencies found for "<strong>${searchTerm}</strong>"`;
+                } else {
+                    resultsSpan.innerHTML = 'No frequencies found';
+                }
+            }
+        }
+
+        // Handle pagination clicks using event delegation
+        document.addEventListener('click', function(e) {
+            // Handle pagination clicks
+            if (e.target.matches('.page-btn') || e.target.closest('.page-btn')) {
+                e.preventDefault();
+                
+                const pageBtn = e.target.matches('.page-btn') ? e.target : e.target.closest('.page-btn');
+                
+                if (pageBtn.closest('.disabled')) {
+                    console.log('Pagination button is disabled, ignoring click');
+                    return false;
+                }
+                
+                const pageIndex = pageBtn.dataset.page;
+                console.log('InspectionFrequency pagination clicked: Page', pageIndex);
+                
+                // Show loading state
+                document.getElementById('tableContainer').innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>';
+                
+                const params = new URLSearchParams({
+                    pageIndex: pageIndex,
+                    pageSize: currentPageSize,
+                    searchTerm: currentSearchTerm || ''
+                });
+
+                fetch('/Admin/InspectionFrequency/LoadTable?' + params.toString(), {
+                    method: 'GET',
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.text())
+                .then(result => {
+                    document.getElementById('tableContainer').innerHTML = result;
+                    console.log('Successfully loaded InspectionFrequency page', pageIndex);
+                    
+                    // Scroll to table top for better UX
+                    document.getElementById('tableContainer').scrollIntoView({ behavior: 'smooth' });
+                })
+                .catch(error => {
+                    console.error('Error loading InspectionFrequency table:', error);
+                    document.getElementById('tableContainer').innerHTML = 
+                        '<div class="alert alert-danger">' +
+                        '<i class="bi bi-exclamation-triangle"></i> ' +
+                        'Error loading data. Please refresh the page and try again.' +
+                        '</div>';
+                });
+            }
+
+            // Handle delete forms
+            if (e.target.matches('.delete-form button[type="submit"]') || e.target.closest('.delete-form button[type="submit"]')) {
+                e.preventDefault();
+                
+                const submitBtn = e.target.matches('button[type="submit"]') ? e.target : e.target.closest('button[type="submit"]');
+                const form = submitBtn.closest('.delete-form');
+                
+                if (!form) return;
+
+                const confirmMessage = form.dataset.confirm;
+                if (!confirm(confirmMessage)) {
+                    return false;
+                }
+                
+                const formData = new FormData(form);
+                
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        // Show success message
+                        const alerts = document.querySelectorAll('.alert');
+                        alerts.forEach(alert => alert.remove());
+                        
+                        const successAlert = document.createElement('div');
+                        successAlert.className = 'alert alert-success alert-dismissible fade show mt-3';
+                        successAlert.setAttribute('role', 'alert');
+                        successAlert.innerHTML = 
+                            '<i class="bi bi-check-circle-fill"></i> ' + result.message +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                        
+                        const headerRow = document.querySelector('.asset-header-row');
+                        headerRow.insertAdjacentElement('afterend', successAlert);
+                        
+                        // Reload table via fetch (stay on same page)
+                        const activePageBtn = document.querySelector('.pagination .page-item.active .page-btn');
+                        const currentPage = activePageBtn ? activePageBtn.dataset.page : 1;
+                        
+                        const params = new URLSearchParams({
+                            pageIndex: currentPage,
+                            pageSize: currentPageSize,
+                            searchTerm: currentSearchTerm || ''
+                        });
+
+                        fetch('/Admin/InspectionFrequency/LoadTable?' + params.toString(), {
+                            method: 'GET',
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('tableContainer').innerHTML = data;
+                            console.log('InspectionFrequency table reloaded after delete');
+                            
+                            // Update search results info
+                            const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                            const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                            updateSearchResultsInfo(totalCount, currentSearchTerm);
+                        })
+                        .catch(error => {
+                            // Fallback to page 1 if current page fails
+                            const fallbackParams = new URLSearchParams({
+                                pageIndex: 1,
+                                pageSize: currentPageSize,
+                                searchTerm: currentSearchTerm || ''
+                            });
+
+                            fetch('/Admin/InspectionFrequency/LoadTable?' + fallbackParams.toString())
+                                .then(response => response.text())
+                                .then(data => {
+                                    document.getElementById('tableContainer').innerHTML = data;
+                                    const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                                    const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                                    updateSearchResultsInfo(totalCount, currentSearchTerm);
+                                });
+                        });
+                    } else {
+                        // Check if it requires confirmation for force delete
+                        if (result.requiresConfirmation) {
+                            showEnhancedFrequencyDeleteDialog(result);
+                        } else {
+                            // Show regular warning message
+                            const alerts = document.querySelectorAll('.alert');
+                            alerts.forEach(alert => alert.remove());
+                            
+                            const warningAlert = document.createElement('div');
+                            warningAlert.className = 'alert alert-warning alert-dismissible fade show mt-3';
+                            warningAlert.setAttribute('role', 'alert');
+                            warningAlert.innerHTML = 
+                                '<i class="bi bi-exclamation-triangle-fill"></i> ' + result.message +
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                            
+                            const headerRow = document.querySelector('.asset-header-row');
+                            headerRow.insertAdjacentElement('afterend', warningAlert);
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error deleting inspection frequency:', error);
+                    const alerts = document.querySelectorAll('.alert');
+                    alerts.forEach(alert => alert.remove());
+                    
+                    const errorAlert = document.createElement('div');
+                    errorAlert.className = 'alert alert-danger alert-dismissible fade show mt-3';
+                    errorAlert.setAttribute('role', 'alert');
+                    errorAlert.innerHTML = 
+                        '<i class="bi bi-exclamation-triangle-fill"></i> Error deleting inspection frequency. Please try again.' +
+                        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                    
+                    const headerRow = document.querySelector('.asset-header-row');
+                    headerRow.insertAdjacentElement('afterend', errorAlert);
+                });
+            }
+        });
+
+        // Enhanced delete dialog with detailed information for inspection frequencies
+        function showEnhancedFrequencyDeleteDialog(result) {
+            const relatedData = result.relatedData || {};
+            
+            let detailsHtml = `
+                <div class="related-data-container">
+                    <h6 class="related-data-title"><i class="bi bi-info-circle text-primary"></i> Related Data Details:</h6>
+                    <div class="related-data-grid">
+                        <div class="data-item">
+                            <span class="data-label">Total Inspections:</span>
+                            <span class="data-value">${relatedData.inspectionCount || 0}</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">First Inspection:</span>
+                            <span class="data-value">${relatedData.firstInspectionDate || 'N/A'}</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Last Inspection:</span>
+                            <span class="data-value">${relatedData.lastInspectionDate || 'N/A'}</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Affected Assets:</span>
+                            <span class="data-value">${relatedData.totalAffectedAssets || 0} asset(s)</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Assigned Employees:</span>
+                            <span class="data-value">${relatedData.totalAssignedEmployees || 0} employee(s)</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Checklist Items:</span>
+                            <span class="data-value">${relatedData.checklistItemsCount || 0} item(s)</span>
+                        </div>
+                    </div>
+                    
+                    ${relatedData.affectedAssets && relatedData.affectedAssets.length > 0 ? 
+                        `<div class="affected-items-section">
+                            <strong class="section-title">Affected Assets:</strong>
+                            <div class="items-list">
+                                ${relatedData.affectedAssets.map(asset => `<span class="item-tag">${asset}</span>`).join('')}
+                                ${relatedData.totalAffectedAssets > relatedData.affectedAssets.length ? 
+                                    `<span class="more-items">... and ${relatedData.totalAffectedAssets - relatedData.affectedAssets.length} more</span>` : ''}
+                            </div>
+                        </div>` : ''
+                    }
+
+                    ${relatedData.assignedEmployees && relatedData.assignedEmployees.length > 0 ? 
+                        `<div class="affected-items-section">
+                            <strong class="section-title">Assigned Employees:</strong>
+                            <div class="items-list">
+                                ${relatedData.assignedEmployees.map(emp => `<span class="item-tag">${emp}</span>`).join('')}
+                                ${relatedData.totalAssignedEmployees > relatedData.assignedEmployees.length ? 
+                                    `<span class="more-items">... and ${relatedData.totalAssignedEmployees - relatedData.assignedEmployees.length} more</span>` : ''}
+                            </div>
+                        </div>` : ''
+                    }
+                </div>
+                
+                <div class="options-container">
+                    <h6 class="options-title"><i class="bi bi-exclamation-triangle text-warning"></i> You have two options:</h6>
+                    <div class="action-buttons">
+                        <button type="button" class="btn btn-info btn-action" onclick="showManageFrequencyRelatedData('${result.frequencyId}', '${result.frequencyName}')">
+                            <i class="bi bi-list-check"></i> 
+                            <span class="btn-text">Show me what to delete first</span>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-action" onclick="confirmFrequencyForceDelete('${result.frequencyId}', '${result.frequencyName}')">
+                            <i class="bi bi-trash"></i> 
+                            <span class="btn-text">Force delete everything</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Create modal dialog
+            const modalHtml = `
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-responsive">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-warning">
+                                <h5 class="modal-title">
+                                    <i class="bi bi-exclamation-triangle"></i> 
+                                    <span class="title-text">Cannot Delete: ${result.frequencyName}</span>
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-responsive">
+                                <div class="alert-message">${result.message}</div>
+                                ${detailsHtml}
+                            </div>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Remove existing modal and add new one
+            const existingModal = document.getElementById('deleteModal');
+            if (existingModal) existingModal.remove();
+            
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+            
+            // Show modal using Bootstrap
+            if (window.bootstrap?.Modal) {
+                const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+                modal.show();
+            }
+        }
+
+        // Show what needs to be managed first for inspection frequencies
+        function showManageFrequencyRelatedData(frequencyId, frequencyName) {
+            const deleteModal = document.getElementById('deleteModal');
+            if (deleteModal && window.bootstrap?.Modal) {
+                const modal = bootstrap.Modal.getInstance(deleteModal);
+                if (modal) modal.hide();
+            }
+            
+            const managementOptionsHtml = `
+                <div class="modal fade" id="manageModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-responsive">
+                        <div class="modal-content">
+                            <div class="modal-header modal-header-info">
+                                <h5 class="modal-title">
+                                    <i class="bi bi-list-check"></i> 
+                                    <span class="title-text">Manage Related Data: ${frequencyName}</span>
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body modal-body-responsive">
+                                <div class="manage-intro">You need to manage the following before deleting this inspection frequency:</div>
+                                <div class="management-options">
+                                    <a href="/Admin/AssetInspection?frequencyId=${frequencyId}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-clipboard-check"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Manage Asset Inspections</strong>
+                                            <small class="option-description">View and reassign inspections using this frequency</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                    <a href="/Admin/Asset?frequencyId=${frequencyId}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-box"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Manage Related Assets</strong>
+                                            <small class="option-description">View assets that have inspections with this frequency</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-chevron-right"></i>
+                                        </div>
+                                    </a>
+                                    <div class="management-option alternative-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-info-circle text-info"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Alternative: Force Delete</strong>
+                                            <small class="option-description">Or you can force delete to remove all related data automatically</small>
+                                            <button type="button" class="btn btn-danger btn-sm mt-2 force-delete-btn" onclick="confirmFrequencyForceDelete('${frequencyId}', '${frequencyName}')">
+                                                <i class="bi bi-trash"></i> Force Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            const existingModal = document.getElementById('manageModal');
+            if (existingModal) existingModal.remove();
+            
+            document.body.insertAdjacentHTML('beforeend', managementOptionsHtml);
+            
+            if (window.bootstrap?.Modal) {
+                const modal = new bootstrap.Modal(document.getElementById('manageModal'));
+                modal.show();
+            }
+        }
+
+        // Confirm force delete for inspection frequencies
+        function confirmFrequencyForceDelete(frequencyId, frequencyName) {
+            // Hide all modals
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (window.bootstrap?.Modal) {
+                    const modalInstance = bootstrap.Modal.getInstance(modal);
+                    if (modalInstance) modalInstance.hide();
+                }
+            });
+            
+            const forceDeleteConfirm = confirm(
+                `FINAL WARNING: This will permanently delete:\n\n` +
+                `• Inspection Frequency: ${frequencyName}\n` +
+                `• All inspections using this frequency\n` +
+                `• All inspection checklist data\n` +
+                `• All associated inspection records\n\n` +
+                `This action CANNOT be undone!\n\n` +
+                `Do you want to proceed?`
+            );
+            
+            if (forceDeleteConfirm) {
+                // Perform force delete
+                const formData = new FormData();
+                formData.append('id', frequencyId);
+                
+                const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+                if (tokenInput) {
+                    formData.append('__RequestVerificationToken', tokenInput.value);
+                }
+
+                fetch('/Admin/InspectionFrequency/ForceDelete', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(response => response.json())
+                .then(forceResult => {
+                    if (forceResult.success) {
+                        // Show success message
+                        const alerts = document.querySelectorAll('.alert');
+                        alerts.forEach(alert => alert.remove());
+                        
+                        const warningAlert = document.createElement('div');
+                        warningAlert.className = 'alert alert-warning alert-dismissible fade show mt-3';
+                        warningAlert.setAttribute('role', 'alert');
+                        warningAlert.innerHTML = 
+                            '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                        
+                        const headerRow = document.querySelector('.asset-header-row');
+                        headerRow.insertAdjacentElement('afterend', warningAlert);
+                        
+                        // Reload table
+                        const activePageBtn = document.querySelector('.pagination .page-item.active .page-btn');
+                        const currentPage = activePageBtn ? activePageBtn.dataset.page : 1;
+                        
+                        const params = new URLSearchParams({
+                            pageIndex: currentPage,
+                            pageSize: currentPageSize,
+                            searchTerm: currentSearchTerm || ''
+                        });
+
+                        fetch('/Admin/InspectionFrequency/LoadTable?' + params.toString(), {
+                            method: 'GET',
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            document.getElementById('tableContainer').innerHTML = data;
+                            const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                            const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                            updateSearchResultsInfo(totalCount, currentSearchTerm);
+                        })
+                        .catch(error => {
+                            const fallbackParams = new URLSearchParams({
+                                pageIndex: 1,
+                                pageSize: currentPageSize,
+                                searchTerm: currentSearchTerm || ''
+                            });
+
+                            fetch('/Admin/InspectionFrequency/LoadTable?' + fallbackParams.toString())
+                                .then(response => response.text())
+                                .then(data => {
+                                    document.getElementById('tableContainer').innerHTML = data;
+                                    const tableWrapper = document.querySelector('#tableContainer .asset-table-wrapper');
+                                    const totalCount = tableWrapper ? parseInt(tableWrapper.getAttribute('data-total-count')) || 0 : 0;
+                                    updateSearchResultsInfo(totalCount, currentSearchTerm);
+                                });
+                        });
+                    } else {
+                        const alerts = document.querySelectorAll('.alert');
+                        alerts.forEach(alert => alert.remove());
+                        
+                        const errorAlert = document.createElement('div');
+                        errorAlert.className = 'alert alert-danger alert-dismissible fade show mt-3';
+                        errorAlert.setAttribute('role', 'alert');
+                        errorAlert.innerHTML = 
+                            '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
+                            '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                        
+                        const headerRow = document.querySelector('.asset-header-row');
+                        headerRow.insertAdjacentElement('afterend', errorAlert);
+                    }
+                })
+                .catch(error => {
+                    const alerts = document.querySelectorAll('.alert');
+                    alerts.forEach(alert => alert.remove());
+                    
+                    const errorAlert = document.createElement('div');
+                    errorAlert.className = 'alert alert-danger alert-dismissible fade show mt-3';
+                    errorAlert.setAttribute('role', 'alert');
+                    errorAlert.innerHTML = 
+                        '<i class="bi bi-exclamation-triangle-fill"></i> Error performing force delete. Please try again.' +
+                        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                    
+                    const headerRow = document.querySelector('.asset-header-row');
+                    headerRow.insertAdjacentElement('afterend', errorAlert);
+                });
+            }
+        }
+
+        // Make functions globally available
+        window.showManageFrequencyRelatedData = showManageFrequencyRelatedData;
+        window.confirmFrequencyForceDelete = confirmFrequencyForceDelete;
+
+        console.log('InspectionFrequency search and pagination system initialized');
+        console.log('Current search term:', currentSearchTerm);
+        console.log('Current page size:', currentPageSize);
+    </script>
+}
+
+<style>
+/* InspectionFrequency Search Section Styles */
+.search-section {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-input-group {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+    margin-right: 1rem;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 2rem 0.75rem 2.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 3px;
+    transition: color 0.2s ease;
+}
+
+.clear-search-btn:hover {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+}
+
+.search-info {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.search-results-count {
+    font-weight: 500;
+    color: #333;
+    margin-right: 0.2rem;
+}
+
+/* Responsive Modal Styles */
+.modal-dialog-responsive {
+    max-width: 95vw;
+    margin: 0.5rem auto;
+}
+
+/* Modal Header Styles */
+.modal-header-warning {
+    background: linear-gradient(135deg, #ffc107, #fd7e14);
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+.modal-header-info {
+    background: linear-gradient(135deg, #17a2b8, #007bff);
+    color: white;
+    border-bottom: none;
+    padding: 1rem 1.5rem;
+}
+
+.modal-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.title-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* Modal Body Styles */
+.modal-body-responsive {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+
+
+.alert-message {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Related Data Container */
+.related-data-container {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e9ecef;
+}
+
+.related-data-title {
+    margin-bottom: 1rem;
+    color: #495057;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.related-data-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+
+
+.data-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.data-label {
+    font-weight: 500;
+    color: #6c757d;
+    font-size: 0.875rem;
+}
+
+.data-value {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.875rem;
+}
+
+/* Affected Items Section */
+.affected-items-section {
+    margin-top: 1.25rem;
+}
+
+.section-title {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #495057;
+    font-size: 0.9rem;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.item-tag {
+    background: #e3f2fd;
+    color: #1565c0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid #bbdefb;
+}
+
+.more-items {
+    background: #fff3e0;
+    color: #ef6c00;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-style: italic;
+    border: 1px solid #ffcc02;
+}
+
+/* Options Container */
+.options-container {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 8px;
+    padding: 1.25rem;
+    border-left: 4px solid #ffc107;
+}
+
+.options-title {
+    margin-bottom: 1rem;
+    color: #856404;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+}
+
+
+
+.btn-text {
+    font-size: 0.875rem;
+}
+
+
+
+/* Management Options */
+.manage-intro {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.management-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.management-option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    gap: 1rem;
+}
+
+.management-option:hover {
+    background: #f8f9fa;
+    border-color: #007bff;
+    text-decoration: none;
+    color: inherit;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.alternative-option {
+    border: 2px dashed #ffc107;
+    background: #fffbf0;
+}
+
+.alternative-option:hover {
+    background: #fff8e1;
+    border-color: #ff9800;
+}
+
+.option-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 8px;
+    color: #1565c0;
+    font-size: 1.25rem;
+}
+
+.option-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.option-title {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #333;
+}
+
+.option-description {
+    display: block;
+    font-size: 0.8rem;
+    color: #6c757d;
+    line-height: 1.3;
+}
+
+.option-arrow {
+    flex-shrink: 0;
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+
+
+.force-delete-btn {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+}
+
+/* Modal Footer */
+.modal-footer-responsive {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #dee2e6;
+    background: #f8f9fa;
+}
+
+
+.btn-responsive {
+    min-width: 80px;
+    padding: 0.5rem 1rem;
+}
+
+
+
+/* Custom Scrollbar for Modal Body */
+.modal-body-responsive::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body-responsive::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.modal-body-responsive::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.modal-body-responsive::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+</style>

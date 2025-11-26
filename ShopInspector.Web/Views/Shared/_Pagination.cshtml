@@ -1,0 +1,102 @@
+@model dynamic
+
+@if (Model != null && Model.TotalPages > 1)
+{
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            <!-- Previous Page Link -->
+            <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+                <a class="page-link page-btn" 
+                   data-page="@(Model.PageIndex - 1)"
+                   href="#">
+                    <i class="bi bi-chevron-left"></i> Prev
+                </a>
+            </li>
+
+            <!-- Page Number Links -->
+            @{
+                int startPage = Math.Max(1, Model.PageIndex - 2);
+                int endPage = Math.Min(Model.TotalPages, Model.PageIndex + 2);
+            }
+
+            @if (startPage > 1)
+            {
+                <li class="page-item">
+                    <a class="page-link page-btn"
+                       data-page="1"
+                       href="#">1</a>
+                </li>
+                @if (startPage > 2)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                }
+            }
+
+            @for (int i = startPage; i <= endPage; i++)
+            {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link page-btn"
+                       data-page="@i"
+                       href="#">@i</a>
+                </li>
+            }
+
+            @if (endPage < Model.TotalPages)
+            {
+                @if (endPage < Model.TotalPages - 1)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">...</span>
+                    </li>
+                }
+                <li class="page-item">
+                    <a class="page-link page-btn"
+                       data-page="@Model.TotalPages"
+                       href="#">@Model.TotalPages</a>
+                </li>
+            }
+
+            <!-- Next Page Link -->
+            <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+                <a class="page-link page-btn"
+                   data-page="@(Model.PageIndex + 1)"
+                   href="#">
+                    Next <i class="bi bi-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Pagination Info -->
+    <div class="text-center text-muted mt-2">
+        <small>
+            @{
+                int pageSize = 3; // Default page size
+                if (ViewData["PageSize"] != null)
+                {
+                    pageSize = (int)ViewData["PageSize"];
+                }
+                else if (ViewContext.RouteData.Values.ContainsKey("pageSize"))
+                {
+                    int.TryParse(ViewContext.RouteData.Values["pageSize"]?.ToString(), out pageSize);
+                }
+                
+                int startItem = (Model.PageIndex - 1) * pageSize + 1;
+                int endItem = Math.Min(Model.PageIndex * pageSize, Model.TotalCount);
+            }
+            
+            Showing @startItem to @endItem of @Model.TotalCount entries
+        </small>
+    </div>
+}
+else if (Model != null && Model.TotalCount > 0)
+{
+    <!-- Show total count when no pagination needed -->
+    <div class="text-center text-muted mt-2">
+        <small>
+            Showing all @Model.TotalCount entries
+        </small>
+    </div>
+}

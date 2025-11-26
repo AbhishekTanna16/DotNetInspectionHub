@@ -1,14 +1,14 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using QuestPDF.Infrastructure;
+using Serilog;
+using Serilog.Events;
 using ShopInspector.Application.Interfaces;
 using ShopInspector.Application.Services;
 using ShopInspector.Infrastructure.Data;
 using ShopInspector.Infrastructure.Repositories;
 using ShopInspector.Infrastructure.Services;
-using QuestPDF.Infrastructure;
-using QuestPDF;
-using Serilog;
-using Serilog.Events;
+using ShopInspector.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel(options =>
@@ -22,6 +22,9 @@ builder.WebHost.ConfigureKestrel(options =>
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
+
 // MVC / Razor
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages(options =>
@@ -29,6 +32,8 @@ builder.Services.AddRazorPages(options =>
     // Razor Pages root is under /Views/Pages
     options.RootDirectory = "/Views/Pages";
 });
+
+
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()

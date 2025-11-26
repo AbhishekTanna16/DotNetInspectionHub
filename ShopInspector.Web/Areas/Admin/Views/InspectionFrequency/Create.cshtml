@@ -1,4 +1,4 @@
-﻿@model ShopInspector.Core.Entities.InspectionFrequency
+﻿@model ShopInspector.Web.Areas.Admin.Models.InspectionFrequencyCreateViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Add Inspection Frequency";
@@ -52,44 +52,20 @@
     <partial name="_ValidationScriptsPartial" />
     <script>
         $(document).ready(function () {
-            // Check authentication status using the new endpoint
-            async function checkAuthenticationStatus() {
-                try {
-                    const response = await fetch('/Admin/Asset/CheckAuth', {
-                        method: 'GET',
-                        credentials: 'same-origin',
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        return data.authenticated === true;
-                    }
-                    return false;
-                } catch (error) {
-                    console.error('Auth check failed:', error);
-                    return false;
-                }
-            }
-
             // Enhanced validation for InspectionFrequency Create form
             $("#createInspectionFrequencyForm").validate({
                 rules: {
                     FrequencyName: {
                         required: true,
                         minlength: 2,
-                        maxlength: 50,
-                        pattern: /^[a-zA-Z\s\-]+$/
+                        maxlength: 100
                     }
                 },
                 messages: {
                     FrequencyName: {
                         required: "Frequency Name is required",
                         minlength: "Frequency Name must be at least 2 characters",
-                        maxlength: "Frequency Name cannot exceed 50 characters",
-                        pattern: "Frequency Name can only contain letters, spaces, and hyphens"
+                        maxlength: "Frequency Name cannot exceed 100 characters"
                     }
                 },
                 errorClass: "text-danger",
@@ -100,7 +76,7 @@
                 unhighlight: function(element) {
                     $(element).removeClass("is-invalid");
                 },
-                submitHandler: async function(form) {
+                submitHandler: function(form) {
                     const submitBtn = $("#submitBtn");
                     const originalText = submitBtn.html();
                     
@@ -108,52 +84,19 @@
                     submitBtn.prop('disabled', true)
                              .html('<i class="bi bi-hourglass-split"></i> Creating...');
 
-                    try {
-                        // Check if user is still authenticated before submitting
-                        const isAuthenticated = await checkAuthenticationStatus();
-                        
-                        if (!isAuthenticated) {
-                            // Show error message and redirect to login
-                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
-                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                                .prependTo('.admin-card .admin-container');
-                            
-                            setTimeout(() => {
-                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
-                            }, 2000);
-                            return;
-                        }
-
-                        // Submit the form normally
-                        form.submit();
-                        
-                    } catch (error) {
-                        console.error('Error during form submission:', error);
-                        
-                        // Show error message
-                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
-                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                            .prependTo('.admin-card .admin-container');
-                        
-                        // Restore button state
-                        submitBtn.prop('disabled', false).html(originalText);
-                    }
+                    // Submit the form
+                    form.submit();
                 }
             });
 
-            // Custom validation method for pattern matching
-            $.validator.addMethod("pattern", function(value, element, pattern) {
-                return this.optional(element) || pattern.test(value);
-            });
-
-            // Check authentication status when page loads
-            checkAuthenticationStatus().then(isAuth => {
-                if (!isAuth) {
-                    // Show warning message
-                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
-                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                        .prependTo('.admin-card .admin-container');
-                }
+            // Add helpful input formatting for frequency name
+            $("#FrequencyName").on('input', function() {
+                let value = $(this).val();
+                // Auto-capitalize first letter of each word
+                value = value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                $(this).val(value);
             });
         });
     </script>

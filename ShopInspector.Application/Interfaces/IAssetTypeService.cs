@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace ShopInspector.Application.Interfaces;
 public interface IAssetTypeService
 {
-    Task<List<AssetType>> GetAllAsync();
+    Task<PaginatedList<AssetType>> GetAllAsync(int? pageIndex, int? pageSize);
     Task<AssetType?> GetByIdAsync(int id);
     Task AddAsync(AssetType entity);
+    Task<PaginatedList<AssetType>> SerchAssetTypeAsync(string seachterm, int? pageIndex, int? pageSize);
     Task UpdateAsync(AssetType entity);
     Task DeleteAsync(int id);
 }

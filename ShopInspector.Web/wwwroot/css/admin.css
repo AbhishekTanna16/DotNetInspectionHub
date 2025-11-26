@@ -105,6 +105,438 @@
     }
 }
 
+/* ===== SEARCH BAR STYLES ===== */
+.search-section {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 0 0 1rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+    width: 100%;
+}
+
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.search-input-group {
+    position: relative;
+    flex: 1 1 auto;
+    min-width: 200px;
+    max-width: 500px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1rem;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.25rem;
+    border: 2px solid #e9ecef;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    background-color: #fafafa;
+    transition: all 0.15s ease;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+    color: #000000 !important; /* FIXED: Force black text color */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1), inset 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #000000 !important; /* FIXED: Ensure black text on focus */
+}
+
+.search-input::placeholder {
+    color: #adb5bd;
+    font-style: italic;
+}
+
+/* ADDITIONAL FIX: Ensure all search input variants have black text */
+input[type="search"],
+input[type="text"].search-input,
+.form-control.search-input {
+    color: #000000 !important;
+}
+
+/* FIX: Override any Bootstrap or browser defaults */
+.search-input:-webkit-autofill,
+.search-input:-webkit-autofill:hover,
+.search-input:-webkit-autofill:focus,
+.search-input:-webkit-autofill:active {
+    -webkit-text-fill-color: #000000 !important;
+    -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #6c757d;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    z-index: 2;
+    transition: all 0.15s ease;
+    display: none;
+}
+
+.clear-search-btn:hover {
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.search-input:not(:placeholder-shown) + .clear-search-btn {
+    display: block;
+}
+
+.search-info {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.search-info .bi {
+    font-size: 1rem;
+    color: #667eea;
+}
+
+.search-results-count {
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Mobile Responsive Styles for Search */
+@media (max-width: 768px) {
+    .search-wrapper {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .search-input-group {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .search-input {
+        padding: 0.875rem 1rem 0.875rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    .search-info {
+        align-self: stretch;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-section {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .search-input {
+        padding: 1rem 1rem 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    .search-info {
+        font-size: 0.8rem;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .search-input {
+        border-color: #000;
+    }
+
+    .search-input:focus {
+        border-color: #0066cc;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .search-input,
+    .clear-search-btn {
+        transition: none;
+    }
+}
+
+/* Dark mode support (if implemented) */
+@media (prefers-color-scheme: dark) {
+    .search-section {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+
+    .search-input {
+        background: #1a202c;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .search-input::placeholder {
+        color: #a0aec0;
+    }
+
+    .search-icon,
+    .clear-search-btn {
+        color: #a0aec0;
+    }
+
+    .search-info {
+        color: #e2e8f0;
+    }
+}
+
+/* ===== MOBILE ASSET CARD STYLES ===== */
+.asset-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.asset-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Asset Card Header */
+.asset-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 1rem 0.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #e9ecef;
+}
+
+.asset-card-title {
+    flex: 1;
+    min-width: 0;
+}
+
+.asset-card-title h6 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+    word-wrap: break-word;
+}
+
+.asset-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.asset-card-qr {
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+.asset-card-qr .btn {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+/* Asset Card Body */
+.asset-card-body {
+    padding: 0.75rem 1rem;
+}
+
+.asset-card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #6c757d;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.detail-value {
+    color: #333;
+    flex: 1;
+    word-wrap: break-word;
+}
+
+/* Asset Card Actions */
+.asset-card-actions {
+    padding: 0.75rem 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+}
+
+.mobile-action-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.mobile-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    min-height: 36px;
+}
+
+.mobile-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-action-form {
+    margin: 0;
+    display: contents;
+}
+
+/* Mobile info notice */
+.mobile-info-notice {
+    background-color: #f8f9fa !important;
+    border-color: #dee2e6 !important;
+}
+
+/* Responsive adjustments for mobile cards */
+@media (max-width: 576px) {
+    .asset-card {
+        border-radius: 8px;
+        margin-bottom: 0.75rem;
+    }
+    
+    .asset-card-header {
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+    
+    .asset-card-title h6 {
+        font-size: 0.9rem;
+    }
+    
+    .asset-card-qr {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+    
+    .asset-card-body {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .detail-row {
+        font-size: 0.8rem;
+    }
+    
+    .detail-label {
+        min-width: 80px;
+        font-size: 0.75rem;
+    }
+    
+    .asset-card-actions {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .mobile-action-grid {
+        gap: 0.375rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .mobile-action-btn {
+        padding: 0.45rem 0.5rem;
+        font-size: 0.75rem;
+        min-height: 32px;
+    }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 400px) {
+    .asset-card-title h6 {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .mobile-action-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .mobile-action-btn {
+        width: 100%;
+    }
+    
+    .detail-label {
+        min-width: 70px;
+        font-size: 0.7rem;
+    }
+    
+    .detail-value {
+        font-size: 0.75rem;
+    }
+}
+
 /* ===== LAYOUT AND HEADER FIXES ===== */
 
 /* Sidebar Layout */
@@ -1276,324 +1708,590 @@
 
 /* ===== CRITICAL FIX: ASSET CHECKLIST CARD BUTTON ICON SIZES ===== */
 
-/* Button group in cards - ICON SIZE FIX */
+/* ===== ENHANCED CHECKLIST ITEM LAYOUT FOR MOBILE RESPONSIVE DESIGN ===== */
+
+/* Base styling for checklist items */
+.checklist-item {
+    padding: 12px !important;
+    border-radius: 6px !important;
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    margin-bottom: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 12px !important;
+}
+
+.checklist-item:hover {
+    background-color: #e3f2fd !important;
+    border-color: #2196f3 !important;
+}
+
+/* Checklist info section */
+.checklist-info {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+}
+
+.checklist-name {
+    font-weight: 500 !important;
+    margin-bottom: 4px !important;
+    font-size: 0.875rem !important;
+    line-height: 1.25 !important;
+    color: #333 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.checklist-name .bi-check-square {
+    color: #198754 !important;
+    font-size: 0.875rem !important;
+    flex-shrink: 0 !important;
+}
+
+.checklist-info small {
+    color: #6c757d !important;
+    font-size: 0.75rem !important;
+}
+
+/* Status and actions container */
+.checklist-status-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Status badge */
+.checklist-status-actions .badge {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+/* Button group container */
 .checklist-item .btn-group {
     display: flex !important;
-    gap: 2px !important;
-}
-
-.checklist-item .btn-group .btn {
-    padding: 4px 6px !important;
-    font-size: 0.7rem !important;
-    line-height: 1 !important;
-    min-height: 26px !important;
-    width: 28px !important;
-    height: 26px !important;
-    display: inline-flex !important;
+    gap: 4px !important;
+    flex-shrink: 0 !important;
     align-items: center !important;
-    justify-content: center !important;
-    border-radius: 4px !important;
-    transition: all 0.15s ease !important;
-    box-sizing: border-box !important;
 }
 
-/* CRITICAL: ICON SIZE CONTROL FOR CHECKLIST CARDS */
-.checklist-item .btn-group .btn i,
-.checklist-item .btn-group .btn .bi {
-    font-size: 0.75rem !important;
-    line-height: 1 !important;
-    width: auto !important;
-    height: auto !important;
-    display: inline-block !important;
-    vertical-align: middle !important;
-}
-
-/* Specific icon size fixes with class targeting */
-.checklist-item .btn-group .btn .bi-pencil,
-.checklist-item .btn-group .btn .bi-pencil-square,
-.checklist-item .btn-group .btn i[class*="pencil"] {
-    font-size: 0.7rem !important;
-}
-
-.checklist-item .btn-group .btn .bi-trash,
-.checklist-item .btn-group .btn .bi-trash3,
-.checklist-item .btn-group .btn i[class*="trash"] {
-    font-size: 0.7rem !important;
-}
-
-/* Legacy btn-sm class override for checklist cards */
-.checklist-item .btn-sm,
-.checklist-item .btn.btn-sm {
-    --bs-btn-padding-y: 4px !important;
-    --bs-btn-padding-x: 6px !important;
-    --bs-btn-font-size: 0.7rem !important;
-    min-height: 26px !important;
-    width: 28px !important;
-    height: 26px !important;
-    padding: 4px 6px !important;
-    font-size: 0.7rem !important;
-}
-
-.checklist-item .btn-sm i,
-.checklist-item .btn-sm .bi,
-.checklist-item .btn.btn-sm i,
-.checklist-item .btn.btn-sm .bi {
-    font-size: 0.7rem !important;
-}
-
-/* ===== RESPONSIVE ADJUSTMENTS FOR CARD VIEW - ULTRA ENHANCED ICON FIXES ===== */
-@media (max-width: 991px) {
-    .asset-header-actions {
-        flex-direction: row !important; /* KEEP HORIZONTAL ON TABLET */
-        gap: 0.5rem !important;
-        flex-wrap: nowrap !important;
-    }
-    
-    .asset-header-actions .btn {
-        flex-shrink: 0 !important;
+/* DESKTOP & TABLET ACTION BUTTONS (768px and up) */
+@media (min-width: 768px) {
+    .checklist-item .btn-group .btn-action {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+        min-height: 32px !important;
+        min-width: 32px !important;
+        border-radius: 4px !important;
+        border: 1px solid !important;
+        transition: all 0.15s ease !important;
+        text-decoration: none !important;
+        gap: 4px !important;
         white-space: nowrap !important;
     }
     
-    /* TABLET ICON SIZE FIX - AGGRESSIVE OVERRIDE */
-    .checklist-item .btn-group .btn {
-        width: 24px !important;
-        height: 22px !important;
-        padding: 2px 4px !important;
-        min-height: 22px !important;
-        font-size: 0.6rem !important;
-    }
-    
-    .checklist-item .btn-group .btn i,
-    .checklist-item .btn-group .btn .bi,
-    .checklist-item .btn-group .btn [class*="bi-"] {
-        font-size: 0.6rem !important;
+    .checklist-item .btn-group .btn-action .bi {
+        font-size: 0.75rem !important;
         line-height: 1 !important;
-        width: auto !important;
-        height: auto !important;
+        flex-shrink: 0 !important;
     }
     
-    .checklist-item .btn-sm,
-    .checklist-item .btn.btn-sm {
-        --bs-btn-padding-y: 2px !important;
-        --bs-btn-padding-x: 4px !important;
-        --bs-btn-font-size: 0.6rem !important;
-        min-height: 22px !important;
-        width: 24px !important;
-        height: 22px !important;
-        padding: 2px 4px !important;
-        font-size: 0.6rem !important;
-    }
-    
-    .checklist-item .btn-sm i,
-    .checklist-item .btn-sm .bi,
-    .checklist-item .btn.btn-sm i,
-    .checklist-item .btn.btn-sm .bi {
-        font-size: 0.6rem !important;
+    /* Desktop hover effects */
+    .checklist-item .btn-group .btn-action:hover {
+        transform: translateY(-1px) !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
     }
 }
 
+/* MOBILE RESPONSIVE DESIGN (up to 767px) */
 @media (max-width: 767px) {
+    /* Mobile layout adjustments */
     .checklist-item {
-        padding: 10px;
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+        padding: 10px !important;
+    }
+    
+    .checklist-info {
+        flex: none !important;
+        width: 100% !important;
     }
     
     .checklist-status-actions {
-        justify-content: space-between;
-        width: 100%;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
     }
     
+    /* Mobile badge styling */
+    .checklist-status-actions .badge {
+        font-size: 0.65rem !important;
+        padding: 3px 6px !important;
+    }
+    
+    /* Mobile button group - horizontal layout */
     .checklist-item .btn-group {
-        flex: 1;
-        justify-content: flex-end;
-        gap: 2px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 6px !important;
+        flex-shrink: 0 !important;
     }
     
-    .card-header h6 {
-        font-size: 0.9rem;
+    /* Mobile action buttons */
+    .checklist-item .btn-group .btn-action {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 8px 12px !important;
+        font-size: 0.75rem !important;
+        min-height: 36px !important;
+        border-radius: 6px !important;
+        border: 1px solid !important;
+        transition: all 0.15s ease !important;
+        text-decoration: none !important;
+        flex: 1 1 auto !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
     }
     
-    .badge.bg-info {
-        font-size: 0.65rem;
-    }
-    
-    /* Stack cards on mobile */
-    .col-lg-6.col-xl-4 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-    
-    /* MOBILE ICON SIZE FIX - ULTRA AGGRESSIVE */
-    .checklist-item .btn-group .btn {
-        width: 22px !important;
-        height: 20px !important;
-        padding: 1px 2px !important;
-        min-height: 20px !important;
-        border-radius: 3px !important;
-        font-size: 0.55rem !important;
-    }
-    
-    .checklist-item .btn-group .btn i,
-    .checklist-item .btn-group .btn .bi,
-    .checklist-item .btn-group .btn [class*="bi-"] {
-        font-size: 0.55rem !important;
+    /* Mobile icon sizing */
+    .checklist-item .btn-group .btn-action .bi {
+        font-size: 0.75rem !important;
         line-height: 1 !important;
-        width: auto !important;
-        height: auto !important;
-        vertical-align: baseline !important;
+        flex-shrink: 0 !important;
     }
     
-    /* Override Bootstrap btn-sm for mobile */
-    .checklist-item .btn-sm,
+    /* Mobile specific button colors - ensure visibility */
+    .checklist-item .btn-group .btn-action.btn-outline-primary {
+        color: #0d6efd !important;
+        border-color: #0d6efd !important;
+        background-color: #fff !important;
+    }
+    
+    .checklist-item .btn-group .btn-action.btn-outline-primary:hover,
+    .checklist-item .btn-group .btn-action.btn-outline-primary:active {
+        color: #fff !important;
+        background-color: #0d6efd !important;
+        border-color: #0d6efd !important;
+    }
+    
+    .checklist-item .btn-group .btn-action.btn-outline-danger {
+        color: #dc3545 !important;
+        border-color: #dc3545 !important;
+        background-color: #fff !important;
+    }
+    
+    .checklist-item .btn-group .btn-action.btn-outline-danger:hover,
+    .checklist-item .btn-group .btn-action.btn-outline-danger:active {
+        color: #fff !important;
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+    }
+}
+
+/* SMALL MOBILE (up to 480px) */
+@media (max-width: 480px) {
+    .checklist-item {
+        padding: 6px !important;
+    }
+    
+    .checklist-name {
+        font-size: 0.75rem !important;
+    }
+    
+    .checklist-info small {
+        font-size: 0.65rem !important;
+    }
+    
+    /* Extra small mobile buttons */
+    .checklist-item .btn-group .btn-action {
+        padding: 5px 6px !important;
+        font-size: 0.65rem !important;
+        min-height: 28px !important;
+        border-radius: 3px !important;
+    }
+    
+    .checklist-item .btn-group .btn-action .bi {
+        font-size: 0.65rem !important;
+    }
+}
+
+/* ===== LEGACY BOOTSTRAP BUTTON OVERRIDES FOR COMPATIBILITY ===== */
+
+/* Override any lingering btn-sm classes in checklist cards */
+.checklist-item .btn.btn-sm {
+    --bs-btn-padding-y: 6px !important;
+    --bs-btn-padding-x: 10px !important;
+    --bs-btn-font-size: 0.75rem !important;
+    min-height: 32px !important;
+    line-height: 1.25 !important;
+}
+
+.checklist-item .btn.btn-sm .bi {
+    font-size: 0.75rem !important;
+}
+
+/* Mobile overrides for legacy btn-sm */
+@media (max-width: 767px) {
     .checklist-item .btn.btn-sm {
-        --bs-btn-padding-y: 1px !important;
-        --bs-btn-padding-x: 2px !important;
-        --bs-btn-font-size: 0.55rem !important;
-        min-height: 20px !important;
-        width: 22px !important;
-        height: 20px !important;
-        padding: 1px 2px !important;
-        font-size: 0.55rem !important;
-    }
-    
-    .checklist-item .btn-sm i,
-    .checklist-item .btn-sm .bi,
-    .checklist-item .btn.btn-sm i,
-    .checklist-item .btn.btn-sm .bi {
-        font-size: 0.55rem !important;
-    }
-    
-    /* Specific icon adjustments for mobile - ENHANCED */
-    .checklist-item .btn-group .btn .bi-pencil,
-    .checklist-item .btn-group .btn .bi-pencil-square,
-    .checklist-item .btn-group .btn i[class*="pencil"] {
-        font-size: 0.5rem !important;
-    }
-    
-    .checklist-item .btn-group .btn .bi-trash,
-    .checklist-item .btn-group .btn .bi-trash3,
-    .checklist-item .btn-group .btn i[class*="trash"] {
-        font-size: 0.5rem !important;
+        --bs-btn-padding-y: 8px !important;
+        --bs-btn-padding-x: 12px !important;
+        --bs-btn-font-size: 0.75rem !important;
+        min-height: 36px !important;
+        flex: 1 1 auto !important;
     }
 }
 
 @media (max-width: 480px) {
-    .checklist-name {
-        font-size: 0.85rem;
+    .checklist-item .btn.btn-sm {
+        --bs-btn-padding-y: 6px !important;
+        --bs-btn-padding-x: 8px !important;
+        --bs-btn-font-size: 0.7rem !important;
+        min-height: 32px !important;
+    }
+}
+
+/* ===== FORM BUTTON OVERRIDE PREVENTION ===== */
+/* Prevent form button styles from affecting checklist card buttons */
+.checklist-item .btn-group .btn-action {
+    background: transparent !important;
+}
+
+.checklist-item .btn-group .btn-action:not(:hover):not(:focus):not(:active) {
+    background: transparent !important;
+}
+
+/* ===== CARD LAYOUT RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 767px) {
+    /* Stack cards full width on mobile */
+    .col-lg-6.col-xl-4 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* Card header adjustments */
+    .card-header h6 {
+        font-size: 0.9rem !important;
+        margin-bottom: 4px !important;
     }
     
     .card-header small {
-        font-size: 0.7rem;
+        font-size: 0.75rem !important;
     }
     
+    .card-header .badge {
+        font-size: 0.65rem !important;
+        padding: 3px 6px !important;
+    }
+    
+    /* Card footer adjustments */
     .card-footer small {
-        font-size: 0.7rem;
-    }
-    
-    /* VERY SMALL MOBILE - ULTRA COMPACT ICONS */
-    .checklist-item .btn-group .btn {
-        width: 20px !important;
-        height: 18px !important;
-        padding: 0px 1px !important;
-        min-height: 18px !important;
-        border-radius: 2px !important;
-        font-size: 0.45rem !important;
-    }
-    
-    .checklist-item .btn-group .btn i,
-    .checklist-item .btn-group .btn .bi,
-    .checklist-item .btn-group .btn [class*="bi-"] {
-        font-size: 0.45rem !important;
-        line-height: 1 !important;
-        width: auto !important;
-        height: auto !important;
-    }
-    
-    .checklist-item .btn-sm,
-    .checklist-item .btn.btn-sm {
-        --bs-btn-padding-y: 0px !important;
-        --bs-btn-padding-x: 1px !important;
-        --bs-btn-font-size: 0.45rem !important;
-        min-height: 18px !important;
-        width: 20px !important;
-        height: 18px !important;
-        padding: 0px 1px !important;
-        font-size: 0.45rem !important;
-    }
-    
-    .checklist-item .btn-sm i,
-    .checklist-item .btn-sm .bi,
-    .checklist-item .btn.btn-sm i,
-    .checklist-item .btn.btn-sm .bi {
-        font-size: 0.45rem !important;
-    }
-    
-    /* Ultra-small specific icons */
-    .checklist-item .btn-group .btn .bi-pencil,
-    .checklist-item .btn-group .btn .bi-pencil-square,
-    .checklist-item .btn-group .btn .bi-trash,
-    .checklist-item .btn-group .btn .bi-trash3,
-    .checklist-item .btn-group .btn i[class*="pencil"],
-    .checklist-item .btn-group .btn i[class*="trash"] {
-        font-size: 0.4rem !important;
-    }
-}
-
-/* UNIVERSAL BOOTSTRAP ICON OVERRIDE - ABSOLUTE OVERRIDE */
-.checklist-item .btn-group .btn i[class^="bi-"],
-.checklist-item .btn-group .btn i[class*=" bi-"],
-.checklist-item .btn i[class^="bi-"],
-.checklist-item .btn i[class*=" bi-"],
-.checklist-item [class^="bi-"],
-.checklist-item [class*=" bi-"] {
-    font-size: inherit !important;
-    line-height: 1 !important;
-    vertical-align: baseline !important;
-    width: auto !important;
-    height: auto !important;
-}
-
-/* Additional override for any lingering Bootstrap conflicts - ENHANCED */
-@media (max-width: 991px) {
-    .checklist-item .btn-group .btn[class*="btn-"] i,
-    .checklist-item .btn-group .btn[class*="btn-"] .bi,
-    .checklist-item .btn[class*="btn-sm"] i,
-    .checklist-item .btn[class*="btn-sm"] .bi,
-    .checklist-item .btn-outline-primary i,
-    .checklist-item .btn-outline-primary .bi,
-    .checklist-item .btn-outline-danger i,
-    .checklist-item .btn-outline-danger .bi {
-        font-size: 0.6rem !important;
-        width: auto !important;
-        height: auto !important;
-        line-height: 1 !important;
-        vertical-align: baseline !important;
-    }
-}
-
-@media (max-width: 767px) {
-    .checklist-item .btn-group .btn[class*="btn-"] i,
-    .checklist-item .btn-group .btn[class*="btn-"] .bi,
-    .checklist-item .btn[class*="btn-sm"] i,
-    .checklist-item .btn[class*="btn-sm"] .bi,
-    .checklist-item .btn-outline-primary i,
-    .checklist-item .btn-outline-primary .bi,
-    .checklist-item .btn-outline-danger i,
-    .checklist-item .btn-outline-danger .bi {
-        font-size: 0.55rem !important;
+        font-size: 0.7rem !important;
     }
 }
 
 @media (max-width: 480px) {
-    .checklist-item .btn-group .btn[class*="btn-"] i,
-    .checklist-item .btn-group .btn[class*="btn-"] .bi,
-    .checklist-item .btn[class*="btn-sm"] i,
-    .checklist-item .btn[class*="btn-sm"] .bi,
-    .checklist-item .btn-outline-primary i,
-    .checklist-item .btn-outline-primary .bi,
-    .checklist-item .btn-outline-danger i,
-    .checklist-item .btn-outline-danger .bi {
-        font-size: 0.45rem !important;
+    .card-header h6 {
+        font-size: 0.85rem !important;
+    }
+
+    .card-header small {
+        font-size: 0.7rem !important;
+    }
+
+    .card-header .badge {
+        font-size: 0.6rem !important;
+        padding: 2px 4px !important;
+    }
+
+    .card-footer small {
+        font-size: 0.65rem !important;
+    }
+
+    .pagination .page-link {
+        padding: 0.75rem 1rem; /* larger tap targets */
+        font-size: 1.1rem;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+        .search-wrapper {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .search-input-group {
+            min-width: 100%;
+        }
+
+        .search-input {
+            padding: 0.875rem 1rem 0.875rem 2.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .search-section {
+            padding: 0.75rem;
+        }
+
+        .search-input {
+            padding: 1rem 1rem 1rem 2.5rem;
+        }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .search-input {
+            border-color: #000;
+        }
+
+            .search-input:focus {
+                border-color: #0066cc;
+            }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .search-input,
+        .clear-search-btn {
+            transition: none;
+        }
+    }
+
+    /* Dark mode support (if implemented) */
+    @media (prefers-color-scheme: dark) {
+        .search-section {
+            background: #2d3748;
+            border-color: #4a5568;
+        }
+
+        .search-input {
+            background: #1a202c;
+            border-color: #4a5568;
+            color: #e2e8f0;
+        }
+
+            .search-input::placeholder {
+                color: #a0aec0;
+            }
+    }
+    /* Mobile Responsive Styles */
+    @media (max-width: 768px) {
+        .search-wrapper {
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .search-input-group {
+            min-width: 100%;
+        }
+
+        .search-input {
+            padding: 0.875rem 1rem 0.875rem 2.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .search-section {
+            padding: 0.75rem;
+        }
+
+        .search-input {
+            padding: 1rem 1rem 1rem 2.5rem;
+        }
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+        .search-input {
+            border-color: #000;
+        }
+
+            .search-input:focus {
+                border-color: #0066cc;
+            }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        .search-input,
+        .clear-search-btn {
+            transition: none;
+        }
+    }
+
+    /* Dark mode support (if implemented) */
+    @media (prefers-color-scheme: dark) {
+        .search-section {
+            background: #2d3748;
+            border-color: #4a5568;
+        }
+
+        .search-input {
+            background: #1a202c;
+            border-color: #4a5568;
+            color: #e2e8f0;
+        }
+
+            .search-input::placeholder {
+                color: #a0aec0;
+            }
+    }
+
+    @media (min-width: 576px) {
+        .modal-dialog-responsive {
+            max-width: 540px;
+            margin: 1.75rem auto;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .modal-dialog-responsive {
+            max-width: 700px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .modal-dialog-responsive {
+            max-width: 800px;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .modal-body-responsive {
+            padding: 1rem;
+            max-height: 60vh;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .modal-title {
+            font-size: 1rem;
+        }
+
+        .title-text {
+            max-width: 200px;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .related-data-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .action-buttons {
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .btn-action {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .btn-text {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .management-option {
+            padding: 0.75rem;
+            gap: 0.75rem;
+        }
+
+        .option-icon {
+            width: 32px;
+            height: 32px;
+            font-size: 1rem;
+        }
+
+        .option-title {
+            font-size: 0.875rem;
+        }
+
+        .option-description {
+            font-size: 0.75rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .modal-footer-responsive {
+            padding: 0.75rem 1rem;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .btn-responsive {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .multi-select-checklist {
+            min-height: 100px;
+            max-height: 150px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .history-mobile-action-grid {
+            gap: 0.375rem;
+        }
+
+            .history-mobile-action-grid .mobile-action-btn {
+                padding: 0.45rem 0.5rem !important;
+                font-size: 0.7rem !important;
+                min-height: 32px !important;
+            }
+    }
+
+    @media (max-width: 400px) {
+        .history-mobile-action-grid {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .history-mobile-action-grid {
+                gap: 0.375rem;
+            }
+
+                .history-mobile-action-grid .mobile-action-btn {
+                    padding: 0.45rem 0.5rem;
+                    font-size: 0.7rem;
+                    min-height: 32px;
+                }
+        }
+
+        /* Extra small screens - stack vertically for very narrow screens */
+        @media (max-width: 400px) {
+            .history-mobile-action-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+                .history-mobile-action-grid .mobile-action-btn {
+                    width: 100%;
+                }
+        }
     }
 }

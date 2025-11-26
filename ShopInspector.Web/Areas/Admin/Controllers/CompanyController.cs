@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ShopInspector.Application.Interfaces;
 using ShopInspector.Core.Entities;
-using ShopInspector.Infrastructure.Data;
 using ShopInspector.Web.Areas.Admin.Models;
 
 namespace ShopInspector.Web.Areas.Admin.Controllers;
@@ -12,104 +11,128 @@ namespace ShopInspector.Web.Areas.Admin.Controllers;
 [Authorize(Policy = "AdminOnly")]
 public class CompanyController : Controller
 {
-    private readonly ICompanyService _service;
-    ILogger<CompanyController> _logger;
+    private readonly ICompanyService _companyService;
+    private readonly IMapper _mapper;
+    private readonly ILogger<CompanyController> _logger;
 
-    public CompanyController(ICompanyService service, ILogger<CompanyController> logger)
+    public CompanyController(ICompanyService companyService, IMapper mapper, ILogger<CompanyController> logger)
     {
-        _service = service;
+        _companyService = companyService;
+        _mapper = mapper;
         _logger = logger;
     }
 
-    // ==============================
-    // AUTH CHECK ENDPOINT
-    // ==============================
     [HttpGet]
     public IActionResult CheckAuth()
     {
         return Ok(new { authenticated = User.Identity?.IsAuthenticated == true });
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 5, string searchTerm = "")
     {
         try
         {
-            var companies = await _service.GetAllAsync();
-            _logger.LogInformation("Retrieving Companies");
-            return View(companies);
+            var companies = await _companyService.GetAllAsync(pageIndex, pageSize, searchTerm);
+            
+            // Manually create the PaginatedList with mapped ViewModels
+            var companyViewModels = _mapper.Map<List<CompanyListViewModel>>(companies.ToList());
+            var viewModel = new PaginatedList<CompanyListViewModel>(
+                companyViewModels, 
+                companies.TotalCount, 
+                companies.PageIndex, 
+                pageSize);
+            
+            ViewData["PageSize"] = pageSize;
+            ViewData["CurrentPage"] = pageIndex;
+            ViewData["SearchTerm"] = searchTerm;
+            
+            _logger.LogInformation("Successfully retrieved {Count} companies for page {PageIndex} with search term '{SearchTerm}'", 
+                companies.Count, pageIndex, searchTerm);
+            
+            return View(viewModel);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error retrieving Companies");
-            throw;
+            _logger.LogError(ex, "Error retrieving companies for page {PageIndex}", pageIndex);
+            TempData["ErrorMessage"] = "An error occurred while loading companies. Please try again.";
+            return View(new PaginatedList<CompanyListViewModel>(new List<CompanyListViewModel>(), 0, pageIndex, pageSize));
+        }
+    }
+
+    // AJAX endpoint for loading table with pagination and search
+    public async Task<IActionResult> LoadTable(int pageIndex = 1, int pageSize = 5, string searchTerm = "")
+    {
+        try
+        {
+            var companies = await _companyService.GetAllAsync(pageIndex, pageSize, searchTerm);
+            
+            // Manually create the PaginatedList with mapped ViewModels
+            var companyViewModels = _mapper.Map<List<CompanyListViewModel>>(companies.ToList());
+            var viewModel = new PaginatedList<CompanyListViewModel>(
+                companyViewModels, 
+                companies.TotalCount, 
+                companies.PageIndex, 
+                pageSize);
+            
+            ViewData["TotalCount"] = companies.TotalCount;
+            
+            _logger.LogInformation("LoadTable: Retrieved {Count} companies for page {PageIndex} with {PageSize} items per page and search term '{SearchTerm}'", 
+                companies.Count, pageIndex, pageSize, searchTerm);
+            
+            return PartialView("_TablePartial", viewModel);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "LoadTable Error retrieving companies for page {PageIndex}", pageIndex);
+            return PartialView("_TablePartial", new PaginatedList<CompanyListViewModel>(new List<CompanyListViewModel>(), 0, pageIndex, pageSize));
         }
     }
 
     public IActionResult Create()
     {
-        try
-        {
-            var model = new Company();
-            _logger.LogInformation("Loading Create Company view");
-            return View(model);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error loading Create Company view");
-            throw;
-        }
+        return View(new CompanyCreateViewModel());
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create(Company model)
+    public async Task<IActionResult> Create(CompanyCreateViewModel model)
     {
         try
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Company creation failed - model validation errors");
-                TempData["ErrorMessage"] = "Please correct the validation errors and try again.";
                 return View(model);
             }
 
-            // Check for duplicate company name
-            var existingCompanies = await _service.GetAllAsync();
-            if (existingCompanies.Any(c => c.CompanyName.Equals(model.CompanyName, StringComparison.OrdinalIgnoreCase)))
+            // Business logic validation using existing service methods
+            if (await _companyService.IsCompanyNameExistsAsync(model.CompanyName))
             {
-                ModelState.AddModelError("CompanyName", "A company with this name already exists.");
-                TempData["ErrorMessage"] = "A company with this name already exists.";
+                ModelState.AddModelError(nameof(model.CompanyName), "A company with this name already exists.");
                 return View(model);
             }
 
-            // Check for duplicate email
-            if (existingCompanies.Any(c => c.CompanyAdminEmail.Equals(model.CompanyAdminEmail, StringComparison.OrdinalIgnoreCase)))
+            if (await _companyService.IsEmailExistsAsync(model.CompanyAdminEmail))
             {
-                ModelState.AddModelError("CompanyAdminEmail", "A company with this email address already exists.");
-                TempData["ErrorMessage"] = "A company with this email address already exists.";
+                ModelState.AddModelError(nameof(model.CompanyAdminEmail), "A company with this email address already exists.");
                 return View(model);
             }
 
-            var entity = new Company
-            {
-                CompanyName = model.CompanyName.Trim(),
-                CompanyAdminEmail = model.CompanyAdminEmail.Trim().ToLower(),
-                CompanyContactName = model.CompanyContactName.Trim(),
-                Active = model.Active,
-                CreatedBy = User?.Identity?.Name ?? "System",
-                CreatedOn = DateTime.UtcNow
-            };
+            var company = await _companyService.CreateCompanyAsync(
+                model.CompanyName,
+                model.CompanyAdminEmail,
+                model.CompanyContactName,
+                model.Active,
+                User?.Identity?.Name ?? "System");
 
-            await _service.AddAsync(entity);
-            
-            _logger.LogInformation("Successfully created Company: {CompanyName}", model.CompanyName);
-            TempData["SuccessMessage"] = $"Company '{model.CompanyName}' was created successfully.";
-            
+            _logger.LogInformation("Successfully created company: {CompanyName} (ID: {CompanyID})", 
+                company.CompanyName, company.CompanyID);
+
+            TempData["SuccessMessage"] = $"Company '{company.CompanyName}' was created successfully.";
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error creating Company: {CompanyName}", model.CompanyName);
+            _logger.LogError(ex, "Error creating company: {CompanyName}", model.CompanyName);
             TempData["ErrorMessage"] = "An error occurred while creating the company. Please try again.";
             return View(model);
         }
@@ -119,79 +142,74 @@ public class CompanyController : Controller
     {
         try
         {
-            var company = await _service.GetByIdAsync(id);
+            var company = await _companyService.GetByIdAsync(id);
             if (company == null)
             {
-                _logger.LogWarning("Company not found for Edit with ID: {CompanyID}", id);
-                return NotFound();
+                _logger.LogWarning("Company not found for edit with ID: {CompanyID}", id);
+                TempData["ErrorMessage"] = "Company not found.";
+                return RedirectToAction(nameof(Index));
             }
 
-            _logger.LogInformation("Loading Edit Company view for ID: {CompanyID}", id);
-            return View(company);
+            var viewModel = _mapper.Map<CompanyEditViewModel>(company);
+            _logger.LogInformation("Loading edit view for company: {CompanyName} (ID: {CompanyID})", 
+                company.CompanyName, id);
+
+            return View(viewModel);
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error loading Edit Company view for ID: {CompanyID}", id);
-            throw;
+            _logger.LogError(ex, "Error loading edit view for company ID: {CompanyID}", id);
+            TempData["ErrorMessage"] = "An error occurred while loading the company. Please try again.";
+            return RedirectToAction(nameof(Index));
         }
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(Company model)
+    public async Task<IActionResult> Edit(CompanyEditViewModel model)
     {
         try
         {
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Company edit failed - model validation errors for ID: {CompanyID}", model.CompanyID);
-                TempData["ErrorMessage"] = "Please correct the validation errors and try again.";
                 return View(model);
             }
 
-            var existingEntity = await _service.GetByIdAsync(model.CompanyID);
-            if (existingEntity == null)
+            // Business logic validation using existing service methods
+            if (await _companyService.IsCompanyNameExistsAsync(model.CompanyName, model.CompanyID))
             {
-                _logger.LogWarning("Company not found for Edit with ID: {CompanyID}", model.CompanyID);
-                return NotFound();
-            }
-
-            // Check for duplicate company name (excluding current company)
-            var existingCompanies = await _service.GetAllAsync();
-            if (existingCompanies.Any(c => c.CompanyID != model.CompanyID && 
-                c.CompanyName.Equals(model.CompanyName, StringComparison.OrdinalIgnoreCase)))
-            {
-                ModelState.AddModelError("CompanyName", "A company with this name already exists.");
-                TempData["ErrorMessage"] = "A company with this name already exists.";
+                ModelState.AddModelError(nameof(model.CompanyName), "A company with this name already exists.");
                 return View(model);
             }
 
-            // Check for duplicate email (excluding current company)
-            if (existingCompanies.Any(c => c.CompanyID != model.CompanyID && 
-                c.CompanyAdminEmail.Equals(model.CompanyAdminEmail, StringComparison.OrdinalIgnoreCase)))
+            if (await _companyService.IsEmailExistsAsync(model.CompanyAdminEmail, model.CompanyID))
             {
-                ModelState.AddModelError("CompanyAdminEmail", "A company with this email address already exists.");
-                TempData["ErrorMessage"] = "A company with this email address already exists.";
+                ModelState.AddModelError(nameof(model.CompanyAdminEmail), "A company with this email address already exists.");
                 return View(model);
             }
 
-            // Update the entity
-            existingEntity.CompanyName = model.CompanyName.Trim();
-            existingEntity.CompanyAdminEmail = model.CompanyAdminEmail.Trim().ToLower();
-            existingEntity.CompanyContactName = model.CompanyContactName.Trim();
-            existingEntity.Active = model.Active;
+            var updatedCompany = await _companyService.UpdateCompanyAsync(
+                model.CompanyID,
+                model.CompanyName,
+                model.CompanyAdminEmail,
+                model.CompanyContactName,
+                model.Active);
 
-            await _service.UpdateAsync(existingEntity);
-            
-            _logger.LogInformation("Successfully updated Company: {CompanyName} (ID: {CompanyID})", 
-                model.CompanyName, model.CompanyID);
-            TempData["SuccessMessage"] = $"Company '{model.CompanyName}' was updated successfully.";
-            
+            _logger.LogInformation("Successfully updated company: {CompanyName} (ID: {CompanyID})", 
+                updatedCompany.CompanyName, updatedCompany.CompanyID);
+
+            TempData["SuccessMessage"] = $"Company '{updatedCompany.CompanyName}' was updated successfully.";
+            return RedirectToAction(nameof(Index));
+        }
+        catch (InvalidOperationException ex)
+        {
+            _logger.LogWarning(ex, "Company not found for update with ID: {CompanyID}", model.CompanyID);
+            TempData["ErrorMessage"] = "Company not found.";
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error editing Company with ID: {CompanyID}", model.CompanyID);
+            _logger.LogError(ex, "Error updating company with ID: {CompanyID}", model.CompanyID);
             TempData["ErrorMessage"] = "An error occurred while updating the company. Please try again.";
             return View(model);
         }
@@ -203,35 +221,167 @@ public class CompanyController : Controller
     {
         try
         {
-            var company = await _service.GetByIdAsync(id);
+            var company = await _companyService.GetByIdAsync(id);
             if (company == null)
             {
-                _logger.LogWarning("Company not found for Delete with ID: {CompanyID}", id);
-                return NotFound();
-            }
-
-            // Check if company has employees
-            if (company.Employees != null && company.Employees.Any())
-            {
-                _logger.LogWarning("Cannot delete Company with ID {CompanyID} - has {EmployeeCount} employees", 
-                    id, company.Employees.Count);
-                TempData["ErrorMessage"] = $"Cannot delete company '{company.CompanyName}' because it has {company.Employees.Count} employee(s). Please reassign or remove employees first.";
+                var errorMessage = "Company not found.";
+                _logger.LogWarning("Company not found for delete with ID: {CompanyID}", id);
+                
+                // Check if this is an AJAX request
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new { success = false, message = errorMessage });
+                }
+                
+                TempData["ErrorMessage"] = errorMessage;
                 return RedirectToAction(nameof(Index));
             }
 
-            await _service.DeleteAsync(id);
-            
-            _logger.LogInformation("Successfully deleted Company: {CompanyName} (ID: {CompanyID})", 
+            // Check business rules using existing service method
+            if (!await _companyService.CanDeleteCompanyAsync(id))
+            {
+                // Get detailed information about what prevents deletion
+                var relatedData = await GetCompanyRelatedDataAsync(id);
+                
+                var warningMessage = $"Company '{company.CompanyName}' cannot be deleted because of the following dependencies:";
+                _logger.LogWarning("Cannot delete company with ID {CompanyID} - has employees", id);
+                
+                // Check if this is an AJAX request
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new { 
+                        success = false, 
+                        message = warningMessage,
+                        requiresConfirmation = true,
+                        companyId = id,
+                        companyName = company.CompanyName,
+                        relatedData = relatedData
+                    });
+                }
+                
+                TempData["WarningMessage"] = warningMessage;
+                TempData["CompanyId"] = id;
+                TempData["CompanyName"] = company.CompanyName;
+                TempData["RelatedData"] = relatedData;
+                return RedirectToAction(nameof(Index));
+            }
+
+            await _companyService.DeleteAsync(id);
+
+            var successMessage = $"Company '{company.CompanyName}' was deleted successfully.";
+            _logger.LogInformation("Successfully deleted company: {CompanyName} (ID: {CompanyID})", 
                 company.CompanyName, id);
-            TempData["SuccessMessage"] = $"Company '{company.CompanyName}' was deleted successfully.";
-            
+
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = true, message = successMessage });
+            }
+
+            TempData["SuccessMessage"] = successMessage;
             return RedirectToAction(nameof(Index));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error deleting Company with ID: {CompanyID}", id);
-            TempData["ErrorMessage"] = "An error occurred while deleting the company. Please try again.";
+            var errorMessage = "An error occurred while deleting the company. Please try again.";
+            _logger.LogError(ex, "Error deleting company with ID: {CompanyID}", id);
+            
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = false, message = errorMessage });
+            }
+            
+            TempData["ErrorMessage"] = errorMessage;
             return RedirectToAction(nameof(Index));
+        }
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ForceDelete(int id)
+    {
+        try
+        {
+            var company = await _companyService.GetByIdAsync(id);
+            if (company == null)
+            {
+                var errorMessage = "Company not found.";
+                _logger.LogWarning("Company not found for force delete with ID: {CompanyID}", id);
+                
+                // Check if this is an AJAX request
+                if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+                {
+                    return Json(new { success = false, message = errorMessage });
+                }
+                
+                TempData["ErrorMessage"] = errorMessage;
+                return RedirectToAction(nameof(Index));
+            }
+
+            await _companyService.ForceDeleteAsync(id);
+            
+            var successMessage = $"Company '{company.CompanyName}' and all associated data deleted successfully!";
+            _logger.LogInformation("Successfully force deleted company: {CompanyName} (ID: {CompanyID})", 
+                company.CompanyName, id);
+            
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = true, message = successMessage });
+            }
+            
+            TempData["SuccessMessage"] = successMessage;
+            return RedirectToAction(nameof(Index));
+        }
+        catch (Exception ex)
+        {
+            var errorMessage = "An error occurred while force deleting the company. Please try again.";
+            _logger.LogError(ex, "Error force deleting company with ID: {CompanyID}", id);
+            
+            // Check if this is an AJAX request
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return Json(new { success = false, message = errorMessage });
+            }
+            
+            TempData["ErrorMessage"] = errorMessage;
+            return RedirectToAction(nameof(Index));
+        }
+    }
+
+    // Add new method to get detailed information about related data
+    private async Task<object> GetCompanyRelatedDataAsync(int companyId)
+    {
+        try
+        {
+            // Get related data
+            var relatedData = await _companyService.GetCompanyRelatedDataAsync(companyId);
+            
+            return new
+            {
+                employeeCount = relatedData.EmployeeCount,
+                totalInspections = relatedData.TotalInspections,
+                lastInspectionDate = relatedData.LastInspectionDate?.ToString("yyyy-MM-dd") ?? "N/A",
+                employeeNames = relatedData.EmployeeNames.Take(5).ToList(),
+                totalEmployees = relatedData.EmployeeNames.Count(),
+                affectedAssets = relatedData.AffectedAssetNames.Take(5).ToList(),
+                totalAffectedAssets = relatedData.AffectedAssetNames.Count()
+            };
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error getting related data for company {CompanyId}", companyId);
+            return new
+            {
+                employeeCount = 0,
+                totalInspections = 0,
+                lastInspectionDate = "Unknown",
+                employeeNames = new List<string>(),
+                totalEmployees = 0,
+                affectedAssets = new List<string>(),
+                totalAffectedAssets = 0
+            };
         }
     }
 }

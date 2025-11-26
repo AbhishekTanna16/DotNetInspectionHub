@@ -1,4 +1,4 @@
-@model ShopInspector.Core.Entities.Company
+@model ShopInspector.Web.Areas.Admin.Models.CompanyCreateViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewData["Title"] = "Add Company";
@@ -53,9 +53,12 @@
                     </div>
 
                     <div class="mb-3 full-width">
-                        <div class="form-check">
-                            <input asp-for="Active" class="form-check-input" checked />
-                            <label asp-for="Active" class="form-check-label">Active Company</label>
+                        <div>
+                            <label class="form-check-label">
+                                @(Model.Active ? "Active" : "Inactive")
+                            </label>
+                            <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                            <label for="Active" class="toggle-switch-slider"></label>
                         </div>
                     </div>
                 </div>

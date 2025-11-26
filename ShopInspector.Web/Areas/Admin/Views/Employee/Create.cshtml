@@ -1,4 +1,4 @@
-﻿@model ShopInspector.Core.Entities.Employee
+﻿@model ShopInspector.Web.Areas.Admin.Models.EmployeeCreateViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -30,10 +30,11 @@
                         </label>
                         <input asp-for="EmployeeName" class="form-control" placeholder="Enter employee name" />
                         <span asp-validation-for="EmployeeName" class="text-danger"></span>
+                        <small class="form-text text-muted">Enter the full name of the employee</small>
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">
+                        <label asp-for="CompanyID" class="form-label">
                             Company 
                             <span class="text-danger required-indicator">*</span>
                         </label>
@@ -41,12 +42,16 @@
                             <option value="">-- Select Company --</option>
                         </select>
                         <span asp-validation-for="CompanyID" class="text-danger"></span>
+                        <small class="form-text text-muted">Select the company this employee belongs to</small>
                     </div>
 
                     <div class="mb-3 full-width">
-                        <div class="form-check">
-                            <input asp-for="Active" class="form-check-input" checked />
-                            <label asp-for="Active" class="form-check-label">Active Employee</label>
+                        <div>
+                            <label class="form-check-label">
+                                @(Model.Active ? "Active" : "Inactive")
+                            </label>
+                            <input class="toggle-switch-input" type="checkbox" asp-for="Active" />
+                            <label for="Active" class="toggle-switch-slider"></label>
                         </div>
                     </div>
                 </div>
@@ -70,28 +75,6 @@
     <partial name="_ValidationScriptsPartial" />
     <script>
         $(document).ready(function () {
-            // Check authentication status using the new endpoint
-            async function checkAuthenticationStatus() {
-                try {
-                    const response = await fetch('/Admin/Asset/CheckAuth', {
-                        method: 'GET',
-                        credentials: 'same-origin',
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        const data = await response.json();
-                        return data.authenticated === true;
-                    }
-                    return false;
-                } catch (error) {
-                    console.error('Auth check failed:', error);
-                    return false;
-                }
-            }
-
             // Enhanced validation for Employee Create form
             $("#createEmployeeForm").validate({
                 rules: {
@@ -122,7 +105,7 @@
                 unhighlight: function(element) {
                     $(element).removeClass("is-invalid");
                 },
-                submitHandler: async function(form) {
+                submitHandler: function(form) {
                     const submitBtn = $("#submitBtn");
                     const originalText = submitBtn.html();
                     
@@ -130,47 +113,19 @@
                     submitBtn.prop('disabled', true)
                              .html('<i class="bi bi-hourglass-split"></i> Creating...');
 
-                    try {
-                        // Check if user is still authenticated before submitting
-                        const isAuthenticated = await checkAuthenticationStatus();
-                        
-                        if (!isAuthenticated) {
-                            // Show error message and redirect to login
-                            $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
-                                .html('<strong>Session Expired:</strong> Your session has expired. Redirecting to login... <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                                .prependTo('.admin-card .admin-container');
-                            
-                            setTimeout(() => {
-                                window.location.href = '/Account/Login?returnUrl=' + encodeURIComponent(window.location.pathname);
-                            }, 2000);
-                            return;
-                        }
-
-                        // Submit the form normally
-                        form.submit();
-                        
-                    } catch (error) {
-                        console.error('Error during form submission:', error);
-                        
-                        // Show error message
-                        $('<div class="alert alert-danger alert-dismissible fade show" role="alert">')
-                            .html('<strong>Error:</strong> There was an error submitting the form. Please try again. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                            .prependTo('.admin-card .admin-container');
-                        
-                        // Restore button state
-                        submitBtn.prop('disabled', false).html(originalText);
-                    }
+                    // Submit the form
+                    form.submit();
                 }
             });
 
-            // Check authentication status when page loads
-            checkAuthenticationStatus().then(isAuth => {
-                if (!isAuth) {
-                    // Show warning message
-                    $('<div class="alert alert-warning alert-dismissible fade show" role="alert">')
-                        .html('<strong>Session Warning:</strong> Your session may have expired. Please <a href="/Account/Login" class="alert-link">log in again</a> if you encounter issues. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>')
-                        .prependTo('.admin-card .admin-container');
-                }
+            // Add helpful input formatting for employee name
+            $("#EmployeeName").on('input', function() {
+                let value = $(this).val();
+                // Auto-capitalize first letter of each word
+                value = value.replace(/\b\w/g, function(char) {
+                    return char.toUpperCase();
+                });
+                $(this).val(value);
             });
         });
     </script>

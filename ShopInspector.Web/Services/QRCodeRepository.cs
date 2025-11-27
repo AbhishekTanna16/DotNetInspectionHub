@@ -35,7 +35,7 @@ public class QRCodeRepository : IQRCodeRepository
                 Directory.CreateDirectory(folder);
 
             var fileName = assetId.HasValue
-                ? $"asset_{assetId.Value}.png"
+                ? $"asset_{assetId.Value}.png" 
                 : $"qr_{Guid.NewGuid()}.png";
 
             var fullPath = Path.Combine(folder, fileName);

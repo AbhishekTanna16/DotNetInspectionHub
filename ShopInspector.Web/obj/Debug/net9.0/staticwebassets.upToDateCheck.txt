@@ -144,6 +144,7 @@ wwwroot\qrcodes\asset_2002.png
 wwwroot\qrcodes\asset_3.png
 wwwroot\qrcodes\asset_3002.png
 wwwroot\qrcodes\asset_3003.png
+wwwroot\qrcodes\asset_3004.png
 wwwroot\uploads\inspections\insp_1_0d879b21-b3e0-4f4b-974c-d3fb4de6b6ce.png
 wwwroot\uploads\inspections\insp_1_200a9dff-3f36-41da-be20-3be1f7f97294.png
 wwwroot\uploads\inspections\insp_1_46b5f171-b67e-48e9-aaf2-7f2ca1cde3de.png

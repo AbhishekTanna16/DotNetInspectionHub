@@ -1,5 +1,4 @@
 ﻿using Azure.Storage.Blobs;
-using Azure.Storage.Blobs.Models;
 
 public class AzureBlobService
 {
@@ -8,16 +7,19 @@ public class AzureBlobService
 
     public AzureBlobService(IConfiguration config)
     {
-        _connectionString = config["AzureBlob:ConnectionString"];
-        _containerName = config["AzureBlob:ContainerName"];
+        _connectionString = config["AzureBlob:ConnectionString"]
+            ?? throw new Exception("Azure Blob ConnectionString is missing!");
+
+        _containerName = config["AzureBlob:ContainerName"]
+            ?? throw new Exception("Azure Blob ContainerName is missing!");
     }
 
     public async Task<string> UploadAsync(byte[] fileBytes, string fileName)
     {
-        // Create client for container
         var containerClient = new BlobContainerClient(_connectionString, _containerName);
 
-        await containerClient.CreateIfNotExistsAsync(PublicAccessType.Blob);
+        // Storage account has public access disabled → remove PublicAccessType
+        await containerClient.CreateIfNotExistsAsync();
 
         var blobClient = containerClient.GetBlobClient(fileName);
 
@@ -25,6 +27,6 @@ public class AzureBlobService
 
         await blobClient.UploadAsync(ms, overwrite: true);
 
-        return blobClient.Uri.ToString(); // Returns public URL
+        return blobClient.Uri.ToString();
     }
 }

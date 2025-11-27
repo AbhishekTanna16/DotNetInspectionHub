@@ -49,12 +49,18 @@ public class FileService : IFileService
 
         var ext = Path.GetExtension(file.FileName);
         var fileName = $"insp_{inspectionId}_{Guid.NewGuid()}{ext}";
-        var folder = Path.Combine(_env.ContentRootPath, "wwwroot", "uploads", "inspections");
+        
+        // Use persistent storage path for production (Render) vs development
+        var uploadsRoot = _env.IsDevelopment()
+            ? Path.Combine(_env.ContentRootPath, "wwwroot", "uploads")
+            : Path.Combine("/var/data", "uploads");
+            
+        var folder = Path.Combine(uploadsRoot, "inspections");
         if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
 
         var fullPath = Path.Combine(folder, fileName);
         using (var fs = new FileStream(fullPath, FileMode.Create))
-        {
+        {   
             await file.CopyToAsync(fs);
         }
 

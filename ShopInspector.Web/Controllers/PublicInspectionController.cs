@@ -26,7 +26,7 @@ public class PublicInspectionController : Controller
         IFileService fileService,
         IInspectionPhotoService photoService,
         ILogger<PublicInspectionController> logger,
-        IWebHostEnvironment env)
+    IWebHostEnvironment env)
     {
         _assetService = assetService;
         _assetCheckListService = assetCheckListService;
@@ -456,7 +456,7 @@ public class PublicInspectionController : Controller
             var photos = insp.Photos ?? new List<InspectionPhoto>();
             var photoFiles = new List<(string Label, string PhysicalPath)>();
             
-            foreach (var photo in photos.OrderBy(p => p.DisplayOrder))
+            foreach (var photo in photos)
             {
                 if (string.IsNullOrWhiteSpace(photo.PhotoPath))
                 {
@@ -464,13 +464,12 @@ public class PublicInspectionController : Controller
                     continue;
                 }
 
-                if (string.IsNullOrWhiteSpace(_env.WebRootPath))
-                {
-                    _logger.LogError("Web root path is not configured");
-                    continue;
-                }
-
-                var physicalPath = Path.Combine(_env.WebRootPath, photo.PhotoPath.TrimStart('/'));
+                // Use correct path for both development and production (Render)
+                var uploadsRoot = _env.IsDevelopment()
+                    ? Path.Combine(_env.WebRootPath ?? _env.ContentRootPath, "uploads")
+                    : Path.Combine("/var/data", "uploads");
+                    
+                var physicalPath = Path.Combine(uploadsRoot, photo.PhotoPath.TrimStart('/').Replace("uploads/", ""));
                 
                 if (!System.IO.File.Exists(physicalPath))
                 {

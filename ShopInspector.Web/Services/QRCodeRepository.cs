@@ -25,7 +25,7 @@ public class QRCodeRepository : IQRCodeRepository
         PngByteQRCode qrCode = new PngByteQRCode(qrData);
         byte[] bytes = qrCode.GetGraphic(20);
 
-        string? savedPath = null;
+        string? savedPath = null;  
         string? publicUrl = null;
 
         if (saveToDisk)

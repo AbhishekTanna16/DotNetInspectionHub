@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.FileProviders;
 using QuestPDF.Infrastructure;
 using Serilog;
 using Serilog.Events;
@@ -17,7 +18,6 @@ builder.WebHost.ConfigureKestrel(options =>
     var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
     options.ListenAnyIP(int.Parse(port));
 });
-
 // Database
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -99,6 +99,15 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+if (!Directory.Exists(uploadsPath)) Directory.CreateDirectory(uploadsPath);
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(uploadsPath),
+    RequestPath = "/uploads"
+});
+
 app.Use(async (context, next) =>
 {
     if (!context.Request.Headers.ContainsKey("ngrok-skip-browser-warning"))

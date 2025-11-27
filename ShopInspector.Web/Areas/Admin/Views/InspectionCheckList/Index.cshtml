@@ -300,72 +300,103 @@
             });
         });
 
-        // Enhanced delete dialog with detailed information for inspection checklists
+        // Enhanced delete dialog with detailed information for inspection checklists - RESPONSIVE VERSION
         function showEnhancedCheckListDeleteDialog(result) {
             const relatedData = result.relatedData || {};
             
-            let detailsHtml = `
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                    <h6><i class="bi bi-info-circle text-primary"></i> Related Data Details:</h6>
-                    <ul style="margin: 10px 0; padding-left: 20px;">
-                        <li><strong>Asset Checklists:</strong> ${relatedData.assetCheckListCount || 0}</li>
-                        <li><strong>Inspection Items:</strong> ${relatedData.inspectionItemsCount || 0}</li>
-                        <li><strong>First Used:</strong> ${relatedData.firstUsedDate || 'N/A'}</li>
-                        <li><strong>Last Used:</strong> ${relatedData.lastUsedDate || 'N/A'}</li>
-                        <li><strong>Affected Assets:</strong> ${relatedData.totalAffectedAssets || 0} asset(s)</li>
-                        <li><strong>Assigned Companies:</strong> ${relatedData.totalAssignedCompanies || 0} company(s)</li>
-                    </ul>
-                    
-                    ${relatedData.affectedAssets && relatedData.affectedAssets.length > 0 ? 
-                        `<div style="margin-top: 10px;">
-                            <strong>Affected Assets:</strong><br>
-                            ${relatedData.affectedAssets.map(asset => `• ${asset}`).join('<br>')}
-                            ${relatedData.totalAffectedAssets > relatedData.affectedAssets.length ? 
-                                `<br>... and ${relatedData.totalAffectedAssets - relatedData.affectedAssets.length} more` : ''}
-                        </div>` : ''
-                    }
-
-                    ${relatedData.assignedCompanies && relatedData.assignedCompanies.length > 0 ? 
-                        `<div style="margin-top: 10px;">
-                            <strong>Assigned Companies:</strong><br>
-                            ${relatedData.assignedCompanies.map(company => `• ${company}`).join('<br>')}
-                            ${relatedData.totalAssignedCompanies > relatedData.assignedCompanies.length ? 
-                                `<br>... and ${relatedData.totalAssignedCompanies - relatedData.assignedCompanies.length} more` : ''}
-                        </div>` : ''
-                    }
-                </div>
-                
-                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                    <h6><i class="bi bi-exclamation-triangle text-warning"></i> You have two options:</h6>
-                    <div style="margin: 10px 0;">
-                        <button type="button" class="btn btn-info btn-sm me-2" onclick="showManageCheckListRelatedData('${result.checkListId}', '${result.checkListName}')">
-                            <i class="bi bi-list-check"></i> Show me what to delete first
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmCheckListForceDelete('${result.checkListId}', '${result.checkListName}')">
-                            <i class="bi bi-trash"></i> Force delete everything
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            // Create modal dialog
+            // Create responsive modal dialog with proper mobile/tablet support
             const modalHtml = `
                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-warning">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-warning text-dark">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-exclamation-triangle"></i> 
-                                    Cannot Delete Inspection Checklist: ${result.checkListName}
+                                    <span class="title-text">Cannot Delete Inspection Checklist: ${result.checkListName}</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>${result.message}</p>
-                                ${detailsHtml}
+                            <div class="modal-body modal-body-responsive">
+                                <div class="alert-message">
+                                    ${result.message}
+                                </div>
+                                
+                                <div class="related-data-container">
+                                    <div class="related-data-title">
+                                        <i class="bi bi-info-circle text-primary"></i>
+                                        Related Data Details:
+                                    </div>
+                                    <div class="related-data-grid">
+                                        <div class="data-item">
+                                            <span class="data-label">Asset Checklists:</span>
+                                            <span class="data-value">${relatedData.assetCheckListCount || 0}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Inspection Items:</span>
+                                            <span class="data-value">${relatedData.inspectionItemsCount || 0}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">First Used:</span>
+                                            <span class="data-value">${relatedData.firstUsedDate || 'N/A'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Last Used:</span>
+                                            <span class="data-value">${relatedData.lastUsedDate || 'N/A'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Affected Assets:</span>
+                                            <span class="data-value">${relatedData.totalAffectedAssets || 0} asset(s)</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Assigned Companies:</span>
+                                            <span class="data-value">${relatedData.totalAssignedCompanies || 0} company(s)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    ${relatedData.affectedAssets && relatedData.affectedAssets.length > 0 ? 
+                                        `<div class="affected-items-section">
+                                            <strong class="section-title">Affected Assets:</strong>
+                                            <div class="items-list">
+                                                ${relatedData.affectedAssets.map(asset => `<span class="item-tag">${asset}</span>`).join('')}
+                                                ${relatedData.totalAffectedAssets > relatedData.affectedAssets.length ? 
+                                                    `<span class="more-items">... and ${relatedData.totalAffectedAssets - relatedData.affectedAssets.length} more</span>` : ''}
+                                            </div>
+                                        </div>` : ''
+                                    }
+
+                                    ${relatedData.assignedCompanies && relatedData.assignedCompanies.length > 0 ? 
+                                        `<div class="affected-items-section">
+                                            <strong class="section-title">Assigned Companies:</strong>
+                                            <div class="items-list">
+                                                ${relatedData.assignedCompanies.map(company => `<span class="item-tag">${company}</span>`).join('')}
+                                                ${relatedData.totalAssignedCompanies > relatedData.assignedCompanies.length ? 
+                                                    `<span class="more-items">... and ${relatedData.totalAssignedCompanies - relatedData.assignedCompanies.length} more</span>` : ''}
+                                            </div>
+                                        </div>` : ''
+                                    }
+                                </div>
+                                
+                                <div class="options-container">
+                                    <div class="options-title mb-3">
+                                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                                        You have two options:
+                                    </div>
+                                    <div class="action-buttons d-flex flex-column flex-sm-row gap-2">
+                                        <button type="button" class="btn btn-info btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="showManageCheckListRelatedData('${result.checkListId}', '${result.checkListName}')">
+                                            <i class="bi bi-list-check"></i> 
+                                            <span class="btn-text">Show me what to delete first</span>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="confirmCheckListForceDelete('${result.checkListId}', '${result.checkListName}')">
+                                            <i class="bi bi-trash"></i> 
+                                            <span class="btn-text">Force delete everything</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -378,46 +409,65 @@
             $('#deleteModal').modal('show');
         }
 
-        // Show what needs to be managed first for inspection checklists
+        // Show what needs to be managed first for inspection checklists - RESPONSIVE VERSION
         function showManageCheckListRelatedData(checkListId, checkListName) {
             $('#deleteModal').modal('hide');
             
             const managementOptionsHtml = `
                 <div class="modal fade" id="manageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-info">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-info text-white">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-list-check"></i> 
-                                    Manage Related Data for: ${checkListName}
+                                    <span class="title-text">Manage Related Data for: ${checkListName}</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>You need to manage the following before deleting this inspection checklist:</p>
-                                <div class="list-group">
-                                    <a href="/Admin/AssetCheckList?checkListId=${checkListId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-clipboard-data"></i> 
-                                        <strong>Manage Asset Checklists</strong>
-                                        <small class="d-block text-muted">View and reassign assets using this checklist</small>
+                            <div class="modal-body modal-body-responsive">
+                                <p class="mb-3">You need to manage the following before deleting this inspection checklist:</p>
+                                <div class="management-options">
+                                    <a href="/Admin/AssetCheckList?checkListId=${checkListId}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-clipboard-data"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Manage Asset Checklists</strong>
+                                            <small class="option-description">View and reassign assets using this checklist</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
                                     </a>
-                                    <a href="/Admin/Asset?checkListId=${checkListId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-box"></i> 
-                                        <strong>Manage Related Assets</strong>
-                                        <small class="d-block text-muted">View assets that have this checklist assigned</small>
+                                    <a href="/Admin/Asset?checkListId=${checkListId}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-box"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Manage Related Assets</strong>
+                                            <small class="option-description">View assets that have this checklist assigned</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
                                     </a>
-                                    <div class="list-group-item">
-                                        <i class="bi bi-info-circle text-info"></i> 
-                                        <strong>Alternative: Force Delete</strong>
-                                        <small class="d-block text-muted">Or you can force delete to remove all related data automatically</small>
-                                        <button type="button" class="btn btn-danger btn-sm mt-2" onclick="confirmCheckListForceDelete('${checkListId}', '${checkListName}')">
-                                            <i class="bi bi-trash"></i> Force Delete
-                                        </button>
+                                    <div class="management-option alternative-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-info-circle text-info"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Alternative: Force Delete</strong>
+                                            <small class="option-description">Or you can force delete to remove all related data automatically</small>
+                                            <button type="button" class="btn btn-danger btn-sm mt-2 force-delete-btn" 
+                                                    onclick="confirmCheckListForceDelete('${checkListId}', '${checkListName}')">
+                                                <i class="bi bi-trash"></i> Force Delete
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -428,103 +478,6 @@
             $('body').append(managementOptionsHtml);
             $('#manageModal').modal('show');
         }
-
-        // Confirm force delete for inspection checklists
-        function confirmCheckListForceDelete(checkListId, checkListName) {
-            $('.modal').modal('hide');
-            
-            const forceDeleteConfirm = confirm(
-                `FINAL WARNING: This will permanently delete:\n\n` +
-                `• Inspection Checklist: ${checkListName}\n` +
-                `• All asset checklist assignments\n` +
-                `• All inspection items using this checklist\n` +
-                `• All associated inspection data\n\n` +
-                `This action CANNOT be undone!\n\n` +
-                `Do you want to proceed?`
-            );
-            
-            if (forceDeleteConfirm) {
-                // Perform force delete
-                $.ajax({
-                    url: '/Admin/InspectionCheckList/ForceDelete',
-                    type: 'POST',
-                    data: { 
-                        id: checkListId,
-                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
-                    },
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    success: function(forceResult) {
-                        if (forceResult.success) {
-                            // Show success message
-                            $('.alert').remove();
-                            $('<div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">' +
-                              '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
-                              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                              '</div>').insertAfter('.asset-header-row');
-                            
-                            // Reload table
-                            const currentPage = $('.pagination .page-item.active .page-btn').data('page') || 1;
-                            $.ajax({
-                                url: '/Admin/InspectionCheckList/LoadTable',
-                                type: 'GET',
-                                data: { 
-                                    pageIndex: currentPage, 
-                                    pageSize: currentPageSize,
-                                    searchTerm: currentSearchTerm 
-                                },
-                                success: function(data) {
-                                    $('#tableContainer').html(data);
-                                    const totalCount = parseInt($('#tableContainer').attr('data-total-count')) || 0;
-                                    updateSearchResultsInfo(totalCount, currentSearchTerm);
-                                },
-                                error: function() {
-                                    $.get('/Admin/InspectionCheckList/LoadTable?pageIndex=1&pageSize=' + currentPageSize + '&searchTerm=' + encodeURIComponent(currentSearchTerm), function(data) {
-                                        $('#tableContainer').html(data);
-                                        const totalCount = parseInt($('#tableContainer').attr('data-total-count')) || 0;
-                                        updateSearchResultsInfo(totalCount, currentSearchTerm);
-                                    });
-                                }
-                            });
-                        } else {
-                            $('.alert').remove();
-                            $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
-                              '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
-                              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                              '</div>').insertAfter('.asset-header-row');
-                        }
-                    },
-                    error: function() {
-                        $('.alert').remove();
-                        $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
-                          '<i class="bi bi-exclamation-triangle-fill"></i> Error performing force delete. Please try again.' +
-                          '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                          '</div>').insertAfter('.asset-header-row');
-                    }
-                });
-            }
-        }
-
-        // Make functions globally available
-        window.showManageCheckListRelatedData = showManageCheckListRelatedData;
-        window.confirmCheckListForceDelete = confirmCheckListForceDelete;
-
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('InspectionCheckList search and pagination system initialized');
-            console.log('Current search term:', currentSearchTerm);
-            console.log('Current page size:', currentPageSize);
-            
-            // Initialize search state
-            if (currentSearchTerm) {
-                $('#searchInput').val(currentSearchTerm);
-                $('#clearSearch').show();
-            }
-            
-            // Focus search input on page load for better UX
-            $('#searchInput').focus();
-        });
     </script>
 }
 

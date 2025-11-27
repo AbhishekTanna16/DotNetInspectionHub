@@ -283,17 +283,6 @@
             });
         });
 
-        // Handle QR Code generation 
-        $(document).on('click', '[data-action="generate-qr"]', function(e) {
-            e.preventDefault();
-            
-            const url = $(this).data('url');
-            if (url) {
-                // Open QR code generation in new window/tab
-                window.open(url, '_blank');
-            }
-        });
-        
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {
             console.log('Asset search and pagination system initialized');

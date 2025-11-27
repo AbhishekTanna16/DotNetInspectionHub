@@ -230,328 +230,328 @@
 @section Scripts {
     <script src="~/js/admin-actions.js"></script>
     <script>
-        let currentViewMode = 'grouped';
-        let currentPageSize = 5; // Set to match controller
+        // Optimized variables and configuration
+        const CONFIG = {
+            viewMode: 'grouped',
+            pageSize: 5,
+            searchDebounceMs: 500,
+            routes: {
+                loadTable: '/Admin/AssetCheckList/LoadTable',
+                search: '/Admin/AssetCheckList',
+                inspectionHistory: '/Admin/Inspection/History',
+                assetDetails: '/Admin/Asset'
+            }
+        };
+
+        let currentViewMode = CONFIG.viewMode;
+        let currentPageSize = CONFIG.pageSize;
         let currentSearchTerm = '@ViewData["SearchTerm"]';
         let searchTimeout;
 
-        // Search functionality
+        // Optimized DOM ready function
         $(document).ready(function() {
-            const searchInput = $('#searchInput');
-            const clearButton = $('#clearSearch');
+            initializeSearch();
+            loadSavedViewMode();
+        });
 
-            // Handle search input with debouncing
-            searchInput.on('input', function() {
-                clearTimeout(searchTimeout);
-                const searchTerm = $(this).val();
+        // Initialize search functionality with better performance
+        function initializeSearch() {
+            const $searchInput = $('#searchInput');
+            const $clearButton = $('#clearSearch');
+
+            // Handle search input with optimized debouncing
+            $searchInput.on('input', function() {
+                const searchTerm = $(this).val().trim();
                 
-                // Show/hide clear button
-                if (searchTerm.length > 0) {
-                    clearButton.show();
-                } else {
-                    clearButton.hide();
-                }
+                // Show/hide clear button efficiently
+                $clearButton.toggle(searchTerm.length > 0);
 
-                // Debounce search to avoid too many requests
-                searchTimeout = setTimeout(function() {
-                    performSearch(searchTerm);
-                }, 500);
+                // Clear previous timeout and set new one
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => performSearch(searchTerm), CONFIG.searchDebounceMs);
             });
 
             // Handle Enter key
-            searchInput.on('keypress', function(e) {
+            $searchInput.on('keypress', function(e) {
                 if (e.which === 13) { // Enter key
                     clearTimeout(searchTimeout);
-                    performSearch($(this).val());
+                    performSearch($(this).val().trim());
                 }
             });
 
             // Clear search
-            clearButton.on('click', function() {
-                searchInput.val('');
-                clearButton.hide();
+            $clearButton.on('click', function() {
+                $searchInput.val('').focus();
+                $(this).hide();
                 performSearch('');
             });
-        });
+        }
 
+        // Load saved view mode from localStorage
+        function loadSavedViewMode() {
+            const savedMode = localStorage.getItem('assetChecklistViewMode');
+            if (savedMode === 'detailed') {
+                toggleViewMode();
+            }
+        }
+
+        // Optimized search function
         function performSearch(searchTerm) {
             currentSearchTerm = searchTerm;
             console.log('AssetCheckList searching for:', searchTerm);
             
-            // For search functionality, redirect to page with search term
-            // This maintains the grouped view functionality while adding search
-            if (searchTerm && searchTerm.trim().length > 0) {
-                window.location.href = '/Admin/AssetCheckList?searchTerm=' + encodeURIComponent(searchTerm);
-            } else {
-                window.location.href = '/Admin/AssetCheckList';
+            // Use URLSearchParams for better URL handling
+            const url = new URL(CONFIG.routes.search, window.location.origin);
+            if (searchTerm) {
+                url.searchParams.set('searchTerm', searchTerm);
             }
-        }
-
-        function updateSearchResultsInfo(totalCount, searchTerm) {
-            const resultsSpan = $('#searchResults');
-            if (totalCount > 0) {
-                if (searchTerm && searchTerm.trim().length > 0) {
-                    resultsSpan.html(
-                        `<span class="search-results-count">${totalCount}</span> ` +
-                        `asset checklist${totalCount === 1 ? '' : 's'} found for "<strong>${searchTerm}</strong>"`
-                    );
-                } else {
-                    resultsSpan.html(
-                        `<span class="search-results-count">${totalCount}</span> ` +
-                        `asset checklist${totalCount === 1 ? '' : 's'} found`
-                    );
-                }
-            } else {
-                if (searchTerm && searchTerm.trim().length > 0) {
-                    resultsSpan.html(`asset checklists found for "<strong>${searchTerm}</strong>"`);
-                } else {
-                    resultsSpan.html('No asset checklists found');
-                }
-            }
-        }
-
-        function toggleViewMode() {
-            const groupedView = document.getElementById('groupedView');
-            const tableContainer = document.getElementById('tableContainer');
-            const toggleBtn = document.getElementById('viewToggle');
             
-            if (groupedView.style.display === 'none') {
-                // Switch to grouped view
-                groupedView.style.display = 'block';
-                tableContainer.style.display = 'none';
-                toggleBtn.innerHTML = '<i class="bi bi-grid-3x3-gap"></i> <span>Grouped View</span>';
-                currentViewMode = 'grouped';
-                localStorage.setItem('assetChecklistViewMode', 'grouped');
+            window.location.href = url.toString();
+        }
+
+        // Optimized search results update
+        function updateSearchResultsInfo(totalCount, searchTerm) {
+            const $resultsSpan = $('#searchResults');
+            const countText = totalCount === 1 ? 'checklist' : 'checklists';
+            
+            if (totalCount > 0) {
+                const searchText = searchTerm ? ` for "<strong>${searchTerm}</strong>"` : '';
+                $resultsSpan.html(
+                    `<span class="search-results-count">${totalCount}</span> ` +
+                    `asset ${countText} found${searchText}`
+                );
             } else {
+                const searchText = searchTerm ? ` for "<strong>${searchTerm}</strong>"` : '';
+                $resultsSpan.html(`No asset checklists found${searchText}`);
+            }
+        }
+
+        // Optimized view mode toggle
+        function toggleViewMode() {
+            const $groupedView = $('#groupedView');
+            const $tableContainer = $('#tableContainer');
+            const $toggleBtn = $('#viewToggle');
+            
+            if ($groupedView.is(':visible')) {
                 // Switch to table view
-                groupedView.style.display = 'none';
-                tableContainer.style.display = 'block';
-                toggleBtn.innerHTML = '<i class="bi bi-table"></i> <span>Table View</span>';
+                $groupedView.hide();
+                $tableContainer.show();
+                $toggleBtn.html('<i class="bi bi-table"></i> <span>Table View</span>');
                 currentViewMode = 'table';
                 localStorage.setItem('assetChecklistViewMode', 'detailed');
                 
-                // Load table data if not already loaded
-                if ($('#tableContainer').children().length === 0 || $('#tableContainer').find('.alert').length > 0) {
-                    $('#tableContainer').html('<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
-                    
-                    $.ajax({
-                        url: '/Admin/AssetCheckList/LoadTable',
-                        type: 'GET',
-                        data: { 
-                            pageIndex: 1, 
-                            pageSize: currentPageSize,
-                            searchTerm: currentSearchTerm 
-                        },
-                        success: function(result) {
-                            $('#tableContainer').html(result);
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error loading table:', error);
-                            $('#tableContainer').html(
-                                '<div class="alert alert-danger">' +
-                                '<i class="bi bi-exclamation-triangle"></i> ' +
-                                'Error loading data. Please refresh the page and try again.' +
-                                '</div>'
-                            );
-                        }
-                    });
-                }
+                loadTableData();
+            } else {
+                // Switch to grouped view
+                $groupedView.show();
+                $tableContainer.hide();
+                $toggleBtn.html('<i class="bi bi-grid-3x3-gap"></i> <span>Grouped View</span>');
+                currentViewMode = 'grouped';
+                localStorage.setItem('assetChecklistViewMode', 'grouped');
             }
         }
 
-        // Handle pagination clicks with improved error handling and logging
-        $(document).on('click', '.page-btn', function(e) {
-            e.preventDefault();
-            
-            if ($(this).closest('.disabled').length) {
-                console.log('Pagination button is disabled, ignoring click');
-                return false;
-            }
-            
-            const pageIndex = $(this).data('page');
-            console.log('Pagination clicked: Page', pageIndex);
+        // Optimized table loading
+        function loadTableData(pageIndex = 1) {
+            const $container = $('#tableContainer');
             
             // Show loading state
-            $('#tableContainer').html('<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+            $container.html('<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
             
-            $.ajax({
-                url: '/Admin/AssetCheckList/LoadTable',
-                type: 'GET',
-                data: { 
-                    pageIndex: pageIndex, 
-                    pageSize: currentPageSize,
-                    searchTerm: currentSearchTerm 
-                },
-                success: function(result) {
-                    $('#tableContainer').html(result);
+            // Use fetch API for better error handling
+            const params = new URLSearchParams({
+                pageIndex: pageIndex,
+                pageSize: currentPageSize,
+                searchTerm: currentSearchTerm
+            });
+            
+            fetch(`${CONFIG.routes.loadTable}?${params}`)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.text();
+                })
+                .then(html => {
+                    $container.html(html);
                     console.log('Successfully loaded page', pageIndex);
-                    
-                    // Scroll to table top for better UX
-                    $('#tableContainer')[0].scrollIntoView({ behavior: 'smooth' });
-                },
-                error: function(xhr, status, error) {
+                })
+                .catch(error => {
                     console.error('Error loading table:', error);
-                    $('#tableContainer').html(
+                    $container.html(
                         '<div class="alert alert-danger">' +
                         '<i class="bi bi-exclamation-triangle"></i> ' +
                         'Error loading data. Please refresh the page and try again.' +
                         '</div>'
                     );
-                }
-            });
-        });
+                });
+        }
 
-        // Handle delete forms with AJAX
-        $(document).on('submit', '.delete-form', function(e) {
+        // Optimized pagination handling
+        $(document).on('click', '.page-btn', function(e) {
             e.preventDefault();
             
-            const confirmMessage = $(this).data('confirm');
-            if (!confirm(confirmMessage)) {
+            const $btn = $(this);
+            if ($btn.closest('.disabled').length) {
                 return false;
             }
             
-            const form = $(this);
+            const pageIndex = $btn.data('page');
+            if (pageIndex && currentViewMode === 'table') {
+                loadTableData(pageIndex);
+                
+                // Smooth scroll to table top
+                $('#tableContainer')[0].scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }
+        });
+
+        // Optimized delete form handling with better error management
+        $(document).on('submit', '.delete-form', function(e) {
+            e.preventDefault();
+            
+            const $form = $(this);
+            const confirmMessage = $form.data('confirm');
+            
+            if (!confirmMessage || !confirm(confirmMessage)) {
+                return false;
+            }
+            
+            // Show loading state on button
+            const $deleteBtn = $form.find('button[type="submit"]');
+            const originalHtml = $deleteBtn.html();
+            $deleteBtn.prop('disabled', true).html('<i class="bi bi-spinner-border"></i>');
+            
             const formData = new FormData(this);
             
-            $.ajax({
-                url: form.attr('action'),
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
+            fetch($form.attr('action'), {
+                method: 'POST',
+                body: formData,
                 headers: {
-                    'X-Requested-With': 'XMLHttpRequest' // Mark as AJAX request
-                },
-                success: function(result) {
-                    if (result.success) {
-                        // Show success message
-                        $('.alert').remove();
-                        $('<div class="alert alert-success alert-dismissible fade show mt-3" role="alert">' +
-                          '<i class="bi bi-check-circle-fill"></i> ' + result.message +
-                          '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                          '</div>').insertAfter('.asset-header-row');
-                        
-                        // Reload current view
-                        if (currentViewMode === 'table') {
-                            // Reload table via AJAX (stay on same page)
-                            const currentPage = $('.pagination .page-item.active .page-btn').data('page') || 1;
-                            $.ajax({
-                                url: '/Admin/AssetCheckList/LoadTable',
-                                type: 'GET',
-                                data: { 
-                                    pageIndex: currentPage, 
-                                    pageSize: currentPageSize,
-                                    searchTerm: currentSearchTerm 
-                                },
-                                success: function(data) {
-                                    $('#tableContainer').html(data);
-                                    console.log('Table reloaded after delete');
-                                },
-                                error: function() {
-                                    // Fallback to page 1 if current page fails
-                                    $.get('/Admin/AssetCheckList/LoadTable?pageIndex=1&pageSize=' + currentPageSize + '&searchTerm=' + encodeURIComponent(currentSearchTerm), function(data) {
-                                        $('#tableContainer').html(data);
-                                    });
-                                }
-                            });
-                        } else {
-                            // Reload full page for grouped view
-                            location.reload();
-                        }
-                    } else {
-                        // Check if it requires confirmation for force delete
-                        if (result.requiresConfirmation) {
-                            showEnhancedAssetCheckListDeleteDialog(result);
-                        } else {
-                            // Show regular warning message
-                            $('.alert').remove();
-                            $('<div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">' +
-                              '<i class="bi bi-exclamation-triangle-fill"></i> ' + result.message +
-                              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                              '</div>').insertAfter('.asset-header-row');
-                        }
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error deleting asset checklist:', error);
-                    $('.alert').remove();
-                    $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
-                      '<i class="bi bi-exclamation-triangle-fill"></i> Error deleting asset checklist. Please try again.' +
-                      '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                      '</div>').insertAfter('.asset-header-row');
+                    'X-Requested-With': 'XMLHttpRequest'
                 }
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    showAlert('success', result.message);
+                    reloadCurrentView();
+                } else if (result.requiresConfirmation) {
+                    showEnhancedAssetCheckListDeleteDialog(result);
+                } else {
+                    showAlert('warning', result.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error deleting asset checklist:', error);
+                showAlert('danger', 'Error deleting asset checklist. Please try again.');
+            })
+            .finally(() => {
+                // Restore button state
+                $deleteBtn.prop('disabled', false).html(originalHtml);
             });
         });
 
-        // Enhanced delete dialog with detailed information for asset checklists
-        function showEnhancedAssetCheckListDeleteDialog(result) {
-            const relatedData = result.relatedData || {};
-            
-            let detailsHtml = `
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                    <h6><i class="bi bi-info-circle text-primary"></i> Related Data Details:</h6>
-                    <ul style="margin: 10px 0; padding-left: 20px;">
-                        <li><strong>Asset:</strong> ${relatedData.assetName || 'Unknown'}</li>
-                        <li><strong>Checklist:</strong> ${relatedData.checkListName || 'Unknown'}</li>
-                        <li><strong>Inspection Records:</strong> ${relatedData.inspectionRecordsCount || 0}</li>
-                        <li><strong>First Inspection:</strong> ${relatedData.firstInspectionDate || 'N/A'}</li>
-                        <li><strong>Last Inspection:</strong> ${relatedData.lastInspectionDate || 'N/A'}</li>
-                        <li><strong>Employees Involved:</strong> ${relatedData.totalEmployees || 0} employee(s)</li>
-                        <li><strong>Inspection Frequencies:</strong> ${relatedData.totalFrequencies || 0} frequency(s)</li>
-                    </ul>
-                    
-                    ${relatedData.employeeNames && relatedData.employeeNames.length > 0 ? 
-                        `<div style="margin-top: 10px;">
-                            <strong>Employees:</strong><br>
-                            ${relatedData.employeeNames.map(emp => `• ${emp}`).join('<br>')}
-                            ${relatedData.totalEmployees > relatedData.employeeNames.length ? 
-                                `<br>... and ${relatedData.totalEmployees - relatedData.employeeNames.length} more` : ''
-                            }
-                        </div>` : ''
-                    }
-
-                    ${relatedData.inspectionFrequencies && relatedData.inspectionFrequencies.length > 0 ? 
-                        `<div style="margin-top: 10px;">
-                            <strong>Inspection Frequencies:</strong><br>
-                            ${relatedData.inspectionFrequencies.map(freq => `• ${freq}`).join('<br>')}
-                            ${relatedData.totalFrequencies > relatedData.inspectionFrequencies.length ? 
-                                `<br>... and ${relatedData.totalFrequencies - relatedData.inspectionFrequencies.length} more` : ''
-                            }
-                        </div>` : ''
-                    }
-                </div>
-                
-                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                    <h6><i class="bi bi-exclamation-triangle text-warning"></i> You have two options:</h6>
-                    <div style="margin: 10px 0;">
-                        <button type="button" class="btn btn-info btn-sm me-2" onclick="showManageAssetCheckListRelatedData('${result.assetCheckListId}', '${result.assetName}', '${result.checkListName}')">
-                            <i class="bi bi-list-check"></i> Show me what to delete first
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmAssetCheckListForceDelete('${result.assetCheckListId}', '${result.assetName}', '${result.checkListName}')">
-                            <i class="bi bi-trash"></i> Force delete everything
-                        </button>
-                    </div>
+        // Utility function to show alerts
+        function showAlert(type, message) {
+            $('.alert').remove();
+            const alertHtml = `
+                <div class="alert alert-${type} alert-dismissible fade show mt-3" role="alert">
+                    <i class="bi bi-${type === 'success' ? 'check-circle-fill' : 'exclamation-triangle-fill'}"></i> ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
                 </div>
             `;
+            $(alertHtml).insertAfter('.asset-header-row');
+        }
+
+        // Optimized view reload
+        function reloadCurrentView() {
+            if (currentViewMode === 'table') {
+                const currentPage = $('.pagination .page-item.active .page-btn').data('page') || 1;
+                loadTableData(currentPage);
+            } else {
+                location.reload();
+            }
+        }
+
+        // FIXED: Enhanced delete dialog with correct navigation URLs
+        function showEnhancedAssetCheckListDeleteDialog(result) {
+            const relatedData = result.relatedData || {};
+            const assetId = relatedData.assetId || result.assetId;
             
-            // Create modal dialog
             const modalHtml = `
                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-warning">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-warning text-dark">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-exclamation-triangle"></i> 
-                                    Cannot Delete Asset Checklist
+                                    <span class="title-text">Cannot Delete Asset Checklist</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>${result.message}</p>
-                                ${detailsHtml}
+                            <div class="modal-body modal-body-responsive">
+                                <div class="alert-message">
+                                    ${result.message}
+                                </div>
+                                
+                                <div class="related-data-container">
+                                    <div class="related-data-title">
+                                        <i class="bi bi-info-circle text-primary"></i>
+                                        Related Data Details:
+                                    </div>
+                                    <div class="related-data-grid">
+                                        <div class="data-item">
+                                            <span class="data-label">Asset:</span>
+                                            <span class="data-value">${relatedData.assetName || 'Unknown'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Checklist:</span>
+                                            <span class="data-value">${relatedData.checkListName || 'Unknown'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Inspection Records:</span>
+                                            <span class="data-value">${relatedData.inspectionRecordsCount || 0}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">First Inspection:</span>
+                                            <span class="data-value">${relatedData.firstInspectionDate || 'N/A'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Last Inspection:</span>
+                                            <span class="data-value">${relatedData.lastInspectionDate || 'N/A'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Employees Involved:</span>
+                                            <span class="data-value">${relatedData.totalEmployees || 0} employee(s)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    ${generateEmployeesList(relatedData)}
+                                    ${generateFrequenciesList(relatedData)}
+                                </div>
+                                
+                                <div class="options-container">
+                                    <div class="options-title mb-3">
+                                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                                        You have two options:
+                                    </div>
+                                    <div class="action-buttons d-flex flex-column flex-sm-row gap-2">
+                                        <button type="button" class="btn btn-info btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="showManageAssetCheckListRelatedData('${result.assetCheckListId}', '${relatedData.assetName}', '${relatedData.checkListName}', '${assetId}')">
+                                            <i class="bi bi-list-check"></i> 
+                                            <span class="btn-text">Show me what to delete first</span>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="confirmAssetCheckListForceDelete('${result.assetCheckListId}', '${relatedData.assetName}', '${relatedData.checkListName}')">
+                                            <i class="bi bi-trash"></i> 
+                                            <span class="btn-text">Force delete everything</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -564,46 +564,96 @@
             $('#deleteModal').modal('show');
         }
 
-        // Show what needs to be managed first for asset checklists
-        function showManageAssetCheckListRelatedData(assetCheckListId, assetName, checkListName) {
+        // Helper functions for generating HTML sections
+        function generateEmployeesList(relatedData) {
+            if (!relatedData.employeeNames || relatedData.employeeNames.length === 0) return '';
+            
+            const employeeTags = relatedData.employeeNames.map(emp => `<span class="item-tag">${emp}</span>`).join('');
+            const moreEmployees = relatedData.totalEmployees > relatedData.employeeNames.length 
+                ? `<span class="more-items">... and ${relatedData.totalEmployees - relatedData.employeeNames.length} more</span>` 
+                : '';
+            
+            return `
+                <div class="affected-items-section">
+                    <strong class="section-title">Employees:</strong>
+                    <div class="items-list">
+                        ${employeeTags}
+                        ${moreEmployees}
+                    </div>
+                </div>
+            `;
+        }
+
+        function generateFrequenciesList(relatedData) {
+            if (!relatedData.inspectionFrequencies || relatedData.inspectionFrequencies.length === 0) return '';
+            
+            const frequencyTags = relatedData.inspectionFrequencies.map(freq => `<span class="item-tag">${freq}</span>`).join('');
+            const moreFrequencies = relatedData.totalFrequencies > relatedData.inspectionFrequencies.length 
+                ? `<span class="more-items">... and ${relatedData.totalFrequencies - relatedData.inspectionFrequencies.length} more</span>` 
+                : '';
+            
+            return `
+                <div class="affected-items-section">
+                    <strong class="section-title">Inspection Frequencies:</strong>
+                    <div class="items-list">
+                        ${frequencyTags}
+                        ${moreFrequencies}
+                    </div>
+                </div>
+            `;
+        }
+
+        // FIXED: Management dialog with correct navigation routes
+        function showManageAssetCheckListRelatedData(assetCheckListId, assetName, checkListName, assetId) {
             $('#deleteModal').modal('hide');
             
             const managementOptionsHtml = `
                 <div class="modal fade" id="manageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-info">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-info text-white">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-list-check"></i> 
-                                    Manage Related Data for: ${assetName} - ${checkListName}
+                                    <span class="title-text">Manage Related Data: ${assetName} - ${checkListName}</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>You need to manage the following before deleting this asset checklist:</p>
-                                <div class="list-group">
-                                    <a href="/Admin/AssetInspection?assetCheckListId=${assetCheckListId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-clipboard-check"></i> 
-                                        <strong>Manage Asset Inspections</strong>
-                                        <small class="d-block text-muted">View and reassign inspection records using this checklist</small>
+                            <div class="modal-body modal-body-responsive">
+                                <p class="mb-3">You need to manage the following before deleting this asset checklist:</p>
+                                <div class="management-options">
+                                        <div class="option-content">
+                                            <strong class="option-title">Delete Inspection History</strong>
+                                            <small class="option-description">Delete inspection records for this asset</small>
+                                        </div>
+                                    <a href="${CONFIG.routes.assetDetails}?searchTerm=${encodeURIComponent(assetName)}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-box"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">View Related Asset Details</strong>
+                                            <small class="option-description">See the asset this checklist is assigned to</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
                                     </a>
-                                    <a href="/Admin/Asset?assetCheckListId=${assetCheckListId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-box"></i> 
-                                        <strong>View Related Asset Details</strong>
-                                        <small class="d-block text-muted">See the asset this checklist is assigned to</small>
-                                    </a>
-                                    <div class="list-group-item">
-                                        <i class="bi bi-info-circle text-info"></i> 
-                                        <strong>Alternative: Force Delete</strong>
-                                        <small class="d-block text-muted">Or you can force delete to remove all related data automatically</small>
-                                        <button type="button" class="btn btn-danger btn-sm mt-2" onclick="confirmAssetCheckListForceDelete('${assetCheckListId}', '${assetName}', '${checkListName}')">
-                                            <i class="bi bi-trash"></i> Force Delete
-                                        </button>
+                                    <div class="management-option alternative-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-info-circle text-info"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Alternative: Force Delete</strong>
+                                            <small class="option-description">Or you can force delete to remove all related data automatically</small>
+                                            <button type="button" class="btn btn-danger btn-sm mt-2 force-delete-btn" 
+                                                    onclick="confirmAssetCheckListForceDelete('${assetCheckListId}', '${assetName}', '${checkListName}')">
+                                                <i class="bi bi-trash"></i> Force Delete
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -614,107 +664,6 @@
             $('body').append(managementOptionsHtml);
             $('#manageModal').modal('show');
         }
-
-        // Confirm force delete for asset checklists
-        function confirmAssetCheckListForceDelete(assetCheckListId, assetName, checkListName) {
-            $('.modal').modal('hide');
-            
-            const forceDeleteConfirm = confirm(
-                `FINAL WARNING: This will permanently delete:\n\n` +
-                `• Asset Checklist: ${assetName} - ${checkListName}\n` +
-                `• All inspection records using this checklist\n` +
-                `• All associated inspection data\n\n` +
-                `This action CANNOT be undone!\n\n` +
-                `Do you want to proceed?`
-            );
-            
-            if (forceDeleteConfirm) {
-                // Perform force delete
-                $.ajax({
-                    url: '/Admin/AssetCheckList/ForceDelete',
-                    type: 'POST',
-                    data: { 
-                        id: assetCheckListId,
-                        __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
-                    },
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    success: function(forceResult) {
-                        if (forceResult.success) {
-                            // Show success message
-                            $('.alert').remove();
-                            $('<div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">' +
-                              '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
-                              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                              '</div>').insertAfter('.asset-header-row');
-                            
-                            // Reload current view
-                            if (currentViewMode === 'table') {
-                                const currentPage = $('.pagination .page-item.active .page-btn').data('page') || 1;
-                                $.ajax({
-                                    url: '/Admin/AssetCheckList/LoadTable',
-                                    type: 'GET',
-                                    data: { 
-                                        pageIndex: currentPage, 
-                                        pageSize: currentPageSize,
-                                        searchTerm: currentSearchTerm 
-                                    },
-                                    success: function(data) {
-                                        $('#tableContainer').html(data);
-                                    },
-                                    error: function() {
-                                        $.get('/Admin/AssetCheckList/LoadTable?pageIndex=1&pageSize=' + currentPageSize + '&searchTerm=' + encodeURIComponent(currentSearchTerm), function(data) {
-                                            $('#tableContainer').html(data);
-                                        });
-                                    }
-                                });
-                            } else {
-                                // Reload full page for grouped view
-                                location.reload();
-                            }
-                        } else {
-                            $('.alert').remove();
-                            $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
-                              '<i class="bi bi-exclamation-triangle-fill"></i> ' + forceResult.message +
-                              '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                              '</div>').insertAfter('.asset-header-row');
-                        }
-                    },
-                    error: function() {
-                        $('.alert').remove();
-                        $('<div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">' +
-                          '<i class="bi bi-exclamation-triangle-fill"></i> Error performing force delete. Please try again.' +
-                          '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>' +
-                          '</div>').insertAfter('.asset-header-row');
-                    }
-                });
-            }
-        }
-
-        // Make functions globally available
-        window.showManageAssetCheckListRelatedData = showManageAssetCheckListRelatedData;
-        window.confirmAssetCheckListForceDelete = confirmAssetCheckListForceDelete;
-
-        // Initialize when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('AssetCheckList search and pagination system initialized');
-            console.log('Current search term:', currentSearchTerm);
-            console.log('Current page size:', currentPageSize);
-            
-            // Initialize search state
-            if (currentSearchTerm) {
-                $('#searchInput').val(currentSearchTerm);
-                $('#clearSearch').show();
-                
-                // Update search results info for current page
-                const currentTotal = @(Model?.TotalCount ?? 0);
-                updateSearchResultsInfo(currentTotal, currentSearchTerm);
-            }
-            
-            // Focus search input on page load for better UX
-            $('#searchInput').focus();
-        });
     </script>
 }
 

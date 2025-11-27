@@ -279,7 +279,7 @@
                     } else {
                         // Check if it requires confirmation for force delete
                         if (result.requiresConfirmation) {
-                            showEnhancedDeleteDialog(result);
+                            showEnhancedEmployeeDeleteDialog(result);
                         } else {
                             // Show regular warning message
                             $('.alert').remove();
@@ -301,61 +301,84 @@
             });
         });
 
-        // Enhanced delete dialog with detailed information
-        function showEnhancedDeleteDialog(result) {
+        // Enhanced delete dialog with detailed information for employees - RESPONSIVE VERSION
+        function showEnhancedEmployeeDeleteDialog(result) {
             const relatedData = result.relatedData || {};
             
-            let detailsHtml = `
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
-                    <h6><i class="bi bi-info-circle text-primary"></i> Related Data Details:</h6>
-                    <ul style="margin: 10px 0; padding-left: 20px;">
-                        <li><strong>Total Inspections:</strong> ${relatedData.inspectionCount || 0}</li>
-                        <li><strong>Last Inspection:</strong> ${relatedData.lastInspectionDate || 'N/A'}</li>
-                        <li><strong>Affected Assets:</strong> ${relatedData.totalAffectedAssets || 0} asset(s)</li>
-                        <li><strong>Checklist Items:</strong> ${relatedData.checklistItemsCount || 0} item(s)</li>
-                    </ul>
-                    
-                    ${relatedData.affectedAssets && relatedData.affectedAssets.length > 0 ? 
-                        `<div style="margin-top: 10px;">
-                            <strong>Affected Assets:</strong><br>
-                            ${relatedData.affectedAssets.map(asset => `• ${asset}`).join('<br>')}
-                            ${relatedData.totalAffectedAssets > relatedData.affectedAssets.length ? 
-                                `<br>... and ${relatedData.totalAffectedAssets - relatedData.affectedAssets.length} more` : ''}
-                        </div>` : ''
-                    }
-                </div>
-                
-                <div style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ffc107;">
-                    <h6><i class="bi bi-exclamation-triangle text-warning"></i> You have two options:</h6>
-                    <div style="margin: 10px 0;">
-                        <button type="button" class="btn btn-info btn-sm me-2" onclick="showManageRelatedData('${result.employeeId}', '${result.employeeName}')">
-                            <i class="bi bi-list-check"></i> Show me what to delete first
-                        </button>
-                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmForceDelete('${result.employeeId}', '${result.employeeName}')">
-                            <i class="bi bi-trash"></i> Force delete everything
-                        </button>
-                    </div>
-                </div>
-            `;
-            
-            // Create modal dialog
+            // Create responsive modal dialog with proper mobile/tablet support
             const modalHtml = `
                 <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-warning">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-warning text-dark">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-exclamation-triangle"></i> 
-                                    Cannot Delete Employee: ${result.employeeName}
+                                    <span class="title-text">Cannot Delete Employee: ${result.employeeName}</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>${result.message}</p>
-                                ${detailsHtml}
+                            <div class="modal-body modal-body-responsive">
+                                <div class="alert-message">
+                                    ${result.message}
+                                </div>
+                                
+                                <div class="related-data-container">
+                                    <div class="related-data-title">
+                                        <i class="bi bi-info-circle text-primary"></i>
+                                        Related Data Details:
+                                    </div>
+                                    <div class="related-data-grid">
+                                        <div class="data-item">
+                                            <span class="data-label">Total Inspections:</span>
+                                            <span class="data-value">${relatedData.inspectionCount || 0}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Last Inspection:</span>
+                                            <span class="data-value">${relatedData.lastInspectionDate || 'N/A'}</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Affected Assets:</span>
+                                            <span class="data-value">${relatedData.totalAffectedAssets || 0} asset(s)</span>
+                                        </div>
+                                        <div class="data-item">
+                                            <span class="data-label">Checklist Items:</span>
+                                            <span class="data-value">${relatedData.checklistItemsCount || 0} item(s)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    ${relatedData.affectedAssets && relatedData.affectedAssets.length > 0 ? 
+                                        `<div class="affected-items-section">
+                                            <strong class="section-title">Affected Assets:</strong>
+                                            <div class="items-list">
+                                                ${relatedData.affectedAssets.map(asset => `<span class="item-tag">${asset}</span>`).join('')}
+                                                ${relatedData.totalAffectedAssets > relatedData.affectedAssets.length ? 
+                                                    `<span class="more-items">... and ${relatedData.totalAffectedAssets - relatedData.affectedAssets.length} more</span>` : ''}
+                                            </div>
+                                        </div>` : ''
+                                    }
+                                </div>
+                                
+                                <div class="options-container">
+                                    <div class="options-title mb-3">
+                                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                                        You have two options:
+                                    </div>
+                                    <div class="action-buttons d-flex flex-column flex-sm-row gap-2">
+                                        <button type="button" class="btn btn-info btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="showManageEmployeeRelatedData('${result.employeeId}', '${result.employeeName}')">
+                                            <i class="bi bi-list-check"></i> 
+                                            <span class="btn-text">Show me what to delete first</span>
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-action d-flex align-items-center justify-content-center gap-2" 
+                                                onclick="confirmEmployeeForceDelete('${result.employeeId}', '${result.employeeName}')">
+                                            <i class="bi bi-trash"></i> 
+                                            <span class="btn-text">Force delete everything</span>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -368,46 +391,57 @@
             $('#deleteModal').modal('show');
         }
 
-        // Show what needs to be managed first
-        function showManageRelatedData(employeeId, employeeName) {
+        // Show what needs to be managed first for employees - RESPONSIVE VERSION
+        function showManageEmployeeRelatedData(employeeId, employeeName) {
             $('#deleteModal').modal('hide');
             
             const managementOptionsHtml = `
                 <div class="modal fade" id="manageModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-responsive modal-dialog-scrollable">
                         <div class="modal-content">
-                            <div class="modal-header bg-info">
-                                <h5 class="modal-title">
+                            <div class="modal-header bg-info text-white">
+                                <h5 class="modal-title d-flex align-items-center gap-2">
                                     <i class="bi bi-list-check"></i> 
-                                    Manage Related Data for: ${employeeName}
+                                    <span class="title-text">Manage Related Data for: ${employeeName}</span>
                                 </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <p>You need to manage the following before deleting this employee:</p>
-                                <div class="list-group">
-                                    <a href="/Admin/AssetInspection?employeeId=${employeeId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-clipboard-check"></i> 
-                                        <strong>Manage Asset Inspections</strong>
-                                        <small class="d-block text-muted">View and reassign inspections performed by this employee</small>
+                            <div class="modal-body modal-body-responsive">
+                                <p class="mb-3">You need to manage the following before deleting this employee:</p>
+                                <div class="management-options">
+                                        <div class="option-content">
+                                            <strong class="option-title">Delete Asset Inspections</strong>
+                                            <small class="option-description">View and reassign inspections performed by this employee</small>
+                                        </div>                                   
+                                    <a href="/Admin/Asset?assignedEmployee=${employeeId}" class="management-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-box"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Manage Asset Assignments</strong>
+                                            <small class="option-description">Reassign assets currently assigned to this employee</small>
+                                        </div>
+                                        <div class="option-arrow">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
                                     </a>
-                                    <a href="/Admin/Asset?assignedEmployee=${employeeId}" class="list-group-item list-group-item-action">
-                                        <i class="bi bi-box"></i> 
-                                        <strong>Manage Asset Assignments</strong>
-                                        <small class="d-block text-muted">Reassign assets currently assigned to this employee</small>
-                                    </a>
-                                    <div class="list-group-item">
-                                        <i class="bi bi-info-circle text-info"></i> 
-                                        <strong>Alternative: Force Delete</strong>
-                                        <small class="d-block text-muted">Or you can force delete to remove all related data automatically</small>
-                                        <button type="button" class="btn btn-danger btn-sm mt-2" onclick="confirmForceDelete('${employeeId}', '${employeeName}')">
-                                            <i class="bi bi-trash"></i> Force Delete
-                                        </button>
+                                    <div class="management-option alternative-option">
+                                        <div class="option-icon">
+                                            <i class="bi bi-info-circle text-info"></i>
+                                        </div>
+                                        <div class="option-content">
+                                            <strong class="option-title">Alternative: Force Delete</strong>
+                                            <small class="option-description">Or you can force delete to remove all related data automatically</small>
+                                            <button type="button" class="btn btn-danger btn-sm mt-2 force-delete-btn" 
+                                                    onclick="confirmEmployeeForceDelete('${employeeId}', '${employeeName}')">
+                                                <i class="bi bi-trash"></i> Force Delete
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <div class="modal-footer modal-footer-responsive">
+                                <button type="button" class="btn btn-secondary btn-responsive" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -419,8 +453,8 @@
             $('#manageModal').modal('show');
         }
 
-        // Confirm force delete
-        function confirmForceDelete(employeeId, employeeName) {
+        // Confirm force delete for employees
+        function confirmEmployeeForceDelete(employeeId, employeeName) {
             $('.modal').modal('hide');
             
             const forceDeleteConfirm = confirm(
@@ -496,8 +530,8 @@
         }
 
         // Make functions globally available
-        window.showManageRelatedData = showManageRelatedData;
-        window.confirmForceDelete = confirmForceDelete;
+        window.showManageEmployeeRelatedData = showManageEmployeeRelatedData;
+        window.confirmEmployeeForceDelete = confirmEmployeeForceDelete;
 
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', function() {

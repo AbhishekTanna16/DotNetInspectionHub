@@ -1877,7 +1877,6 @@ G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\scopedcss\projectbundle\ShopInspector.Web.bundle.scp.css
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\ge4c6td3zz-sac9zu0f7w.gz
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\lv52yt6txw-61n19gt1b8.gz
-G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-rwnnjl3q8u.gz
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\qj2o9vwtmk-018vwze4gp.gz
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\x9wg2uelmy-ldok2ipqtl.gz
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\dktc5c3n69-xtxxf3hu2r.gz
@@ -1954,4 +1953,5 @@ G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.pdb
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\ShopInspector.Web.genruntimeconfig.cache
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
-G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-c053xvk985.gz
+G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-smavg4nohg.gz
+G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-7jp89fa384.gz

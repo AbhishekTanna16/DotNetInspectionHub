@@ -9,8 +9,8 @@
             <thead>
                 <tr>
                     <th>Frequency Name</th>
-                    <th class="text-center">Inspections</th>
-                    <th class="asset-col-actions text-end">Actions</th>
+                    <th class="text-center" style="width: 120px;">Inspections</th>
+                    <th class="asset-col-actions text-end" style="width: 200px;">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                             <td>
                                 <div class="fw-bold">@f.FrequencyName</div>
                             </td>
-                            <td class="text-center">
+                            <td class="text-center" style="width: 120px;">
                                 @if (f.InspectionsCount > 0)
                                 {
                                     <span class="badge bg-info">@f.InspectionsCount</span>
@@ -32,7 +32,7 @@
                                     <span class="text-muted">0</span>
                                 }
                             </td>
-                            <td class="asset-col-actions">
+                            <td class="asset-col-actions" style="width: 200px;">
                                 <div class="asset-action-group">
                                     <a asp-area="Admin" asp-controller="InspectionFrequency" asp-action="Edit" asp-route-id="@f.InspectionFrequencyID" 
                                        class="btn btn-action btn-outline-primary" title="Edit Inspection Frequency">

@@ -64,6 +64,7 @@ builder.Services.AddScoped<IInspectionPhotoRepository, InspectionPhotoRepository
 builder.Services.AddScoped<IInspectionPhotoService, InspectionPhotoService>();
 builder.Services.AddScoped<IInspectionFrequencyRepository, InspectionFrequencyRepository>();
 builder.Services.AddScoped<IInspectionFrequencyService, InspectionFrequencyService>();
+builder.Services.AddSingleton<AzureBlobService>();
 
 // AuthN / AuthZ
 builder.Services.AddAuthentication("Cookies")

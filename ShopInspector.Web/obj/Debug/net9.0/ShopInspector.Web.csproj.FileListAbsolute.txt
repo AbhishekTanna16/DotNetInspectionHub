@@ -1955,3 +1955,6 @@ G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\ref\ShopInspector.Web.dll
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\ci9w59hv2w-smavg4nohg.gz
 G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\obj\Debug\net9.0\compressed\tektik1mw0-7jp89fa384.gz
+G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\bin\Debug\net9.0\Azure.Storage.Blobs.dll
+G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\bin\Debug\net9.0\Azure.Storage.Common.dll
+G:\ShopInspector\24-11-25\26\DotNetInspectionHub\ShopInspector.Web\bin\Debug\net9.0\System.IO.Hashing.dll

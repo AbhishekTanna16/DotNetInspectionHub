@@ -7,10 +7,11 @@ namespace ShopInspector.Infrastructure.Repositories;
 public class QRCodeRepository : IQRCodeRepository
 {
     private readonly IWebHostEnvironment _env;
-
-    public QRCodeRepository(IWebHostEnvironment env)
+    private readonly AzureBlobService _blobService;
+    public QRCodeRepository(IWebHostEnvironment env, AzureBlobService blobService)
     {
         _env = env;
+        _blobService = blobService;
     }
 
     public async Task<(byte[] PngBytes, string? SavedPath)> GenerateAsync(
@@ -25,6 +26,7 @@ public class QRCodeRepository : IQRCodeRepository
         byte[] bytes = qrCode.GetGraphic(20);
 
         string? savedPath = null;
+        string? publicUrl = null;
 
         if (saveToDisk)
         {
@@ -37,13 +39,13 @@ public class QRCodeRepository : IQRCodeRepository
                 : $"qr_{Guid.NewGuid()}.png";
 
             var fullPath = Path.Combine(folder, fileName);
-
+             publicUrl = await _blobService.UploadAsync(bytes, fileName);
             // Save the PNG bytes
             await File.WriteAllBytesAsync(fullPath, bytes);
 
             savedPath = $"/qrcodes/{fileName}";
         }
 
-        return (bytes, savedPath);
+        return (bytes, publicUrl);
     }
 }

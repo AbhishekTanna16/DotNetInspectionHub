@@ -673,7 +673,7 @@
                     errorAlert.setAttribute('role', 'alert');
                     errorAlert.innerHTML = 
                         '<i class="bi bi-exclamation-triangle-fill"></i> Error performing force delete. Please try again.' +
-                        '<button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                        '<button type="button" class="btn-close" data-bs-dismissible="alert"></button>';
                     
                     const headerRow = document.querySelector('.asset-header-row');
                     headerRow.insertAdjacentElement('afterend', errorAlert);
@@ -941,28 +941,9 @@
     gap: 0.75rem;
 }
 
-
-
-.btn-action {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    flex: 1;
-    justify-content: center;
-    min-height: 44px;
-}
-
-
-
 .btn-text {
     font-size: 0.875rem;
 }
-
-
 
 /* Management Options */
 .manage-intro {
@@ -1052,8 +1033,6 @@
     font-size: 1rem;
 }
 
-
-
 .force-delete-btn {
     margin-top: 0.5rem;
     font-size: 0.75rem;
@@ -1067,13 +1046,10 @@
     background: #f8f9fa;
 }
 
-
 .btn-responsive {
     min-width: 80px;
     padding: 0.5rem 1rem;
 }
-
-
 
 /* Custom Scrollbar for Modal Body */
 .modal-body-responsive::-webkit-scrollbar {

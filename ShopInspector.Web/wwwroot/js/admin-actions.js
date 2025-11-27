@@ -1,5 +1,4 @@
-﻿
-(function () {
+﻿(function () {
     'use strict';
     function log(...args) {
         if (window.console) console.log('[admin-actions]', ...args);
@@ -61,6 +60,60 @@
         });
     }
 
+    // Global function for Asset Checklist force delete confirmation
+    window.confirmAssetCheckListForceDelete = function(assetCheckListId, assetName, checkListName) {
+        const confirmMessage = `Are you absolutely sure you want to FORCE DELETE this asset checklist?\n\n` +
+                             `Asset: ${assetName}\n` +
+                             `Checklist: ${checkListName}\n\n` +
+                             `This will permanently delete:\n` +
+                             `• The asset checklist assignment\n` +
+                             `• ALL related inspection records\n` +
+                             `• ALL related inspection data\n\n` +
+                             `This action CANNOT be undone!`;
+
+        if (!confirm(confirmMessage)) {
+            return false;
+        }
+
+        // Close any open modals
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            if (window.bootstrap?.Modal) {
+                const modalInstance = window.bootstrap.Modal.getInstance(modal);
+                if (modalInstance) modalInstance.hide();
+            }
+        });
+
+        // Perform the force delete
+        const token = getAntiForgeryToken();
+        const formData = new URLSearchParams();
+        if (token) formData.append('__RequestVerificationToken', token);
+
+        fetch(`/Admin/AssetCheckList/ForceDelete/${assetCheckListId}`, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                showToast(result.message || 'Asset checklist force deleted successfully', 'success');
+                // Reload the page after a short delay to show the success message
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                showToast(result.message || 'Force delete failed', 'danger');
+            }
+        })
+        .catch(error => {
+            console.error('Force delete error:', error);
+            showToast('Network error during force delete', 'danger');
+        });
+    };
 
     function ensureQrModal() {
         let modalEl = document.getElementById('qrModal');
@@ -92,7 +145,49 @@
         const wrapper = document.createElement('div');
         wrapper.innerHTML = markup;
         document.body.appendChild(wrapper.firstElementChild);
-        return document.getElementById('qrModal');
+
+        modalEl = document.getElementById('qrModal');
+        
+        // Function to reset generating buttons
+        function resetGeneratingButtons() {
+            const generatingButtons = document.querySelectorAll('[data-action="generate-qr"]');
+            generatingButtons.forEach(btn => {
+                if (btn.innerHTML.includes('Generating...') || btn.disabled) {
+                    const originalText = btn.getAttribute('data-original-text') || 'Generate QR';
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                    btn.removeAttribute('data-original-text');
+                }
+            });
+        }
+
+        // Add multiple event listeners to catch modal close
+        
+        // Bootstrap modal events
+        modalEl.addEventListener('hidden.bs.modal', resetGeneratingButtons);
+        modalEl.addEventListener('hide.bs.modal', resetGeneratingButtons);
+        
+        // Direct close button clicks
+        const closeBtn = modalEl.querySelector('.btn-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', resetGeneratingButtons);
+        }
+        
+        // Escape key press
+        modalEl.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                resetGeneratingButtons();
+            }
+        });
+        
+        // Click outside modal
+        modalEl.addEventListener('click', function(e) {
+            if (e.target === modalEl) {
+                resetGeneratingButtons();
+            }
+        });
+
+        return modalEl;
     }
 
     window.showQrModal = function (imageUrl, targetUrl) {
@@ -109,15 +204,46 @@
 
         try {
             if (window.bootstrap?.Modal) {
-                window.bootstrap.Modal.getOrCreateInstance(modalEl).show();
+                const modal = window.bootstrap.Modal.getOrCreateInstance(modalEl);
+                modal.show();
+                
+                // Also listen for when this specific modal instance is hidden
+                modalEl.addEventListener('hidden.bs.modal', function handler() {
+                    // Reset any generating buttons when modal closes
+                    const generatingButtons = document.querySelectorAll('[data-action="generate-qr"]');
+                    generatingButtons.forEach(btn => {
+                        if (btn.innerHTML.includes('Generating...') || btn.disabled) {
+                            const originalText = btn.getAttribute('data-original-text') || 'Generate QR';
+                            btn.disabled = false;
+                            btn.innerHTML = originalText;
+                            btn.removeAttribute('data-original-text');
+                        }
+                    });
+                    modalEl.removeEventListener('hidden.bs.modal', handler);
+                }, { once: true });
             } else {
                 modalEl.style.display = 'block';
                 modalEl.classList.add('show');
+                modalEl.setAttribute('aria-hidden', 'false');
             }
         } catch (e) {
             console.error('QR modal show error', e);
             modalEl.style.display = 'block';
+            modalEl.classList.add('show');
         }
+    };
+
+    // Global function to reset all generating buttons
+    window.resetAllGeneratingButtons = function() {
+        const generatingButtons = document.querySelectorAll('[data-action="generate-qr"]');
+        generatingButtons.forEach(btn => {
+            if (btn.innerHTML.includes('Generating...') || btn.disabled) {
+                const originalText = btn.getAttribute('data-original-text') || 'Generate QR';
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                btn.removeAttribute('data-original-text');
+            }
+        });
     };
 
     async function handleNavigate(el) {
@@ -407,15 +533,31 @@
                     return;
                 }
 
+                // Reset any other generating buttons first
+                if (window.resetAllGeneratingButtons) {
+                    window.resetAllGeneratingButtons();
+                }
+
                 const originalHTML = el.innerHTML;
+                // Store original text for modal close recovery
+                el.setAttribute('data-original-text', originalHTML);
                 el.disabled = true;
                 el.innerHTML = "Generating...";
+
+                // Set a timeout to auto-reset the button if something goes wrong
+                const resetTimeout = setTimeout(() => {
+                    el.disabled = false;
+                    el.innerHTML = originalHTML;
+                    el.removeAttribute('data-original-text');
+                    showToast("QR generation timed out", "warning");
+                }, 30000); // 30 second timeout
 
                 fetch(url, {
                     method: "GET",
                     headers: { "X-Requested-With": "XMLHttpRequest" }
                 })
                     .then(res => {
+                        clearTimeout(resetTimeout);
                         if (!res.ok) throw new Error("HTTP " + res.status);
                         const ct = (res.headers.get("content-type") || "").toLowerCase();
                         if (ct.includes("application/json")) {
@@ -428,7 +570,7 @@
                             const imageUrl = result.json.imageUrl;
                             if (!imageUrl) { showToast("QR generated but no image returned", "warning"); return; }
                             showQrModal(imageUrl);
-                            showToast("QR generated successfully", "success");
+                            //showToast("QR generated successfully", "success");
                             return;
                         }
                         const parser = new DOMParser();
@@ -442,12 +584,15 @@
                         showToast("QR generated successfully", "success");
                     })
                     .catch(err => {
+                        clearTimeout(resetTimeout);
                         console.error("QR Error:", err);
                         showToast("QR generation error", "danger");
                     })
                     .finally(() => {
+                        clearTimeout(resetTimeout);
                         el.disabled = false;
                         el.innerHTML = originalHTML;
+                        el.removeAttribute('data-original-text');
                     });
                 return;
             }
@@ -459,6 +604,23 @@
                 e.preventDefault();
                 handleAjaxDeleteForm(form);
             });
+        });
+
+        // Reset generating buttons on page visibility change (tab switch, etc.)
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'visible') {
+                // Reset any stuck generating buttons when page becomes visible again
+                if (window.resetAllGeneratingButtons) {
+                    setTimeout(window.resetAllGeneratingButtons, 100);
+                }
+            }
+        });
+
+        // Reset generating buttons on page focus
+        window.addEventListener('focus', function() {
+            if (window.resetAllGeneratingButtons) {
+                setTimeout(window.resetAllGeneratingButtons, 100);
+            }
         });
 
         log('admin-actions loaded');

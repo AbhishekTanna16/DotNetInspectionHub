@@ -156,6 +156,12 @@ public class PublicInspectionController : Controller
                 LastInspection = lastSummary
             };
             
+            // Add validation error display if redirected from failed submission
+            if (TempData["ValidationErrors"] != null)
+            {
+                ViewBag.ValidationErrors = TempData["ValidationErrors"].ToString();
+            }
+            
             _logger.LogInformation("Successfully prepared inspection start view for Asset ID {AssetID} with {ItemCount} checklist items", assetId, items.Count);
             return View("~/Views/PublicInspection/Start.cshtml", viewModel);
         }
@@ -316,9 +322,29 @@ public class PublicInspectionController : Controller
     {
         try
         {
+            // Custom validation for required fields
+            if (string.IsNullOrWhiteSpace(model.InspectorName))
+            {
+                ModelState.AddModelError(nameof(model.InspectorName), "Inspector Name is required");
+            }
+
+            if (!model.EmployeeID.HasValue || model.EmployeeID <= 0)
+            {
+                ModelState.AddModelError(nameof(model.EmployeeID), "Employee selection is required");
+            }
+
+            if (!model.InspectionFrequencyID.HasValue || model.InspectionFrequencyID <= 0)
+            {
+                ModelState.AddModelError(nameof(model.InspectionFrequencyID), "Frequency selection is required");
+            }
+
             if (!ModelState.IsValid)
             {
-                _logger.LogWarning("Submit inspection for Asset ID but Model is not valid {AssetID}", model.AssetID);
+                _logger.LogWarning("Submit inspection for Asset ID {AssetID} - Model validation failed: {Errors}", 
+                    model.AssetID, string.Join(", ", ModelState.SelectMany(x => x.Value.Errors.Select(e => e.ErrorMessage))));
+                
+                // Redirect back to start with validation errors
+                TempData["ValidationErrors"] = string.Join("; ", ModelState.SelectMany(x => x.Value.Errors.Select(e => e.ErrorMessage)));
                 return RedirectToAction(nameof(Start), new { assetId = model.AssetID });
             }
 
@@ -328,17 +354,14 @@ public class PublicInspectionController : Controller
             var inspection = new AssetInspection
             {
                 AssetID = model.AssetID,
-                InspectorName = string.IsNullOrWhiteSpace(model.InspectorName) ? "Anonymous" : model.InspectorName,
+                InspectorName = model.InspectorName,
                 InspectionDate = DateTime.UtcNow,
                 CreatedOn = DateTime.UtcNow,
                 CreatedBy = User?.Identity?.Name ?? "public",
-                EmployeeID = model.EmployeeID ?? 0,
+                EmployeeID = model.EmployeeID.Value, // Now guaranteed to have a value
                 ThirdParty = model.ThirdParty ?? false,
-                InspectionFrequencyID = model.InspectionFrequencyID ?? 0,
+                InspectionFrequencyID = model.InspectionFrequencyID.Value, // Now guaranteed to have a value
                 Attachment = "",
-                // Store general remarks in a field that can accommodate it
-                // You might want to add a GeneralRemarks field to AssetInspection entity
-                // For now, we'll use a comment or notes field if available
             };
 
             await _inspectionService.AddAsync(inspection);

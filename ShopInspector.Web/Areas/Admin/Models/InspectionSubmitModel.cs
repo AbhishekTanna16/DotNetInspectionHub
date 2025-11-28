@@ -7,10 +7,15 @@ public class InspectionSubmitModel
     [Required]
     public int AssetID { get; set; }
 
+    [Required(ErrorMessage = "Inspector Name is required")]
     public string? InspectorName { get; set; }
 
+    [Required(ErrorMessage = "Employee selection is required")]
+    [Range(1, int.MaxValue, ErrorMessage = "Please select an employee")]
     public int? EmployeeID { get; set; }
 
+    [Required(ErrorMessage = "Frequency selection is required")]
+    [Range(1, int.MaxValue, ErrorMessage = "Please select a frequency")]
     public int? InspectionFrequencyID { get; set; }
 
     public bool? ThirdParty { get; set; }
@@ -19,6 +24,7 @@ public class InspectionSubmitModel
 
     public List<IFormFile>? Files { get; set; }
 }
+
 public class InspectionItemAnswerModel
 {
     public int AssetCheckListID { get; set; }

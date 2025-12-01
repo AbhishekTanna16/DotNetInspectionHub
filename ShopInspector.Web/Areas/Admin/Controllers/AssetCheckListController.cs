@@ -69,12 +69,24 @@ public class AssetCheckListController : Controller
         }
     }
 
-    public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 3, string searchTerm = "")
+    // FIXED: Index action to load all data for grouped view by default, but still support pagination for table view
+    public async Task<IActionResult> Index(int pageIndex = 1, int pageSize = 3, string searchTerm = "", string viewMode = "grouped")
     {
         try
         {
-            // Use small page size to ensure pagination shows up
-            var list = await _service.GetAllAsync(pageIndex, pageSize, searchTerm);
+            PaginatedList<AssetCheckList> list;
+            
+            // FIXED: For grouped view (default), load ALL data. For table view, use pagination.
+            if (viewMode.ToLower() == "table")
+            {
+                // Use pagination for table view
+                list = await _service.GetAllAsync(pageIndex, pageSize, searchTerm);
+            }
+            else
+            {
+                // Load all data for grouped view (default behavior)
+                list = await _service.GetAllAsync(null, null, searchTerm);
+            }
             
             // Add cache-busting headers to ensure fresh data
             Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -85,10 +97,11 @@ public class AssetCheckListController : Controller
             ViewData["PageSize"] = pageSize;
             ViewData["CurrentPage"] = pageIndex;
             ViewData["SearchTerm"] = searchTerm;
+            ViewData["ViewMode"] = viewMode;
             
             // Log detailed information for debugging
-            _logger.LogInformation("Successfully retrieved {Count} AssetCheckLists for page {PageIndex} with {PageSize} items per page and search term '{SearchTerm}'. Total count: {TotalCount}", 
-                list.Count, pageIndex, pageSize, searchTerm, list.TotalCount);
+            _logger.LogInformation("Successfully retrieved {Count} AssetCheckLists for view mode '{ViewMode}' (page {PageIndex} with {PageSize} items per page) and search term '{SearchTerm}'. Total count: {TotalCount}", 
+                list.Count, viewMode, pageIndex, pageSize, searchTerm, list.TotalCount);
             
             return View(list);
         }
@@ -96,7 +109,16 @@ public class AssetCheckListController : Controller
         {
             _logger.LogError(ex, "Error retrieving AssetCheckList for page {PageIndex}", pageIndex);
             TempData["ErrorMessage"] = "An error occurred while loading asset checklists. Please try again.";
-            return View(new PaginatedList<AssetCheckList>(new List<AssetCheckList>(), 0, pageIndex, pageSize));
+            
+            // Return appropriate empty list based on view mode
+            if (viewMode.ToLower() == "table")
+            {
+                return View(new PaginatedList<AssetCheckList>(new List<AssetCheckList>(), 0, pageIndex, pageSize));
+            }
+            else
+            {
+                return View(new PaginatedList<AssetCheckList>(new List<AssetCheckList>(), 0, 1, int.MaxValue));
+            }
         }
     }
 
@@ -251,8 +273,8 @@ public class AssetCheckListController : Controller
                 return View(vm);
             }
 
-            // Force a redirect with cache busting to ensure fresh data
-            return RedirectToAction(nameof(Index), new { refresh = DateTime.Now.Ticks });
+            // FIXED: Redirect with viewMode parameter to ensure correct data loading
+            return RedirectToAction(nameof(Index), new { viewMode = "grouped", refresh = DateTime.Now.Ticks });
         }
         catch (Exception ex)
         {
@@ -334,7 +356,7 @@ public class AssetCheckListController : Controller
             _logger.LogInformation("Updated AssetCheckList successfully: ID {AssetCheckListID}", entity.AssetCheckListID);
             
             TempData["SuccessMessage"] = "Asset Check List updated successfully!";
-            return RedirectToAction(nameof(Index), new { refresh = DateTime.Now.Ticks });
+            return RedirectToAction(nameof(Index), new { viewMode = "grouped", refresh = DateTime.Now.Ticks });
         }
         catch (Exception ex)
         {
@@ -410,7 +432,7 @@ public class AssetCheckListController : Controller
             }
             
             TempData["SuccessMessage"] = successMessage;
-            return RedirectToAction(nameof(Index), new { refresh = DateTime.Now.Ticks });
+            return RedirectToAction(nameof(Index), new { viewMode = "grouped", refresh = DateTime.Now.Ticks });
         }
         catch (Exception ex)
         {
@@ -463,7 +485,7 @@ public class AssetCheckListController : Controller
             }
             
             TempData["SuccessMessage"] = successMessage;
-            return RedirectToAction(nameof(Index), new { refresh = DateTime.Now.Ticks });
+            return RedirectToAction(nameof(Index), new { viewMode = "grouped", refresh = DateTime.Now.Ticks });
         }
         catch (Exception ex)
         {
@@ -561,6 +583,34 @@ public class AssetCheckListController : Controller
         {
             _logger.LogError(ex, "Error retrieving AssetCheckList for AssetID {AssetID}", assetId);
             throw;
+        }
+    }
+
+    // AJAX endpoint for loading grouped view content - this should always return all data
+    public async Task<IActionResult> LoadGroupedView(string searchTerm = "")
+    {
+        try
+        {
+            // FIXED: Always load ALL data for grouped view, not paginated
+            var list = await _service.GetAllAsync(null, null, searchTerm);
+            
+            // Add cache-busting headers to ensure fresh data
+            Response.Headers.Append("Cache-Control", "no-cache, no-store, must-revalidate");
+            Response.Headers.Append("Pragma", "no-cache");
+            Response.Headers.Append("Expires", "0");
+            
+            ViewData["SearchTerm"] = searchTerm;
+            
+            _logger.LogInformation("LoadGroupedView: Retrieved {Count} AssetCheckLists with search term '{SearchTerm}'. Total count: {TotalCount}", 
+                list.Count, searchTerm, list.TotalCount);
+            
+            return PartialView("_GroupedViewPartial", list);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "LoadGroupedView Error retrieving AssetCheckList with search term '{SearchTerm}'", searchTerm);
+            // Return empty list that can hold all data
+            return PartialView("_GroupedViewPartial", new PaginatedList<AssetCheckList>(new List<AssetCheckList>(), 0, 1, int.MaxValue));
         }
     }
 }

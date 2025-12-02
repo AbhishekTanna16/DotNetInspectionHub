@@ -7,11 +7,8 @@ public class AzureBlobService
 
     public AzureBlobService(IConfiguration config)
     {
-        _connectionString = config["AzureBlob:ConnectionString"]
-            ?? throw new Exception("Azure Blob ConnectionString is missing!");
-
-        _containerName = config["AzureBlob:ContainerName"]
-            ?? throw new Exception("Azure Blob ContainerName is missing!");
+        _connectionString = config["AzureBlob:ConnectionString"];
+        _containerName = config["AzureBlob:ContainerName"];
     }
 
     public async Task<string> UploadAsync(byte[] fileBytes, string fileName)

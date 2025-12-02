@@ -26,7 +26,7 @@ public class QRCodeRepository : IQRCodeRepository
         byte[] bytes = qrCode.GetGraphic(20);
 
         string? savedPath = null;  
-        string? publicUrl = null;
+       // string? publicUrl = null;
 
         if (saveToDisk)
         {
@@ -39,13 +39,13 @@ public class QRCodeRepository : IQRCodeRepository
                 : $"qr_{Guid.NewGuid()}.png";
 
             var fullPath = Path.Combine(folder, fileName);
-             publicUrl = await _blobService.UploadAsync(bytes, fileName);
+          //   publicUrl = await _blobService.UploadAsync(bytes, fileName);
             // Save the PNG bytes
             await File.WriteAllBytesAsync(fullPath, bytes);
 
             savedPath = $"/qrcodes/{fileName}";
         }
 
-        return (bytes, publicUrl);
+        return (bytes, savedPath);
     }
 }

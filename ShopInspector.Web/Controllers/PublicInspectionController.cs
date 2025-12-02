@@ -488,9 +488,7 @@ public class PublicInspectionController : Controller
                 }
 
                 // Use correct path for both development and production (Render)
-                var uploadsRoot = _env.IsDevelopment()
-                    ? Path.Combine(_env.WebRootPath ?? _env.ContentRootPath, "uploads")
-                    : Path.Combine("/var/data", "uploads");
+                var uploadsRoot = Path.Combine(_env.WebRootPath ?? _env.ContentRootPath, "uploads");
                     
                 var physicalPath = Path.Combine(uploadsRoot, photo.PhotoPath.TrimStart('/').Replace("uploads/", ""));
                 

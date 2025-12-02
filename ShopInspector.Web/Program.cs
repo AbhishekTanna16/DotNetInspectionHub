@@ -101,9 +101,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Configure persistent uploads directory for Render
-var uploadsPath = app.Environment.IsDevelopment() 
-    ? Path.Combine(Directory.GetCurrentDirectory(), "uploads")
-    : Path.Combine("/var/data", "uploads");
+var uploadsPath = Path.Combine(Directory.GetCurrentDirectory(), "uploads");
+   
 
 if (!Directory.Exists(uploadsPath)) 
     Directory.CreateDirectory(uploadsPath);
